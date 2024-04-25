@@ -13,5 +13,6 @@ markdown_extensions:
     - fenced_code
 
 nav:
-  - Home: index.md
+  - Introduction: index.md
   - "Getting Connected": connected.md
+  - "Using Software": software.md
