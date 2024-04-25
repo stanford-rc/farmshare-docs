@@ -31,7 +31,7 @@ PuTTY supports GSSAPI authentication as of version 0.61 and will automatically u
 
 [Mosh](https://mosh.org/) is an alternative to SSH for Linux and macOS clients. It uses SSH for authentication, so you may want to review the suggested SSH configuration above. Mosh has some advantages, including predictive display, which can be useful on high-latency connections, and improved network resiliency. Mosh connections can persist when you switch networks and can even survive putting your computer to sleep.
 
-# OnDemand
+## OnDemand
 
 [Open OnDemand](https://ondemand.farmshare.stanford.edu/) is a browser based interface to FarmShare. OnDemand offers terminal, file manager, editor, desktop, and GUI applications right from your web browser!
 
