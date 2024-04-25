@@ -1,6 +1,8 @@
-So, you've logged in to FarmShare, and now you want to do something on it?  We can help you with that!  In addition to the software that we already have available, we have tools for you to build/install your own.
+# Using Software
 
-# The Three Software Sources
+FarmShare has lots of free and commercial software available to use. We provide software that comes with Ubuntu, software that we package ourselves, and we also provide the capability for you to build and use software yourself!
+
+## Software Sources
 
 Software on FarmShare comes from three sources:
 
