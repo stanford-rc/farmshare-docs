@@ -32,35 +32,27 @@ ssh SUNetID@login.farmshare.stanford.edu
 
 FarmShare has lots of free and commercial software available to use. We provide software that comes with Ubuntu, software that we package ourselves, and we also provide the capability for you to build and use software yourself!
 
-# Running Jobs
+## Running Jobs
 
-FarmShare uses the Slurm job-submission system. This is the same system used elsewhere in SRCC (FarmShare has its own installation, separate from the others). You can use Slurm to submit batch jobs (which run while your're away), start interactive jobs (which automatically connects you to a compute node), and request a general allocation of computing resources (so you can connect multiple times).
+FarmShare uses the [Slurm](slurm.schedmd.com/) job-submission system. This is the same system used elsewhere in SRCC (FarmShare has its own installation, separate from the others). You can use Slurm to submit batch jobs (which run while your're away), start interactive jobs (which automatically connects you to a compute node), and request a general allocation of computing resources (so you can connect multiple times).
 
-# Eligibility
+## Eligibility
 
-FarmShare is available to anyone who has a full-service SUNetID. A full-service SUNetID is one that has email service; if you can successfully get to Stanford Webmail, then you are eligible to use FarmShare 2 for academic work and small research jobs! If you do not already have a full-service SUNetID (maybe because you are a visiting researcher), you can get a sponsored full-service SUNetID. Read more about SUNetID levels.
+FarmShare is available to anyone who has a full-service SUNetID. A full-service SUNetID is one that has email service; if you can successfully get to [Stanford Webmail](https://webmail.stanford.edu/), then you are eligible to use FarmShare 2 for academic work and small research jobs! If you do not already have a full-service SUNetID (maybe because you are a visiting researcher), you can get a sponsored full-service SUNetID. Read more about [SUNetID levels](https://uit.stanford.edu/service/accounts/sunetids).
 
-Note that, in order to get a sponsored SUNetID, a monthly fee will be charged by University IT. Only people with spending authority may sponsor a SUNetID. Sponsorships can be obtained and paid for through Sponsorship Manager.  Current rates are available from the Sponsored Account Rates page.
+Note that, in order to get a sponsored SUNetID, a monthly fee will be charged by University IT. Only people with spending authority may sponsor a SUNetID. Sponsorships can be obtained and paid for through [Sponsorship Manager](https://uit.stanford.edu/service/sponsorship/).  Current rates are available from the Sponsored Account [Rates page](https://uit.stanford.edu/rates/sponsorship).
 
-FarmShare is meant for low- or moderate-risk data, and is primarily intended for class work and for other general- and personal-use work (research and training). It is not meant for sponsored research (where you have a dedicated source of funding), and is not approved for handling high-risk data.
-
-# CS Students
-
-If you're a CSD (Stanford Computer Science Department) student, that you may want to use the Xenon or myth clusters. Read more in CS's Computing Guide.
+FarmShare is meant for [low- or moderate-risk data](https://uit.stanford.edu/guide/riskclassifications), and is primarily intended for class work and for other general- and personal-use work (research and training). It is not meant for sponsored research (where you have a dedicated source of funding), and is not approved for handling high-risk data.
 
 # Using Sherlock for Sponsored and Departmental Research
 
-If you are doing sponsored or departmental research, then FarmShare might not be the right place for you. Instead, if the data you are working with is all low-risk, then you should consider getting access to Sherlock! The Sherlock web site has more information about how to get access.
+If you are doing sponsored or departmental research, then FarmShare might not be the right place for you. Instead, if the data you are working with is all low-risk, then you should consider getting access to Sherlock! The [Sherlock web site](https://www.sherlock.stanford.edu/docs/getting-started/#how-to-request-an-account) has more information about how to get access.
 
-# High-Risk Computing
-
-If you have high-risk data of any kind, please let us know, and we can help you figure something out!
-
-# Getting Help
+## Getting Help
 
 Most FarmShare support is provided during business hours, either via email or during academic-year office hours.
 
-For email support, send a message to srcc-support@stanford.edu. Make sure you have "FarmShare 2" somewhere in the subject line, and please be as detailed as possible with your request!
+For email support, send a message to [srcc-support][mailto:srcc-support@stanford.edu?subject=FarmShare 2 support). Make sure you have "FarmShare 2" somewhere in the subject line, and please be as detailed as possible with your request!
 
 # Adding Capacity
 
@@ -72,6 +64,3 @@ FarmShare does not have a dedicated funding source available to it, and we appre
 * If you already have hardware being supported by SRCC, we may be able to use that hardware once you are done with it.
 
 We appreciate anything you can do to get the word out about FarmShare and how awesome it is!
-
-
-
