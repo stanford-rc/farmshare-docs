@@ -33,6 +33,6 @@ PuTTY supports GSSAPI authentication as of version 0.61 and will automatically u
 
 # OnDemand
 
-[Open OnDemand](https://ondemand.farmshare.stanford.edu/) is a browser based interface to FarmShare. OnDemand offers terminal, file manager and editor and access to a desktop session and GUI applications right from your web browser.
+[Open OnDemand](https://ondemand.farmshare.stanford.edu/) is a browser based interface to FarmShare. OnDemand offers terminal, file manager, editor, desktop, and GUI applications right from your web browser!
 
 
