@@ -26,11 +26,7 @@ Note that, in order to get a sponsored SUNetID, a monthly fee will be charged by
 
 FarmShare is meant for [low- or moderate-risk data](https://uit.stanford.edu/guide/riskclassifications), and is primarily intended for class work and for other general- and personal-use work (research and training). It is not meant for sponsored research (where you have a dedicated source of funding), and is not approved for handling high-risk data.
 
-## Running Jobs
-
-FarmShare uses the [Slurm](http://slurm.schedmd.com/) job-submission system. This is the same system used elsewhere in SRCC (FarmShare has its own installation, separate from the others). You can use Slurm to submit batch jobs (which run while your're away), start interactive jobs (which automatically connects you to a compute node), and request a general allocation of computing resources (so you can connect multiple times).
-
-# Using Sherlock for Sponsored and Departmental Research
+## Using Sherlock for Sponsored and Departmental Research
 
 If you are doing sponsored or departmental research, then FarmShare might not be the right place for you. Instead, if the data you are working with is all low-risk, then you should consider getting access to Sherlock! The [Sherlock web site](https://www.sherlock.stanford.edu/docs/getting-started/#how-to-request-an-account) has more information about how to get access.
 
@@ -39,14 +35,3 @@ If you are doing sponsored or departmental research, then FarmShare might not be
 Most FarmShare support is provided during business hours, either via email or during academic-year office hours.
 
 For email support, send a message to [srcc-support](mailto:srcc-support@stanford.edu?subject=FarmShare 2 support). Make sure you have "FarmShare 2" somewhere in the subject line, and please be as detailed as possible with your request!
-
-# Adding Capacity
-
-FarmShare does not have a dedicated funding source available to it, and we appreciate any contributions that people can make.  For example:
-
-* If you are using FarmShare for a class, let your department chair know that you are using it.
-* If you are a registered student group using FarmShare, let your faculty representative and/or ASSU know that you are using it.
-* If you have spare funds available, [email us](mailto:srcc-support@stanford.edu?subject=FarmShare 2 funds contribution) and we can arrange either a iJournals transfer to our PTA, or a capital purchase from your PTA.
-* If you already have hardware being supported by SRCC, we may be able to use that hardware once you are done with it.
-
-We appreciate anything you can do to get the word out about FarmShare and how awesome it is!
