@@ -5,6 +5,13 @@ theme: readthedocs
 extra_css:
   - style.css
 
+markdown_extensions:
+    - smarty
+    - toc:
+        permalink: True
+    - sane_lists
+    - fenced_code
+
 nav:
   - Home: index.md
   - "Getting Connected": connected.md
