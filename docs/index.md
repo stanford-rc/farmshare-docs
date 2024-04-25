@@ -26,9 +26,9 @@ Note that, in order to get a sponsored SUNetID, a monthly fee will be charged by
 
 FarmShare is meant for [low- or moderate-risk data](https://uit.stanford.edu/guide/riskclassifications), and is primarily intended for class work and for other general- and personal-use work (research and training). It is not meant for sponsored research (where you have a dedicated source of funding), and is not approved for handling high-risk data.
 
-## Using Sherlock for Sponsored and Departmental Research
+## Sponsored and Departmental Research
 
-If you are doing sponsored or departmental research, then FarmShare might not be the right place for you. Instead, if the data you are working with is all low-risk, then you should consider getting access to Sherlock! The [Sherlock web site](https://www.sherlock.stanford.edu/docs/getting-started/#how-to-request-an-account) has more information about how to get access.
+If you are doing sponsored or departmental research, then FarmShare might not be the right place for you. Instead, if the data you are working with is all low-risk, then you should consider getting access to our Sherlock Cluster! The [Sherlock web site](https://www.sherlock.stanford.edu/docs/getting-started/#how-to-request-an-account) has more information about how to get access.
 
 ## Getting Help
 
