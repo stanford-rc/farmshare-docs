@@ -15,13 +15,13 @@ Depending on your environment and configuration you may be prompted for your SUN
 
 ## SSH on Windows
 
-Windows does not have a built-in SSH client, but a number are available from third parties.
+Windows does not have a built-in SSH client, but a number are available from third parties:
 
-## MobaXterm
+### MobaXterm
 
 [MobaXterm](http://mobaxterm.mobatek.net/) is an SSH client with a built-in X server, making remote display extremely convenient, and the Home Edition is free for personal use.
 
-## PuTTY
+### PuTTY
 
 [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) is a popular, freely available SSH client for Windows. The default settings are appropriate for most users, so all you need to do is specify the host name and click the Open button to connect. Aat the login as: prompt, enter your SUNet ID, and authenticate by password if asked. A number of configuration options are available, and PuTTY allows you to customize your connection settings and save them as a session. The next time you start the application you can load the saved configuration by selecting the desired session and clicking the Load button.
 
