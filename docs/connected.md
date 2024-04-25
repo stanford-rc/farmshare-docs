@@ -27,7 +27,7 @@ Windows does not have a built-in SSH client, but a number are available from thi
 
 PuTTY supports GSSAPI authentication as of version 0.61 and will automatically use your existing Kerberos credentials for login, if available. You may also want to enable Kerberos ticket forwarding by checking the Connection → SSH → Auth → GSSAPI → Allow GSSAPI credential delegation box.
 
-### Mobile Shell (Mosh)
+## Mobile Shell (Mosh)
 
 [Mosh](https://mosh.org/) is an alternative to SSH for Linux and macOS clients. It uses SSH for authentication, so you may want to review the suggested SSH configuration above. Mosh has some advantages, including predictive display, which can be useful on high-latency connections, and improved network resiliency. Mosh connections can persist when you switch networks and can even survive putting your computer to sleep.
 
