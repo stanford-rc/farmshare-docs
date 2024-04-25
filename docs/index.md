@@ -34,7 +34,7 @@ FarmShare has lots of free and commercial software available to use. We provide 
 
 ## Running Jobs
 
-FarmShare uses the [Slurm](slurm.schedmd.com/) job-submission system. This is the same system used elsewhere in SRCC (FarmShare has its own installation, separate from the others). You can use Slurm to submit batch jobs (which run while your're away), start interactive jobs (which automatically connects you to a compute node), and request a general allocation of computing resources (so you can connect multiple times).
+FarmShare uses the [Slurm](http://slurm.schedmd.com/) job-submission system. This is the same system used elsewhere in SRCC (FarmShare has its own installation, separate from the others). You can use Slurm to submit batch jobs (which run while your're away), start interactive jobs (which automatically connects you to a compute node), and request a general allocation of computing resources (so you can connect multiple times).
 
 ## Eligibility
 
