@@ -63,6 +63,6 @@ Use "module spider" to find all possible modules and extensions.
 Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 ~~~
 
-## Your Own Software
+## Build Your Own
 
 In addition to the software that we provide for you to use, it is perfectly OK for you to build and use your own software. 
