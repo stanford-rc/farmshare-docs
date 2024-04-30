@@ -18,7 +18,7 @@ FarmShare 2 consists of three classes of servers:
 
 All FarmShare servers run [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes)
 
-FarmShare currently has 4 rice servers (login nodes) along with 31 compute nodes.
+FarmShare currently has 4 rice servers (login nodes) along with 31 compute nodes (wheat, iron, oat nodes)
 
 ## Eligibility
 
