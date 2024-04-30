@@ -16,7 +16,7 @@ FarmShare 2 consists of three classes of servers:
 
 * The *oat* servers are GPU compute nodes. They are similar to the wheat nodes, except that they also have GPUs installed. These nodes are meant for computational academic or research work that is able to take advantage of a GPU (e.g., TensorFlow jobs fit into this category). 
 
-All FarmShare servers run [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/NobleNumbat/ReleaseNotes)
+All FarmShare servers run [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes)
 
 FarmShare currently has 4 rice servers (login nodes) along with  
 
