@@ -1,6 +1,6 @@
 # Welcome to FarmShare 2
 
-FarmShare 2 is the latest iteration of the FarmShare computing environment. FarmShare is Stanford's community computing environment. It is intended for use in coursework and unsponsored research; it is not approved for use with high-risk data, or for use in sponsored research.
+FarmShare 2 is the latest iteration of the FarmShare computing environment. FarmShare is Stanford's community computing environment. It is intended for use in coursework and unsponsored research. It is not approved for use with high-risk data, or for use in sponsored research.
 
 FarmShare evolved from the old, public UNIX cluster, once located on the second floor of Sweet Hall, which was itself a successor to systems like the University's original timeshare service, LOTS. FarmShare 2 came online early 2024.
 
