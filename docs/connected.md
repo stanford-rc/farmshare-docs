@@ -7,7 +7,7 @@ SSH provides a secure, remote terminal connection to the login nodes. There are 
 
 Simply open up your favorite terminal program (on macOS you can use the built-in Terminal application or something like iTerm) and run the ssh command like so, replacing sunetid with your own SUNet ID:
 
-~~~
+~~~no-highlight
 ssh SUNetID@login.farmshare.stanford.edu
 ~~~
 
