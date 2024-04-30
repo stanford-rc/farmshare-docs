@@ -31,9 +31,3 @@ FarmShare is meant for [low- or moderate-risk data](https://uit.stanford.edu/gui
 ## Sponsored Research
 
 If you are doing sponsored or departmental research, then FarmShare might not be the right place for you. Instead, if the data you are working with is all low-risk, then you should consider getting access to our Sherlock Cluster! The [Sherlock web site](https://www.sherlock.stanford.edu/docs/getting-started/#how-to-request-an-account) has more information about how to get access.
-
-## Getting Help
-
-Most FarmShare support is provided during business hours, either via email or during academic-year office hours.
-
-For email support, send a message to [srcc-support](mailto:srcc-support@stanford.edu?subject=FarmShare 2 support). Make sure you have "FarmShare 2" somewhere in the subject line, and please be as detailed as possible with your request!
