@@ -25,7 +25,7 @@ FarmShare 2 runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Ja
 
 ## Modules
 
-To provide up-to-date software, we use modules. Modularized software lives in shared, network-connected storage, and is  built by SRCC. To see a listing of available software, run the module available command:
+To provide up-to-date software, we use modules. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. To see a listing of available software, run the module available command:
 
 ~~~no-highlight
 ta5@rice-01:~$ module available
