@@ -25,3 +25,31 @@ ta5@rice-04:~$ srun --qos=interactive --pty bash
 ta5@wheat-01:~$ 
 ~~~
 
+## Batch Jobs
+
+The [`sbatch`](https://slurm.schedmd.com/sbatch.html) command is used to submit a batch job, and takes a batch script as an argument. Options are used to request specific resources (including runtime), and can be provided either on the command line or, using a special syntax, in the script file itself. sbatch can also be used to submit many similar jobs, each perhaps varying in only one or two parameters, in a single invocation using the --array option; each job in an array has access to environment variables identifying its rank.
+
+Sample hello world program and batch script:
+
+~~~
+ta5@rice-04:~$ cat hello_world.sh 
+#!/bin/bash
+
+#SBATCH --job-name=hello_world
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=normal
+
+echo 'Hello World!'
+ta5@rice-04:~$ 
+ta5@rice-04:~$ 
+ta5@rice-04:~$ sbatch hello_world.sh 
+Submitted batch job 177987
+ta5@rice-04:~$ 
+ta5@rice-04:~$ cat slurm-177987.out 
+Hello World!
+ta5@rice-04:~$ 
+~~~
+
+
