@@ -15,3 +15,4 @@ Jobs are scheduled according to a priority which depends on a number of factors,
 | gpu         | ??      | ??       | 2 Days     |
 | caddyshack  | 32GB    | 8        | 2 Days     |
 | interactive | ?       | 16       | 24 Hours   |
+
