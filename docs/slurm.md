@@ -29,7 +29,7 @@ ta5@wheat-01:~$
 
 The [`sbatch`](https://slurm.schedmd.com/sbatch.html) command is used to submit a batch job, and takes a batch script as an argument. Options are used to request specific resources (including runtime), and can be provided either on the command line or, using a special syntax, in the script file itself. sbatch can also be used to submit many similar jobs, each perhaps varying in only one or two parameters, in a single invocation using the --array option; each job in an array has access to environment variables identifying its rank.
 
-Sample hello world program and batch script:
+Sample batch script to submit a job:
 
 ~~~
 ta5@rice-04:~$ cat hello_world.sh 
