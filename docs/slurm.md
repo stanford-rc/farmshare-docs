@@ -16,3 +16,11 @@ Jobs are scheduled according to a priority which depends on a number of factors,
 | caddyshack  | 32GB    | 8        | 2 Days     |
 | interactive | ?       | 16       | 24 Hours   |
 
+## Interactive Jobs
+
+Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node.
+
+~~~
+ta5@rice-04:~$ srun --qos=interactive --pty bash
+ta5@wheat-01:~$ 
+~~~
