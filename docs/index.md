@@ -1,6 +1,6 @@
-# Welcome to FarmShare 2
+# Welcome to FarmShare
 
-FarmShare 2 is the latest iteration of the FarmShare computing environment. FarmShare is Stanford's community computing environment. It is intended for use in coursework and unsponsored research. It is not approved for use with high-risk data, or for use in sponsored research.
+FarmShare is Stanford's community computing environment. It is intended for use in coursework and unsponsored research. It is not approved for use with high-risk data, or for use in sponsored research.
 
 FarmShare evolved from the old, public UNIX cluster, once located on the second floor of Sweet Hall, which was itself a successor to systems like the University's original timeshare service, LOTS. FarmShare 2 came online early 2024.
 
@@ -8,7 +8,7 @@ The FarmShare resources are focused on making it easier to learn how to use rese
 
 ## Cluster Components
 
-FarmShare 2 consists of three classes of servers:
+FarmShare consists of three classes of servers:
 
 * The **rice** servers are *login* nodes where you log in to run commands, access files, submit jobs, and review results. The rice servers also have access to [Stanford AFS](https://uit.stanford.edu/service/afs). These servers can be used for interactive work, but some resource limits are enforced, so if you need to run a long-running or compute- and/or memory-intensive process you should submit a job. Remember, these are servers for research and academic use, not for administrative or business functions.  
   
@@ -22,7 +22,7 @@ FarmShare currently has 4 rice servers (login nodes) along with 26 compute nodes
 
 ## Eligibility
 
-FarmShare 2 is available to anyone who has a full-service SUNetID. A full-service SUNetID is one that has email service; if you can successfully get to [Stanford Webmail](https://webmail.stanford.edu/), then you are eligible to use FarmShare 2 for academic work and small research jobs! If you do not already have a full-service SUNetID (maybe because you are a visiting researcher), you can get a sponsored full-service SUNetID. Read more about [SUNetID levels](https://uit.stanford.edu/service/accounts/sunetids).
+FarmShare is available to anyone who has a full-service SUNetID. A full-service SUNetID is one that has email service; if you can successfully get to [Stanford Webmail](https://webmail.stanford.edu/), then you are eligible to use FarmShare 2 for academic work and small research jobs! If you do not already have a full-service SUNetID (maybe because you are a visiting researcher), you can get a sponsored full-service SUNetID. Read more about [SUNetID levels](https://uit.stanford.edu/service/accounts/sunetids).
 
 Note that, in order to get a sponsored SUNetID, a monthly fee will be charged by University IT. Only people with spending authority may sponsor a SUNetID. Sponsorships can be obtained and paid for through [Sponsorship Manager](https://uit.stanford.edu/service/sponsorship/).  Current rates are available from the Sponsored Account [Rates page](https://uit.stanford.edu/rates/sponsorship).
 
