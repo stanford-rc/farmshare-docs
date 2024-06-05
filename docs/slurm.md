@@ -6,18 +6,6 @@ FarmShare uses [Slurm](https://slurm.schedmd.com/) for job (resource) management
 
 Jobs are scheduled according to a priority which depends on a number of factors, including how long a job has been waiting, its size, and a fair-share value that tracks recent per-user utilization of cluster resources. Lower-priority jobs, and jobs requiring access to resources not currently available, may wait some time before starting to run. The scheduler may reserve resources so that pending jobs can start; while it will try to backfill these resources with smaller, shorter jobs (even those at lower priorities), this behavior can sometimes cause nodes to appear to be idle even when there are jobs that are ready to run. You can use `squeue --start` to get an estimate of when pending jobs will start.
 
-## Partition info
-
-Partition    | Max mem | Max CPUs | Time limit
------------- | ------- | -------- |----------
- normal      | 188GB   | 256      | 2 Days     
- bigmem      | 768GB   | 344      | 2 Days     
- gpu         | ??      | ??       | 2 Days     
- caddyshack  | 32GB    | 8        | 2 Days     
- interactive | 188GB   | 16       | 24 Hours   
-
-
-
 ## Interactive Jobs
 
 Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the [`srun`](https://slurm.schedmd.com/srun.html) command to request one:
