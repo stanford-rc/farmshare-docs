@@ -59,8 +59,6 @@
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#slurm">Slurm</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#partition-info">Partition info</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#interactive-jobs">Interactive Jobs</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#batch-jobs">Batch Jobs</a>
@@ -112,49 +110,6 @@
 <h2 id="slurm">Slurm<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h2>
 <p>FarmShare uses <a href="https://slurm.schedmd.com/">Slurm</a> for job (resource) management. Full <a href="https://slurm.schedmd.com/documentation.html">documentation</a> and detailed usage information is provided in the man pages for the srun, sbatch, squeue, scancel, sinfo, and scontrol commands.</p>
 <p>Jobs are scheduled according to a priority which depends on a number of factors, including how long a job has been waiting, its size, and a fair-share value that tracks recent per-user utilization of cluster resources. Lower-priority jobs, and jobs requiring access to resources not currently available, may wait some time before starting to run. The scheduler may reserve resources so that pending jobs can start; while it will try to backfill these resources with smaller, shorter jobs (even those at lower priorities), this behavior can sometimes cause nodes to appear to be idle even when there are jobs that are ready to run. You can use <code>squeue --start</code> to get an estimate of when pending jobs will start.</p>
-<h2 id="partition-info">Partition info<a class="headerlink" href="#partition-info" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Partition</th>
-<th>Max mem</th>
-<th>Max CPUs</th>
-<th>Time limit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>normal</td>
-<td>188GB</td>
-<td>256</td>
-<td>2 Days</td>
-</tr>
-<tr>
-<td>bigmem</td>
-<td>768GB</td>
-<td>344</td>
-<td>2 Days</td>
-</tr>
-<tr>
-<td>gpu</td>
-<td>??</td>
-<td>??</td>
-<td>2 Days</td>
-</tr>
-<tr>
-<td>caddyshack</td>
-<td>32GB</td>
-<td>8</td>
-<td>2 Days</td>
-</tr>
-<tr>
-<td>interactive</td>
-<td>188GB</td>
-<td>16</td>
-<td>24 Hours</td>
-</tr>
-</tbody>
-</table>
 <h2 id="interactive-jobs">Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permanent link">&para;</a></h2>
 <p>Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the <a href="https://slurm.schedmd.com/srun.html"><code>srun</code></a> command to request one:</p>
 <pre><code>ta5@rice-04:~$ srun --qos=interactive --pty bash
