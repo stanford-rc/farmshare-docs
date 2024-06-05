@@ -9,7 +9,7 @@ Jobs are scheduled according to a priority which depends on a number of factors,
 ## Partition info
 
 Partition    | Max mem | Max CPUs | Time limit
--------------|---------|----------|------------
+------------ | ------- | -------- |----------
  normal      | 188GB   | 256      | 2 Days     
  bigmem      | 768GB   | 344      | 2 Days     
  gpu         | ??      | ??       | 2 Days     
