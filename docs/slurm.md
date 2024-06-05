@@ -42,4 +42,9 @@ Hello World!
 ta5@rice-04:~$ 
 ~~~
 
+## Partition Info
+
+Partition | Max Memory | Max CPUs | Time Limit
+--------- | ---------- | -------- | ----------
+normal | 188GB | 256 | 2 Days
 
