@@ -5,10 +5,10 @@
 SSH provides a secure, remote terminal connection to the login nodes. There are a number of rice servers providing login service (e.g., rice-01, rice-02); the easiest way to connect is using the load-balanced name, *login.farmshare.stanford.edu*, which will select one for you according to recent utilization.
 
 
-Simply open up your favorite terminal program (on macOS you can use the built-in Terminal application or something like iTerm) and run the ssh command like so, replacing *SUNetID* with your own SUNet ID:
+Simply open up your favorite terminal program (on macOS you can use the built-in Terminal application or something like iTerm) and run the ssh command like so, replacing SUNetID with your own SUNet ID:
 
 ~~~no-highlight
-ssh *SUNetID*@login.farmshare.stanford.edu
+ssh SUNetID@login.farmshare.stanford.edu
 ~~~
 
 Depending on your environment and configuration you may be prompted for your SUNet ID password, and you'll need to complete your login using [two-step authentication](https://uit.stanford.edu/service/webauth/twostep).
