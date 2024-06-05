@@ -44,7 +44,10 @@ ta5@rice-04:~$
 
 ## Partition Info
 
-Partition | Max Memory | Max CPUs | Time Limit
---------- | ---------- | -------- | ----------
-normal | 188GB | 256 | 2 Days
+| Partition   | Max Mem     | Max CPU       |
+| :---        |    :----:   |          ---: |
+| normal      | 188GB       | 256           |
+| bigmem      | 768GB       | 344           |
+| normal      | 188GB       | 256           |
+| interactive | 188GB       | 16            |
 
