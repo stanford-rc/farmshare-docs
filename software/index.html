@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Using Software - FarmShare</title>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  <link href="../style.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Using Software";
+    var mkdocs_page_input_path = "software.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> FarmShare</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../connected/">Getting Connected</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../slurm/">Running Jobs</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Using Software</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#software-sources">Software Sources</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#packages">Packages</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#build-your-own">Build Your Own</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../capacity/">Adding Capacity</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">FarmShare</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Using Software</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="using-software">Using Software<a class="headerlink" href="#using-software" title="Permanent link">&para;</a></h1>
+<p>FarmShare has lots of free and commercial software available to use. We provide software that comes with Ubuntu, software that we package ourselves, and we also provide the capability for you to build and use software yourself.</p>
+<h2 id="software-sources">Software Sources<a class="headerlink" href="#software-sources" title="Permanent link">&para;</a></h2>
+<p>Software on FarmShare comes from three sources:</p>
+<ul>
+<li>Packages</li>
+<li>Modules</li>
+<li>Build your own</li>
+</ul>
+<h2 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h2>
+<p>Packaged software is easiest to use, because you don&rsquo;t have to do anything. Packaged software has already been installed on all of the systems in the environment, so to use the software, you just have to run the command.</p>
+<p>For example, to run the packaged version of Python, you just need to run the python3 command:</p>
+<pre><code class="language-no-highlight">ta5@rice-01:~$ python3 --version
+Python 3.10.12
+</code></pre>
+<p>FarmShare 2 runs Ubuntu 22.04 LTS, which means almost anything in the <a href="http://packages.ubuntu.com/jammy">Ubuntu Jammy package repository</a> is available to be installed.</p>
+<h2 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h2>
+<p>To provide up-to-date software, we use modules. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. To see a listing of available software, run the module available command:</p>
+<pre><code class="language-no-highlight">ta5@rice-01:~$ module available
+
+---------------------------- /software/modules/linux-ubuntu22.04-x86_64/Core ----------------------------
+   apptainer/1.1.9                    libpng/1.5.30
+   blast-plus/2.14.1                  llvm/16.0.6
+   boost/1.83.0                       micromamba/1.1.0
+   bowtie2/2.5.1                      mpich/4.1.2
+   cuda/11.4.4                        numactl/2.0.14
+   cudnn/8.2.4.15-11.4                openblas/0.3.23
+   gcc/13.2.0                         openblas/0.3.24                   (D)
+   imagemagick/7.1.1-11               openmpi/1.10.7
+   intel-oneapi-compilers/2023.2.1    py-jupyterlab/4.0.1_python/3.11.6
+   intel-oneapi-dal/2023.2.0          py-pip/23.1.2_python/3.11.6
+   intel-oneapi-ipp/2021.9.0          python/3.11.6
+   intel-oneapi-mkl/2023.2.0          r-magick/2.7.4_r/4.3.0
+   intel-oneapi-mpi/2021.10.0         r-tidyverse/2.0.0_r/4.3.0
+   intel-oneapi-tbb/2021.10.0         r/4.3.0
+   julia/1.9.2                        rust/1.75.0
+   libjpeg-turbo/2.1.5.1
+
+------------------------------------- /software/modules/commercial --------------------------------------
+   mathematica/13.3.1    mathematica/14.0.0 (D)    matlab/r2023b    sas/9.4    stata/18
+
+  Where:
+   D:  Default Module
+
+If the avail list is too long consider trying:
+
+&quot;module --default avail&quot; or &quot;ml -d av&quot; to just list the default modules.
+&quot;module overview&quot; or &quot;ml ov&quot; to display the number of modules for each name.
+
+Use &quot;module spider&quot; to find all possible modules and extensions.
+Use &quot;module keyword key1 key2 ...&quot; to search for all possible modules matching any of the &quot;keys&quot;.
+</code></pre>
+<h2 id="build-your-own">Build Your Own<a class="headerlink" href="#build-your-own" title="Permanent link">&para;</a></h2>
+<p>In addition to the software that we provide for you to use, it is perfectly OK for you to build and use your own software. </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../capacity/" class="btn btn-neutral float-right" title="Adding Capacity">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../slurm/" class="btn btn-neutral" title="Running Jobs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../slurm/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../capacity/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
