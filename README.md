@@ -7,10 +7,10 @@ Clone the repo:
 
 ```gh repo clone stanford-rc/farmshare-docs```
 
-Update files as needed and then test locally using:
+Update md files as needed and then test changes locally using:
 
 ```mkdocs serve```
 
-To deploy the changes:
+If it looks good, commit/push your changes then deploy using:
 
 ```mkdocs gh-deploy --clean```
