@@ -1,5 +1,5 @@
 # Farmshare documentation
-This repo is for the farmshare public website.
+This repo is for the farmshare public website docs.farmshare.stanford.edu
 
 MkDocs based website using Read the Docs theme hosted on Github pages.
 
