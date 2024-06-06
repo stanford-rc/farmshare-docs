@@ -21,7 +21,7 @@ ta5@rice-01:~$ python3 --version
 Python 3.10.12
 ~~~
 
-FarmShare 2 runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Jammy package repository](http://packages.ubuntu.com/jammy) is available to be installed.
+FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Jammy package repository](http://packages.ubuntu.com/jammy) is available to be installed.
 
 ## Modules
 
