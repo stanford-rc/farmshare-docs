@@ -49,6 +49,8 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href=".">Introduction</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#whats-new">What's New</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#cluster-components">Cluster Components</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#eligibility">Eligibility</a>
@@ -110,6 +112,16 @@
 <p>FarmShare is Stanford&rsquo;s community computing environment. It is intended for use in coursework and unsponsored research. It is not approved for use with high-risk data, or for use in sponsored research.</p>
 <p>FarmShare evolved from the old, public UNIX cluster, once located on the second floor of Sweet Hall, which was itself a successor to systems like the University&rsquo;s original timeshare service, LOTS. The latest iteration of FarmShare with hardware and major OS update came online early 2024.</p>
 <p>Resources on FarmShare are focused on making it easier to learn how to use research computing including “scheduler” or “distributed resource management system” to submit compute jobs. By using FarmShare, new researchers can more easily adapt to using larger clusters when they have big projects that involve using federally funded resources, shared Stanford clusters, or on a small grant funded cluster. Full SUNet (or sponsorship) required.</p>
+<h2 id="whats-new">What&rsquo;s New<a class="headerlink" href="#whats-new" title="Permanent link">&para;</a></h2>
+<p>Key changes on the new Farmshare environment include:</p>
+<ul>
+<li>Major OS upgrade to <a href="https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes">Ubuntu 22.04 LTS</a> which brings many changes, improvements and provides LTS stability.</li>
+<li>New Hardware with CPU and memory improvements.</li>
+<li>New browser based access with <a href="https://ondemand.farmshare.stanford.edu/">Open OnDemand v3</a>. NOTE:  Before you submit any batch jobs, you must access one of the new login nodes: Clusters → <a href="https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh">FarmShare Shell Access</a>). This will initialize your new environment setup.</li>
+<li>Updated Open Ondemand apps: JupyterLabs, RStudio, and VS Code.</li>
+<li>Updated Scheduler (resource manager) to <a href="https://slurm.schedmd.com/">Slurm v24.05</a></li>
+<li>Home directory path updated to <code>/home/users/USER</code>. Please use the variable <code>$HOME</code> instead of hard coding directory paths.</li>
+</ul>
 <h2 id="cluster-components">Cluster Components<a class="headerlink" href="#cluster-components" title="Permanent link">&para;</a></h2>
 <p>FarmShare consists of three classes of servers:</p>
 <ul>
@@ -187,5 +199,5 @@
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2024-06-06 14:59:22.577253+00:00
+Build Date UTC : 2024-07-24 21:30:57.438625+00:00
 -->
