@@ -6,6 +6,17 @@ FarmShare evolved from the old, public UNIX cluster, once located on the second 
 
 Resources on FarmShare are focused on making it easier to learn how to use research computing including “scheduler” or “distributed resource management system” to submit compute jobs. By using FarmShare, new researchers can more easily adapt to using larger clusters when they have big projects that involve using federally funded resources, shared Stanford clusters, or on a small grant funded cluster. Full SUNet (or sponsorship) required.
 
+## What's New
+
+Key changes on the new Farmshare environment include:
+
+* Major OS upgrade to [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes) which brings many changes, improvements and stability.
+* New Hardware with additional memory and cpu cores?
+* New browser based access with [Open OnDemand v3](https://ondemand.farmshare.stanford.edu/). NOTE:  Before you submit any batch jobs, you must access one of the new login nodes: Clusters → [FarmShare Shell Access](https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh)). This will initialize
+* Updated Open Ondemand apps: RStudio, VS Code
+* Updated Scheduler (resource manager) to [Slurm v24.05](https://slurm.schedmd.com/)
+* Home directory path updated to `/home/users/USER`. Please use the variable `$HOME` instead of hard coding directory paths
+
 ## Cluster Components
 
 FarmShare consists of three classes of servers:
