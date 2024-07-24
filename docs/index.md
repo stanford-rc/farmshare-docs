@@ -10,7 +10,7 @@ Resources on FarmShare are focused on making it easier to learn how to use resea
 
 Key changes on the new Farmshare environment include:
 
-* Major OS upgrade to [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes) which brings many changes, improvements and stability.
+* Major OS upgrade to [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes) which brings many changes, improvements and provides LTS stability.
 * New Hardware with CPU and memory improvements.
 * New browser based access with [Open OnDemand v3](https://ondemand.farmshare.stanford.edu/). NOTE:  Before you submit any batch jobs, you must access one of the new login nodes: Clusters → [FarmShare Shell Access](https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh)). This will initialize your new environment setup.
 * Updated Open Ondemand apps: JupyterLabs, RStudio, and VS Code.
