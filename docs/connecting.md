@@ -35,3 +35,6 @@ PuTTY supports GSSAPI authentication as of version 0.61 and will automatically u
 
 [Open OnDemand](https://ondemand.farmshare.stanford.edu/) is a browser based interface to FarmShare. OnDemand offers terminal, file manager, editor, desktop, and GUI applications right from your web browser!
 
+Note: If you have never logged into Farmshare before you won't be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down then FarmShare Shell Access.
+
+
