@@ -13,6 +13,18 @@ ssh SUNetID@login.farmshare.stanford.edu
 
 Depending on your environment and configuration you may be prompted for your SUNet ID password, and you'll need to complete your login using [two-step authentication](https://uit.stanford.edu/service/webauth/twostep).
 
+## Host keys
+
+For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:
+
+~~~no-highlight
+SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)
+~~~
+
+~~~no-highlight
+SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
+~~~
+
 ## SSH on Windows
 
 Windows does not have a built-in SSH client, but a number are available from third parties:
