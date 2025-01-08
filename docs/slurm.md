@@ -16,6 +16,7 @@ main Slurm commands to submit jobs are listed in the table below:
 | `salloc` | Request resources and allocates them to a job | Starts a new shell, but does not execute anything |
 | `srun`   | Request resources and runs a command on the allocated compute node(s) | Blocking command: will not return until the job ends |
 | `sbatch` | Request resources and runs a script on the allocated compute node(s) | Asynchronous command: will return as soon as the job is submitted |
+| `squeue` | View job and job step information | Displays job information | 
 
 ## Interactive Jobs
 
