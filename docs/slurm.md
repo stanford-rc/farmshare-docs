@@ -37,7 +37,7 @@ The [`sbatch`](https://slurm.schedmd.com/sbatch.html) command is used to submit 
 
 **time:** How long will it take for your code to run to completion?
 
-**partition:** What set of compute nodes on FarmShare will you run on, normal, interactive, bigmem? Use the [`sh_part`][url_sh_part] command to see what partitions you are allowed to run on. The default partition on Sherlock is the normal partition.
+**partition:** What set of compute nodes on FarmShare will you run on, normal, interactive, bigmem? The default partition on FarmShare is the normal partition.
 
 Sample batch script to submit a job:
 
