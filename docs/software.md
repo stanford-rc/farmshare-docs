@@ -217,3 +217,23 @@ Python version = 3.13.0 (main, Dec 10 2024, 13:22:44) [GCC 13.2.0]
 Numpy version = 2.2.2
 Pandas version = 2.2.3
 ~~~
+
+## JupyterLab
+
+JupyterLab is [Project Jupyter's](https://jupyter.org/)  web-based devolopment interface for Jupyter Notebooks. On FarmShare, it is available as an app on our [OnDemand](https://ondemand.farmshare.stanford.edu) interface and supports computation with Python 3.
+
+### Accessing JupyterLab
+
+Login in to [OnDemand](https://ondemand.farmshare.stanford.edu) and select **Interactive Apps > JupyterLab**
+
+If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. To do this, start an interactive terminal session and activate your environment (if you do not have an environment, refer to the sections above on how to do so). 
+
+~~~
+ta5@rice-02:~$ source tutorial_env/bin/activate
+(tutorial_env) ta5@rice-02:~$ pip install ipykernel
+ta5@rice-02:~$ 
+(tutorial_env) ta5@rice-02:~$ python3 -m ipykernel install --user --name tutorial_env
+Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernels/tutorial_env
+~~~
+
+Once you've successfully created your kernel, you should see your enviroment (custom kernel name) at the Notebook Launcher!
