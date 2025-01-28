@@ -55,6 +55,10 @@
                     </li>
                 </ul>
                 <ul>
+                    <li class="toctree-l1"><a class="" href="../ondemand.md">OnDemand</a>
+                    </li>
+                </ul>
+                <ul>
                     <li class="toctree-l1"><a class="reference internal" href="../slurm/">Running Jobs</a>
                     </li>
                 </ul>
@@ -68,6 +72,16 @@
     <li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#build-your-own">Build Your Own</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#python">Python</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pip">pip</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#virtual-environments">Virtual Environments</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#using-virtual-environment-in-slurm">Using Virtual Environment in SLURM</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -161,7 +175,125 @@ Use &quot;module spider&quot; to find all possible modules and extensions.
 Use &quot;module keyword key1 key2 ...&quot; to search for all possible modules matching any of the &quot;keys&quot;.
 </code></pre>
 <h2 id="build-your-own">Build Your Own<a class="headerlink" href="#build-your-own" title="Permanent link">&para;</a></h2>
-<p>In addition to the software that we provide for you to use, it is perfectly OK for you to build and use your own software. </p>
+<p>In addition to the software that we provide for you to use, it is perfectly OK for you to build and use your own software.</p>
+<h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
+<p>Different versions of Python3 are available on FarmShare both as system modules as well as system software. To see a listing run <code>module spider python</code></p>
+<p>We install commonly used Python packages (such as NumPy, SciPy) globally that are available when you load Python with the module command.</p>
+<p>To install packages that are not already installed you can use <code>pip</code></p>
+<h3 id="pip">pip<a class="headerlink" href="#pip" title="Permanent link">&para;</a></h3>
+<p><code>pip</code> is available as a module on FarmShare. You will need to use the <code>--user</code> flag which places the package installation under your $HOME directory.</p>
+<p>Here is an example on how to install <code>pandas</code>:</p>
+<pre><code>ta5@rice-02:~$ module spider python
+
+----------------------------------------------------------------------------
+  python:
+----------------------------------------------------------------------------
+     Versions:
+        python/3.10.13
+        python/3.11.7
+        python/3.12.5
+        python/3.13.0
+...
+ta5@rice-02:~$ 
+ta5@rice-02:~$ module spider pip
+
+----------------------------------------------------------------------------
+  py-pip/23.1.2_python:
+----------------------------------------------------------------------------
+     Versions:
+        py-pip/23.1.2_python/3.10.13
+        py-pip/23.1.2_python/3.11.7
+        py-pip/23.1.2_python/3.12.5
+        py-pip/23.1.2_python/3.13.0
+...
+ta5@rice-02:~$ 
+ta5@rice-02:~$ module load py-pip/23.1.2_python/3.13.0
+ta5@rice-02:~$ module load python/3.13.0
+ta5@rice-02:~$ 
+ta5@rice-02:~$ python --version
+Python 3.13.0
+ta5@rice-02:~$ 
+ta5@rice-02:~$ python3 -m pip install --user pandas
+...
+ta5@rice-02:~$ python3 -m pip freeze
+numpy==2.2.2
+pandas==2.2.3
+python-dateutil==2.9.0.post0
+pytz==2024.2
+six==1.17.0
+tzdata==2025.1
+</code></pre>
+<h3 id="virtual-environments">Virtual Environments<a class="headerlink" href="#virtual-environments" title="Permanent link">&para;</a></h3>
+<p>Virtual environment is an isolated space for your Python projects, allowing you to manage dependencies separately for each project. You can create a personal Python environment that will persist each time you log in. There is no risk of packages being updated and allows greater control over your environment. </p>
+<p>To create python virtual environments, start by loading your preferred version of Python and use the <code>venv</code> command:</p>
+<pre><code>ta5@rice-02:~$ module load python/3.13.0
+ta5@rice-02:~$ 
+ta5@rice-02:~$ python3 -m venv tutorial_env
+ta5@rice-02:~$ source tutorial_env/bin/activate
+(tutorial_env) ta5@rice-02:~$ 
+(tutorial_env) ta5@rice-02:~$ python --version
+Python 3.13.0
+(tutorial_env) ta5@rice-02:~$ 
+</code></pre>
+<p>This will create a new virtual environment in the tutorial_env (the name inside the parentheses) subdirectory, and configure the current shell to use it as the default python environment.</p>
+<p>Here you can install packages with <code>pip</code>:</p>
+<pre><code>(tutorial_env) ta5@rice-02:~$
+(tutorial_env) ta5@rice-02:~$ pip install pandas
+</code></pre>
+<p>Installing <code>setuptools</code> and <code>wheel</code> projects are useful to ensure you can also install from source archives:</p>
+<pre><code>(tutorial_env) ta5@rice-02:~$
+(tutorial_env) ta5@rice-02:~$ pip install --upgrade pip setuptools wheel
+(tutorial_env) ta5@rice-02:~$ pip freeze
+numpy==2.2.2
+pandas==2.2.3
+python-dateutil==2.9.0.post0
+pytz==2024.2
+setuptools==75.8.0
+six==1.17.0
+tzdata==2025.1
+wheel==0.45.1
+</code></pre>
+<p>To deactivate or leave the environment <code>tutorial_env</code>:</p>
+<pre><code>(tutorial_env) ta5@rice-02:~$ deactivate 
+</code></pre>
+<h3 id="using-virtual-environment-in-slurm">Using Virtual Environment in SLURM<a class="headerlink" href="#using-virtual-environment-in-slurm" title="Permanent link">&para;</a></h3>
+<p>Python virtual environments can be used in slurm jobs. To submit a <code>sbatch</code> job using a venv environment, you can <code>source</code> the environment at the top of the sbatch script.</p>
+<p>Sample python script that prints versions of packages:</p>
+<pre><code>ta5@rice-02:~$ cat test.py 
+import numpy as np
+import pandas as pd
+import sys
+
+print(f&quot;Python version = {sys.version}&quot;)
+print(f&quot;Numpy version = {np.version.version}&quot;)
+print(f&quot;Pandas version = {pd.__version__}&quot;)
+</code></pre>
+<p>To submit this script using the venv <code>tutorial_env</code> create a sbatch script to load the venv and run <code>test.py</code>:</p>
+<pre><code>ta5@rice-02:~$ cat tutorial_env.sh 
+#!/bin/bash
+
+#SBATCH --job-name=tutorial_env
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=normal
+
+# Load venv tutorial_env
+source tutorial_env/bin/activate
+
+# Run script
+python3 test.py
+
+ta5@rice-02:~$ 
+ta5@rice-02:~$ 
+ta5@rice-02:~$ sbatch tutorial_env.sh
+Submitted batch job 298438
+
+ta5@rice-02:~$ cat slurm-298438.out 
+Python version = 3.13.0 (main, Dec 10 2024, 13:22:44) [GCC 13.2.0]
+Numpy version = 2.2.2
+Pandas version = 2.2.3
+</code></pre>
               
             </div>
           </div>
