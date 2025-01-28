@@ -65,4 +65,155 @@ Use "module keyword key1 key2 ..." to search for all possible modules matching a
 
 ## Build Your Own
 
-In addition to the software that we provide for you to use, it is perfectly OK for you to build and use your own software. 
+In addition to the software that we provide for you to use, it is perfectly OK for you to build and use your own software.
+
+## Python
+
+Different versions of Python3 are available on FarmShare both as system modules as well as system software. To see a listing run `module spider python`
+
+We install commonly used Python packages (such as NumPy, SciPy) globally that are available when you load Python with the module command.
+
+To install packages that are not already installed you can use `pip`
+
+### pip
+
+`pip` is available as a module on FarmShare. You will need to use the `--user` flag which places the package installation under your $HOME directory.
+
+Here is an example on how to install `pandas`:
+
+~~~
+ta5@rice-02:~$ module spider python
+
+----------------------------------------------------------------------------
+  python:
+----------------------------------------------------------------------------
+     Versions:
+        python/3.10.13
+        python/3.11.7
+        python/3.12.5
+        python/3.13.0
+...
+ta5@rice-02:~$ 
+ta5@rice-02:~$ module spider pip
+
+----------------------------------------------------------------------------
+  py-pip/23.1.2_python:
+----------------------------------------------------------------------------
+     Versions:
+        py-pip/23.1.2_python/3.10.13
+        py-pip/23.1.2_python/3.11.7
+        py-pip/23.1.2_python/3.12.5
+        py-pip/23.1.2_python/3.13.0
+...
+ta5@rice-02:~$ 
+ta5@rice-02:~$ module load py-pip/23.1.2_python/3.13.0
+ta5@rice-02:~$ module load python/3.13.0
+ta5@rice-02:~$ 
+ta5@rice-02:~$ python --version
+Python 3.13.0
+ta5@rice-02:~$ 
+ta5@rice-02:~$ python3 -m pip install --user pandas
+...
+ta5@rice-02:~$ python3 -m pip freeze
+numpy==2.2.2
+pandas==2.2.3
+python-dateutil==2.9.0.post0
+pytz==2024.2
+six==1.17.0
+tzdata==2025.1
+~~~
+
+### Virtual Environments
+
+Virtual environment is an isolated space for your Python projects, allowing you to manage dependencies separately for each project. You can create a personal Python environment that will persist each time you log in. There is no risk of packages being updated and allows greater control over your environment. 
+
+To create python virtual environments, start by loading your preferred version of Python and use the `venv` command:
+
+~~~
+ta5@rice-02:~$ module load python/3.13.0
+ta5@rice-02:~$ 
+ta5@rice-02:~$ python3 -m venv tutorial_env
+ta5@rice-02:~$ source tutorial_env/bin/activate
+(tutorial_env) ta5@rice-02:~$ 
+(tutorial_env) ta5@rice-02:~$ python --version
+Python 3.13.0
+(tutorial_env) ta5@rice-02:~$ 
+~~~
+
+This will create a new virtual environment in the tutorial_env (the name inside the parentheses) subdirectory, and configure the current shell to use it as the default python environment.
+
+Here you can install packages with `pip`:
+
+~~~
+(tutorial_env) ta5@rice-02:~$
+(tutorial_env) ta5@rice-02:~$ pip install pandas
+~~~
+
+Installing `setuptools` and `wheel` projects are useful to ensure you can also install from source archives:
+
+~~~
+(tutorial_env) ta5@rice-02:~$
+(tutorial_env) ta5@rice-02:~$ pip install --upgrade pip setuptools wheel
+(tutorial_env) ta5@rice-02:~$ pip freeze
+numpy==2.2.2
+pandas==2.2.3
+python-dateutil==2.9.0.post0
+pytz==2024.2
+setuptools==75.8.0
+six==1.17.0
+tzdata==2025.1
+wheel==0.45.1
+~~~
+
+To deactivate or leave the environment `tutorial_env`:
+
+~~~
+(tutorial_env) ta5@rice-02:~$ deactivate 
+~~~
+
+### Using Virtual Environment in SLURM
+
+Python virtual environments can be used in slurm jobs. To submit a `sbatch` job using a venv environment, you can `source` the environment at the top of the sbatch script.
+
+Sample python script that prints versions of packages:
+
+~~~
+ta5@rice-02:~$ cat test.py 
+import numpy as np
+import pandas as pd
+import sys
+
+print(f"Python version = {sys.version}")
+print(f"Numpy version = {np.version.version}")
+print(f"Pandas version = {pd.__version__}")
+~~~
+
+To submit this script using the venv `tutorial_env` create a sbatch script to load the venv and run `test.py`:
+
+
+~~~
+ta5@rice-02:~$ cat tutorial_env.sh 
+#!/bin/bash
+
+#SBATCH --job-name=tutorial_env
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=normal
+
+# Load venv tutorial_env
+source tutorial_env/bin/activate
+
+# Run script
+python3 test.py
+
+ta5@rice-02:~$ 
+ta5@rice-02:~$ 
+ta5@rice-02:~$ sbatch tutorial_env.sh
+Submitted batch job 298438
+
+ta5@rice-02:~$ cat slurm-298438.out 
+Python version = 3.13.0 (main, Dec 10 2024, 13:22:44) [GCC 13.2.0]
+Numpy version = 2.2.2
+Pandas version = 2.2.3
+~~~
