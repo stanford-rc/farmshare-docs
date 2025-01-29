@@ -15,7 +15,6 @@ markdown_extensions:
 nav:
   - Introduction: index.md
   - "Getting Connected": connecting.md
-  - "OnDemand": ondemand.md
   - "Running Jobs": slurm.md
   - "Using Software": software.md
   - "Adding Capacity": capacity.md
