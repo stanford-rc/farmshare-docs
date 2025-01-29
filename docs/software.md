@@ -10,7 +10,7 @@ Software on FarmShare comes from three sources:
 * Modules
 * Build your own
 
-## Packages
+### Packages
 
 Packaged software is easiest to use, because you don't have to do anything. Packaged software has already been installed on all of the systems in the environment, so to use the software, you just have to run the command.
 
@@ -23,47 +23,35 @@ Python 3.10.12
 
 FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Jammy package repository](http://packages.ubuntu.com/jammy) is available to be installed.
 
-## Modules
+### Modules
 
 To provide up-to-date software, we use modules. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. To see a listing of available software, run the module available command:
 
 ~~~no-highlight
 ta5@rice-01:~$ module available
 
----------------------------- /software/modules/linux-ubuntu22.04-x86_64/Core ----------------------------
-   apptainer/1.1.9                    libpng/1.5.30
-   blast-plus/2.14.1                  llvm/16.0.6
-   boost/1.83.0                       micromamba/1.1.0
-   bowtie2/2.5.1                      mpich/4.1.2
-   cuda/11.4.4                        numactl/2.0.14
-   cudnn/8.2.4.15-11.4                openblas/0.3.23
-   gcc/13.2.0                         openblas/0.3.24                   (D)
-   imagemagick/7.1.1-11               openmpi/1.10.7
-   intel-oneapi-compilers/2023.2.1    py-jupyterlab/4.0.1_python/3.11.6
-   intel-oneapi-dal/2023.2.0          py-pip/23.1.2_python/3.11.6
-   intel-oneapi-ipp/2021.9.0          python/3.11.6
-   intel-oneapi-mkl/2023.2.0          r-magick/2.7.4_r/4.3.0
-   intel-oneapi-mpi/2021.10.0         r-tidyverse/2.0.0_r/4.3.0
-   intel-oneapi-tbb/2021.10.0         r/4.3.0
-   julia/1.9.2                        rust/1.75.0
-   libjpeg-turbo/2.1.5.1
+---------------------------------------------- /software/modules/linux-ubuntu22.04-x86_64/Core -----------------------------------------------
+   apptainer/1.1.9                   intel-oneapi-compilers/2024.1.0        micromamba/1.4.2                    python/3.11.7
+   apptainer/1.3.4            (D)    intel-oneapi-dal/2024.2.0              mpich/4.2.1                         python/3.12.5
+   blast-plus/2.14.1                 intel-oneapi-dnn/2024.1.1              ncurses/5.9                         python/3.13.0             (D)
+   boost/1.85.0                      intel-oneapi-dpl/2022.5.0              openblas/0.3.26                     r-magick/2.7.4_r/4.3.3
+   bowtie2/2.5.2                     intel-oneapi-ipp/2021.11.0             openmpi/5.0.3                       r-magick/2.7.4_r/4.4.0    (D)
+   cuda/11.4.4                       intel-oneapi-ippcp/2021.11.0           pandoc/2.19.2                       r-tidyverse/2.0.0_r/4.3.3
+   cudnn/8.2.4.15-11.4               intel-oneapi-mkl/2024.0.0              paraview/5.12.0                     r/4.3.3
+   fastqc/0.12.1                     intel-oneapi-mpi/2021.12.1             postgresql/15.2                     r/4.4.0                   (D)
+   gcc/13.2.0                        intel-oneapi-tbb/2021.12.0             py-pip/23.1.2_python/3.10.13        rust/1.78.0
+   gcc/14.2.0                 (D)    julia/1.9.3                            py-pip/23.1.2_python/3.11.7         texlive/20240312
+   ghostscript/10.0.0                julia/1.10.2                           py-pip/23.1.2_python/3.12.5
+   imagemagick/7.1.1-29              julia/1.11.0                    (D)    py-pip/23.1.2_python/3.13.0  (D)
+   intel-oneapi-ccl/2021.12.0        llvm/18.1.3                            python/3.10.13
 
-------------------------------------- /software/modules/commercial --------------------------------------
-   mathematica/13.3.1    mathematica/14.0.0 (D)    matlab/r2023b    sas/9.4    stata/18
-
-  Where:
-   D:  Default Module
-
-If the avail list is too long consider trying:
-
-"module --default avail" or "ml -d av" to just list the default modules.
-"module overview" or "ml ov" to display the number of modules for each name.
-
-Use "module spider" to find all possible modules and extensions.
-Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+-------------------------------------------------------- /software/modules/commercial --------------------------------------------------------
+   ansys/2024r2             gurobi/12.0.0         mathematica/14.1.0 (D)    sas/9.4m8                 stata/18
+   gaussian/g16-a.03        mathematica/13.3.1    matlab/r2023b      (D)    schrodinger/2024-4 (g)
+   gaussian/g16-b.01 (D)    mathematica/14.0.0    matlab/r2024a             stata/now          (D)
 ~~~
 
-## Build Your Own
+### Build Your Own
 
 In addition to the software that we provide for you to use, it is perfectly OK for you to build and use your own software.
 
@@ -258,7 +246,7 @@ ta5@rice-04:~$ srun --partition=interactive --cpus-per-task=4 --qos=interactive 
 ta5@iron-06:~$ 
 ~~~
 
-Create a directory `/scratch/users/$USER/lxd` to store all your images. Load the `apptainer` module and pull the image:
+Next create a directory `/scratch/users/$USER/lxd` to store all your images. Now load the `apptainer` module and pull the image:
 
 ~~~
 ta5@iron-06:~$ pwd
@@ -292,7 +280,7 @@ python_3.13.1-alpine3.21.sif
 ta5@iron-06:/scratch/users/ta5/lxc$ 
 ~~~
 
-Once the image in downloaded, you can run the python container using:
+Once the image is downloaded, you can run the container using:
 
 ~~~
 ta5@iron-06:/scratch/users/ta5/lxc$ apptainer run python_3.13.1-alpine3.21.sif 
