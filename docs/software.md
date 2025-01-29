@@ -79,7 +79,7 @@ To install packages that are not already installed you can use `pip`
 
 `pip` is available as a module on FarmShare. You will need to use the `--user` flag which places the package installation under your $HOME directory.
 
-Here is an example on how to install `pandas`:
+The example below shows how to install `pandas`:
 
 ~~~
 ta5@rice-02:~$ module spider python
@@ -171,7 +171,7 @@ To deactivate or leave the environment `tutorial_env`:
 (tutorial_env) ta5@rice-02:~$ deactivate 
 ~~~
 
-### Using Virtual Environment in SLURM
+### Using Virtual Environment in Slurm
 
 Python virtual environments can be used in slurm jobs. To submit a `sbatch` job using a venv environment, you can `source` the environment at the top of the sbatch script.
 
@@ -237,3 +237,86 @@ Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernel
 ~~~
 
 Once you've successfully created your kernel, you should see your enviroment (custom kernel name) at the Notebook Launcher!
+
+## Apptainer
+
+Containers are isolated environmenets packaged together with an executable so that no additional installation or setup is required for running on any system.
+
+[Apptainer](https://apptainer.org/) (formerly known as Singularity), is a container runtime that is available on FarmShare. Apptainer, and Linux containers in general allow sharing pipelines in a portable, reproducible way. You can create and customize your own containers, and because Apptainer also supports Docker containers, you have immediate access to a very large number of Apptainer and Docker containers available via repositories:
+
+* [DockerHub](https://hub.docker.com/)
+* [Sylabs](https://cloud.sylabs.io/library)
+
+### Running Apptainer
+
+This example will use the Docker container [python/3.13.1-alpine3.21](https://hub.docker.com/_/python) from DockerHub. This container provides the latest release of python in an Alpine OS environment.
+
+The first step is to request an interactive session with multiple cores:
+
+~~~
+ta5@rice-04:~$ srun --partition=interactive --cpus-per-task=4 --qos=interactive --pty bash
+ta5@iron-06:~$ 
+~~~
+
+Create a directory `/scratch/users/$USER/lxd` to store all your images. Load the `apptainer` module and pull the image:
+
+~~~
+ta5@iron-06:~$ pwd
+/home/users/ta5
+ta5@iron-06:~$ 
+ta5@iron-06:~$ cd /scratch/users/$USER
+ta5@iron-06:/scratch/users/ta5$ 
+ta5@iron-06:/scratch/users/ta5$ mkdir lxc
+ta5@iron-06:/scratch/users/ta5$ 
+ta5@iron-06:/scratch/users/ta5$ cd lxc/
+ta5@iron-06:/scratch/users/ta5/lxc$ 
+ta5@iron-06:/scratch/users/ta5/lxc$ module load apptainer
+ta5@iron-06:/scratch/users/ta5/lxc$ 
+ta5@iron-06:/scratch/users/ta5/lxc$ apptainer pull docker://python:3.13.1-alpine3.21
+INFO:    Converting OCI blobs to SIF format
+INFO:    Starting build...
+Copying blob 2109cea89a77 done   | 
+Copying blob 1f3e46996e29 done   | 
+Copying blob b7c174cb6c8c done   | 
+Copying blob 7486ee1cd0b3 done   | 
+Copying config d5cb4e1bd6 done   | 
+Writing manifest to image destination
+2025/01/29 12:52:06  info unpack layer: sha256:1f3e46996e2966e4faa5846e56e76e3748b7315e2ded61476c24403d592134f0
+2025/01/29 12:52:06  info unpack layer: sha256:7486ee1cd0b33ed93151ce1d3f73254a0987b484773adb31f37fe42bad78ba63
+2025/01/29 12:52:06  info unpack layer: sha256:b7c174cb6c8cb4276eaff5e9ebfb56eb7124be68c8fcb4518cb5eb6b18245cf5
+2025/01/29 12:52:07  info unpack layer: sha256:2109cea89a773ab9365659a6a63a1b7d8be1f7be6031112a429533bd7ba07f68
+INFO:    Creating SIF file...
+ta5@iron-06:/scratch/users/ta5/lxc$ 
+ta5@iron-06:/scratch/users/ta5/lxc$ ls
+python_3.13.1-alpine3.21.sif
+ta5@iron-06:/scratch/users/ta5/lxc$ 
+~~~
+
+Once the image in downloaded, you can run the python container using:
+
+~~~
+ta5@iron-06:/scratch/users/ta5/lxc$ apptainer run python_3.13.1-alpine3.21.sif 
+Python 3.13.1 (main, Jan 24 2025, 19:30:15) [GCC 14.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a = (1, 2, 3, 4, 5)
+>>> x = sum(a)
+>>> print(x)
+15
+>>> exit
+ta5@iron-06:/scratch/users/ta5/lxc$ 
+~~~
+
+To launch a shell within the container and to verify the OS environment:
+
+~~~
+ta5@iron-06:/scratch/users/ta5/lxc$ apptainer shell python_3.13.1-alpine3.21.sif 
+Apptainer> cat /etc/issue 
+Welcome to Alpine Linux 3.21
+Kernel \r on an \m (\l)
+
+Apptainer> exit
+ta5@iron-06:/scratch/users/ta5/lxc$ 
+ta5@iron-06:/scratch/users/ta5/lxc$ cat /etc/issue
+Ubuntu 22.04.5 LTS \n \l
+~~~
+
