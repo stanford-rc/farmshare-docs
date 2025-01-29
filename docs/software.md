@@ -208,7 +208,7 @@ Pandas version = 2.2.3
 
 ## JupyterLab
 
-JupyterLab is [Project Jupyter's](https://jupyter.org/)  web-based devolopment interface for Jupyter Notebooks. On FarmShare, it is available as an app on our [OnDemand](https://ondemand.farmshare.stanford.edu) interface and supports computation with Python 3.
+JupyterLab is [Project Jupyter's](https://jupyter.org/)  web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our [OnDemand](https://ondemand.farmshare.stanford.edu) interface and supports computation with Python 3.
 
 ### Accessing JupyterLab
 
@@ -224,11 +224,11 @@ ta5@rice-02:~$
 Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernels/tutorial_env
 ~~~
 
-Once you've successfully created your kernel, you should see your enviroment (custom kernel name) at the Notebook Launcher!
+Once you've successfully created your kernel, you should see your environment (custom kernel name) at the Notebook Launcher!
 
 ## Apptainer
 
-Containers are isolated environmenets packaged together with an executable so that no additional installation or setup is required for running on any system.
+Containers are isolated environments packaged together with an executable so that no additional installation or setup is required for running on any system.
 
 [Apptainer](https://apptainer.org/) (formerly known as Singularity), is a container runtime that is available on FarmShare. Apptainer, and Linux containers in general allow sharing pipelines in a portable, reproducible way. You can create and customize your own containers, and because Apptainer also supports Docker containers, you have immediate access to a very large number of Apptainer and Docker containers available via repositories:
 
