@@ -9,6 +9,12 @@ Depending on your environment and configuration you may be prompted for your SUN
 Open up your favorite terminal program (on macOS you can use the built-in Terminal application or something like iTerm) and run the ssh command like so, replacing SUNetID with your own SUNet ID:
 
 ``` shell
+ssh SUNetID@login.farmshare.stanford.edu
+```
+
+The example below shows how to login in using your SUNet ID and password plus two-step authentication. To logout, type `exit` or `logout`:
+
+``` shell
 $ ssh ta5@login.farmshare.stanford.edu
 ta5@login.farmshare.stanford.edu's password: 
 (ta5@login.farmshare.stanford.edu) Duo two-factor login for ta5
@@ -38,8 +44,9 @@ Ubuntu 22.04.5 LTS \n \l
 ta5@rice-02:~$ 
 ta5@rice-02:~$ 
 ta5@rice-02:~$ exit
+logout
+Shared connection to login.farmshare.stanford.edu closed.
 ```
-
 
 ## Host keys
 
@@ -75,6 +82,6 @@ PuTTY supports GSSAPI authentication as of version 0.61 and will automatically u
 
 [Open OnDemand](https://ondemand.farmshare.stanford.edu/) is a browser based interface to FarmShare. OnDemand offers terminal, file manager, editor, desktop, and GUI applications right from your web browser!
 
-Note: If you have never logged into Farmshare before you won't be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down then FarmShare Shell Access.
+**Note: If you have never logged into Farmshare before you won't be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down then FarmShare Shell Access.**
 
 
