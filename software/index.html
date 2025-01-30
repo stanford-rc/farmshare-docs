@@ -66,6 +66,16 @@
     <li class="toctree-l3"><a class="reference internal" href="#packages">Packages</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#modules">Modules</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#module-usage">Module usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#module-properties">Module properties</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#searching-for-modules">Searching for modules</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#listing">Listing</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#build-your-own">Build Your Own</a>
     </li>
@@ -149,7 +159,116 @@ Python 3.10.12
 </code></pre>
 <p>FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the <a href="http://packages.ubuntu.com/jammy">Ubuntu Jammy package repository</a> is available to be installed.</p>
 <h3 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h3>
-<p>To provide up-to-date software, we use modules. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. To see a listing of available software, run the module available command:</p>
+<p>To provide up-to-date software, FarmShare uses loadable <em>environment modules</em>. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. This mechanism allows us to provide multiple versions of the same software concurrently, and gives users the possibility to easily switch between software versions.</p>
+<p>The module system is used to manage the user environment and to <em>activate</em> software packages on demand. In order to use software installed on FarmShare, you must first load the corresponding software module.</p>
+<p>When you load a module, the system will set or modify your user environment variables to enable access to the software package provided by that module. For instance, the <code>$PATH</code> environment variable might be updated so that appropriate executable for that package can be used.</p>
+<p>The example below shows how to load <code>r</code> module for the <a href="https://www.r-project.org/">R</a> software:</p>
+<pre><code>ta5@rice-04:~$ module load r
+ta5@rice-04:~$ R --version
+R version 4.4.0 (2024-04-24) -- &quot;Puppy Cup&quot;
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under the terms of the
+GNU General Public License versions 2 or 3.
+For more information about these matters see
+https://www.gnu.org/licenses/.
+</code></pre>
+<h4 id="module-usage">Module usage<a class="headerlink" href="#module-usage" title="Permanent link">&para;</a></h4>
+<p>The most common <code>module</code> commands are outlined in the following table. <code>module</code> commands may be shortened with the <code>ml</code> alias.</p>
+<table>
+<thead>
+<tr>
+<th>Module\ command</th>
+<th>Short\ version</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>module avail</code></td>
+<td><code>ml av</code></td>
+<td>List available software</td>
+</tr>
+<tr>
+<td><code>module spider r</code></td>
+<td><code>ml spider r</code></td>
+<td>Search for particular software</td>
+</tr>
+<tr>
+<td><code>module keyword blas</code></td>
+<td><code>ml key blas</code></td>
+<td>Search for <code>blas</code> in module names and descriptions</td>
+</tr>
+<tr>
+<td><code>module whatis gcc</code></td>
+<td><code>ml whatis gcc</code></td>
+<td>Display information about the <code>gcc</code> module</td>
+</tr>
+<tr>
+<td><code>module help gcc</code></td>
+<td><code>ml help gcc</code></td>
+<td>Display module specific help</td>
+</tr>
+<tr>
+<td><code>module load gcc</code></td>
+<td><code>ml gcc</code></td>
+<td>Load a module to use the associated software</td>
+</tr>
+<tr>
+<td><code>module load r/4.3.3</code></td>
+<td><code>ml r/4.3.3</code></td>
+<td>Load specific version of a module</td>
+</tr>
+<tr>
+<td><code>module unload gcc</code></td>
+<td><code>ml -gcc</code></td>
+<td>Unload a module</td>
+</tr>
+<tr>
+<td><code>module purge</code></td>
+<td><code>ml purge</code></td>
+<td>Remove all modules</td>
+</tr>
+<tr>
+<td><code>module save foo</code></td>
+<td><code>ml save foo</code></td>
+<td>Save the state of all loaded modules in a collection named <code>foo</code></td>
+</tr>
+<tr>
+<td><code>module restore foo</code></td>
+<td><code>ml restore foo</code></td>
+<td>Restore the state of saved modules from the <code>foo</code> collection</td>
+</tr>
+</tbody>
+</table>
+<p>Additional module sub-commands are documented in the <code>module help</code> command. For complete reference, please refer to the official <a href="[https://lmod.readthedocs.io">Lmod documentation</a></p>
+<h4 id="module-properties">Module properties<a class="headerlink" href="#module-properties" title="Permanent link">&para;</a></h4>
+<p>To quickly see some of the modules characteristics, <code>module avail</code> will display colored property attributes next to the module names. The main module properties are:</p>
+<ul>
+<li><code>S</code>: Module is sticky, requires <code>--force</code> to unload or purge</li>
+<li><code>L</code>: Indicate currently loaded module</li>
+<li><code>D</code>: Default module that will be loaded when multiple versions are available</li>
+<li><code>g</code>: GPU-accelerated software, will only run on GPU nodes</li>
+</ul>
+<h4 id="searching-for-modules">Searching for modules<a class="headerlink" href="#searching-for-modules" title="Permanent link">&para;</a></h4>
+<p>You can search through all the available modules for either:</p>
+<ul>
+<li>a module name (if you already know it), using <code>module spider</code></li>
+<li>any string within modules names and descriptions, using <code>module keyword</code></li>
+</ul>
+<p>For instance, if you want to know how to load the <code>apptainer</code> module, you can do:</p>
+<pre><code class="language-shell">ta5@rice-04:~$ module spider apptainer
+</code></pre>
+<p>If you don&rsquo;t know the module name, or want to list all the modules that contain
+a specific string of characters in their name or description, you can use
+<code>module keyword</code>. For instance, the following command will list all the modules
+providing a BLAS library:</p>
+<pre><code class="language-shell">ta5@rice-04:~$ module keyword blas
+</code></pre>
+<h4 id="listing">Listing<a class="headerlink" href="#listing" title="Permanent link">&para;</a></h4>
+<p>For a complete list of available software modules, run the <code>module available</code> command:</p>
 <pre><code class="language-no-highlight">ta5@rice-01:~$ module available
 
 ---------------------------------------------- /software/modules/linux-ubuntu22.04-x86_64/Core -----------------------------------------------
