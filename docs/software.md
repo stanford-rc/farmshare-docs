@@ -14,12 +14,12 @@ Software on FarmShare comes from three sources:
 
 Packaged software is easiest to use, because you don't have to do anything. Packaged software has already been installed on all of the systems in the environment, so to use the software, you just have to run the command.
 
-For example, to run the packaged version of Python, you just need to run the python3 command:
+For example, to run the packaged version of Python, you just need to run the `python3` command:
 
-~~~no-highlight
+``` shell
 ta5@rice-01:~$ python3 --version
 Python 3.10.12
-~~~
+```
 
 FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Jammy package repository](http://packages.ubuntu.com/jammy) is available to be installed.
 
@@ -33,7 +33,7 @@ When you load a module, the system will set or modify your user environment vari
 
 The example below shows how to load `r` module for the [R](https://www.r-project.org/) software:
 
-~~~
+``` shell
 ta5@rice-04:~$ module load r
 ta5@rice-04:~$ R --version
 R version 4.4.0 (2024-04-24) -- "Puppy Cup"
@@ -45,7 +45,7 @@ You are welcome to redistribute it under the terms of the
 GNU General Public License versions 2 or 3.
 For more information about these matters see
 https://www.gnu.org/licenses/.
-~~~
+```
 
 #### Module usage
 
@@ -105,7 +105,7 @@ ta5@rice-04:~$ module keyword blas
 
 For a complete list of available software modules, run the `module available` command:
 
-~~~no-highlight
+``` shell
 ta5@rice-01:~$ module available
 
 ---------------------------------------------- /software/modules/linux-ubuntu22.04-x86_64/Core -----------------------------------------------
@@ -127,7 +127,7 @@ ta5@rice-01:~$ module available
    ansys/2024r2             gurobi/12.0.0         mathematica/14.1.0 (D)    sas/9.4m8                 stata/18
    gaussian/g16-a.03        mathematica/13.3.1    matlab/r2023b      (D)    schrodinger/2024-4 (g)
    gaussian/g16-b.01 (D)    mathematica/14.0.0    matlab/r2024a             stata/now          (D)
-~~~
+```
 
 
 ### Build Your Own
@@ -148,31 +148,7 @@ To install packages that are not already installed you can use `pip`
 
 The example below shows how to install `pandas`:
 
-~~~
-ta5@rice-02:~$ module spider python
-
-----------------------------------------------------------------------------
-  python:
-----------------------------------------------------------------------------
-     Versions:
-        python/3.10.13
-        python/3.11.7
-        python/3.12.5
-        python/3.13.0
-...
-ta5@rice-02:~$ 
-ta5@rice-02:~$ module spider pip
-
-----------------------------------------------------------------------------
-  py-pip/23.1.2_python:
-----------------------------------------------------------------------------
-     Versions:
-        py-pip/23.1.2_python/3.10.13
-        py-pip/23.1.2_python/3.11.7
-        py-pip/23.1.2_python/3.12.5
-        py-pip/23.1.2_python/3.13.0
-...
-ta5@rice-02:~$ 
+``` shell
 ta5@rice-02:~$ module load py-pip/23.1.2_python/3.13.0
 ta5@rice-02:~$ module load python/3.13.0
 ta5@rice-02:~$ 
@@ -188,7 +164,7 @@ python-dateutil==2.9.0.post0
 pytz==2024.2
 six==1.17.0
 tzdata==2025.1
-~~~
+```
 
 ### Virtual Environments
 
@@ -196,7 +172,7 @@ Virtual environment is an isolated space for your Python projects, allowing you 
 
 To create python virtual environments, start by loading your preferred version of Python and use the `venv` command:
 
-~~~
+``` shell
 ta5@rice-02:~$ module load python/3.13.0
 ta5@rice-02:~$ 
 ta5@rice-02:~$ python3 -m venv tutorial_env
@@ -205,20 +181,20 @@ ta5@rice-02:~$ source tutorial_env/bin/activate
 (tutorial_env) ta5@rice-02:~$ python --version
 Python 3.13.0
 (tutorial_env) ta5@rice-02:~$ 
-~~~
+```
 
 This will create a new virtual environment in the tutorial_env (the name inside the parentheses) subdirectory, and configure the current shell to use it as the default python environment.
 
 Here you can install packages with `pip`:
 
-~~~
+``` shell
 (tutorial_env) ta5@rice-02:~$
 (tutorial_env) ta5@rice-02:~$ pip install pandas
-~~~
+```
 
 Installing `setuptools` and `wheel` projects are useful to ensure you can also install from source archives:
 
-~~~
+``` shell
 (tutorial_env) ta5@rice-02:~$
 (tutorial_env) ta5@rice-02:~$ pip install --upgrade pip setuptools wheel
 (tutorial_env) ta5@rice-02:~$ pip freeze
@@ -230,13 +206,13 @@ setuptools==75.8.0
 six==1.17.0
 tzdata==2025.1
 wheel==0.45.1
-~~~
+```
 
 To deactivate or leave the environment `tutorial_env`:
 
-~~~
+``` shell
 (tutorial_env) ta5@rice-02:~$ deactivate 
-~~~
+```
 
 ### Using Virtual Environment in Slurm
 
@@ -244,7 +220,7 @@ Python virtual environments can be used in slurm jobs. To submit a `sbatch` job 
 
 Sample python script that prints versions of packages:
 
-~~~
+``` shell
 ta5@rice-02:~$ cat test.py 
 import numpy as np
 import pandas as pd
@@ -253,12 +229,11 @@ import sys
 print(f"Python version = {sys.version}")
 print(f"Numpy version = {np.version.version}")
 print(f"Pandas version = {pd.__version__}")
-~~~
+```
 
 To submit this script using the venv `tutorial_env` create a sbatch script to load the venv and run `test.py`:
 
-
-~~~
+``` shell
 ta5@rice-02:~$ cat tutorial_env.sh 
 #!/bin/bash
 
@@ -283,7 +258,7 @@ ta5@rice-02:~$ cat slurm-298438.out
 Python version = 3.13.0 (main, Dec 10 2024, 13:22:44) [GCC 13.2.0]
 Numpy version = 2.2.2
 Pandas version = 2.2.3
-~~~
+```
 
 ## JupyterLab
 
@@ -295,13 +270,13 @@ Login in to [OnDemand](https://ondemand.farmshare.stanford.edu) and select **Int
 
 If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. To do this, start an interactive terminal session and activate your environment (if you do not have an environment, refer to the sections above on how to do so). 
 
-~~~
+``` shell
 ta5@rice-02:~$ source tutorial_env/bin/activate
 (tutorial_env) ta5@rice-02:~$ pip install ipykernel
 ta5@rice-02:~$ 
 (tutorial_env) ta5@rice-02:~$ python3 -m ipykernel install --user --name tutorial_env
 Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernels/tutorial_env
-~~~
+```
 
 Once you've successfully created your kernel, you should see your environment (custom kernel name) at the Notebook Launcher!
 
@@ -320,14 +295,14 @@ This example will use the Docker container [python/3.13.1-alpine3.21](https://hu
 
 The first step is to request an interactive session with multiple cores:
 
-~~~
+``` shell
 ta5@rice-04:~$ srun --partition=interactive --cpus-per-task=4 --qos=interactive --pty bash
 ta5@iron-06:~$ 
-~~~
+```
 
 Next create a directory `/scratch/users/$USER/lxd` to store all your images. Now load the `apptainer` module and pull the image:
 
-~~~
+``` shell
 ta5@iron-06:~$ pwd
 /home/users/ta5
 ta5@iron-06:~$ 
@@ -357,11 +332,11 @@ ta5@iron-06:/scratch/users/ta5/lxc$
 ta5@iron-06:/scratch/users/ta5/lxc$ ls
 python_3.13.1-alpine3.21.sif
 ta5@iron-06:/scratch/users/ta5/lxc$ 
-~~~
+```
 
 Once the image is downloaded, you can run the container using:
 
-~~~
+``` shell
 ta5@iron-06:/scratch/users/ta5/lxc$ apptainer run python_3.13.1-alpine3.21.sif 
 Python 3.13.1 (main, Jan 24 2025, 19:30:15) [GCC 14.2.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
@@ -371,11 +346,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 15
 >>> exit
 ta5@iron-06:/scratch/users/ta5/lxc$ 
-~~~
+```
 
 To launch a shell within the container and to verify the OS environment:
 
-~~~
+``` shell
 ta5@iron-06:/scratch/users/ta5/lxc$ apptainer shell python_3.13.1-alpine3.21.sif 
 Apptainer> cat /etc/issue 
 Welcome to Alpine Linux 3.21
@@ -385,5 +360,5 @@ Apptainer> exit
 ta5@iron-06:/scratch/users/ta5/lxc$ 
 ta5@iron-06:/scratch/users/ta5/lxc$ cat /etc/issue
 Ubuntu 22.04.5 LTS \n \l
-~~~
+```
 
