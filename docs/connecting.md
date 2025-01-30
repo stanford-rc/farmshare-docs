@@ -4,26 +4,54 @@
 
 SSH provides a secure, remote terminal connection to the login nodes. There are a number of rice servers providing login service (e.g., rice-01, rice-02); the easiest way to connect is using the load-balanced name, *login.farmshare.stanford.edu*, which will select one for you according to recent utilization.
 
-
-Simply open up your favorite terminal program (on macOS you can use the built-in Terminal application or something like iTerm) and run the ssh command like so, replacing SUNetID with your own SUNet ID:
-
-~~~no-highlight
-ssh SUNetID@login.farmshare.stanford.edu
-~~~
-
 Depending on your environment and configuration you may be prompted for your SUNet ID password, and you'll need to complete your login using [two-step authentication](https://uit.stanford.edu/service/webauth/twostep).
+
+Open up your favorite terminal program (on macOS you can use the built-in Terminal application or something like iTerm) and run the ssh command like so, replacing SUNetID with your own SUNet ID:
+
+``` shell
+$ ssh ta5@login.farmshare.stanford.edu
+ta5@login.farmshare.stanford.edu's password: 
+(ta5@login.farmshare.stanford.edu) Duo two-factor login for ta5
+
+Enter a passcode or select one of the following options:
+
+ 1. Duo Push to XXX-XXX-XXXX
+ 2. Phone call to XXX-XXX-XXXX
+ 3. SMS passcodes to XXX-XXX-XXXX
+
+Passcode or option (1-3): 1
+Success. Logging you in...
+Success. Logging you in...
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.8.0-50-generic x86_64)
+
+Stanford Research Computing (https://srcc.stanford.edu/) -----------------------
+
+FarmShare (https://docs.farmshare.stanford.edu/)
+
+...
+
+Last login: Tue Jan 28 11:11:51 2025 from 24.155.46.245
+ta5@rice-02:~$ 
+ta5@rice-02:~$ cat /etc/issue
+Ubuntu 22.04.5 LTS \n \l
+
+ta5@rice-02:~$ 
+ta5@rice-02:~$ 
+ta5@rice-02:~$ exit
+```
+
 
 ## Host keys
 
 For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:
 
-~~~no-highlight
+``` shell
 SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)
-~~~
+```
 
-~~~no-highlight
+``` shell
 SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
-~~~
+```
 
 ## SSH on Windows
 
