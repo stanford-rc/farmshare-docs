@@ -119,15 +119,48 @@
                 <h1 id="getting-connected">Getting Connected<a class="headerlink" href="#getting-connected" title="Permanent link">&para;</a></h1>
 <h2 id="ssh-on-linux-and-macos">SSH on Linux and macOS<a class="headerlink" href="#ssh-on-linux-and-macos" title="Permanent link">&para;</a></h2>
 <p>SSH provides a secure, remote terminal connection to the login nodes. There are a number of rice servers providing login service (e.g., rice-01, rice-02); the easiest way to connect is using the load-balanced name, <em>login.farmshare.stanford.edu</em>, which will select one for you according to recent utilization.</p>
-<p>Simply open up your favorite terminal program (on macOS you can use the built-in Terminal application or something like iTerm) and run the ssh command like so, replacing SUNetID with your own SUNet ID:</p>
-<pre><code class="language-no-highlight">ssh SUNetID@login.farmshare.stanford.edu
-</code></pre>
 <p>Depending on your environment and configuration you may be prompted for your SUNet ID password, and you&rsquo;ll need to complete your login using <a href="https://uit.stanford.edu/service/webauth/twostep">two-step authentication</a>.</p>
+<p>Open up your favorite terminal program (on macOS you can use the built-in Terminal application or something like iTerm) and run the ssh command like so, replacing SUNetID with your own SUNet ID:</p>
+<pre><code class="language-shell">ssh SUNetID@login.farmshare.stanford.edu
+</code></pre>
+<p>The example below shows how to login in using your SUNet ID and password plus two-step authentication. To logout, type <code>exit</code> or <code>logout</code>:</p>
+<pre><code class="language-shell">$ ssh ta5@login.farmshare.stanford.edu
+ta5@login.farmshare.stanford.edu's password: 
+(ta5@login.farmshare.stanford.edu) Duo two-factor login for ta5
+
+Enter a passcode or select one of the following options:
+
+ 1. Duo Push to XXX-XXX-XXXX
+ 2. Phone call to XXX-XXX-XXXX
+ 3. SMS passcodes to XXX-XXX-XXXX
+
+Passcode or option (1-3): 1
+Success. Logging you in...
+Success. Logging you in...
+Welcome to Ubuntu 22.04.5 LTS (GNU/Linux 6.8.0-50-generic x86_64)
+
+Stanford Research Computing (https://srcc.stanford.edu/) -----------------------
+
+FarmShare (https://docs.farmshare.stanford.edu/)
+
+...
+
+Last login: Tue Jan 28 11:11:51 2025 from 24.155.46.245
+ta5@rice-02:~$ 
+ta5@rice-02:~$ cat /etc/issue
+Ubuntu 22.04.5 LTS \n \l
+
+ta5@rice-02:~$ 
+ta5@rice-02:~$ 
+ta5@rice-02:~$ exit
+logout
+Shared connection to login.farmshare.stanford.edu closed.
+</code></pre>
 <h2 id="host-keys">Host keys<a class="headerlink" href="#host-keys" title="Permanent link">&para;</a></h2>
 <p>For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:</p>
-<pre><code class="language-no-highlight">SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)
+<pre><code class="language-shell">SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)
 </code></pre>
-<pre><code class="language-no-highlight">SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
+<pre><code class="language-shell">SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
 </code></pre>
 <h2 id="ssh-on-windows">SSH on Windows<a class="headerlink" href="#ssh-on-windows" title="Permanent link">&para;</a></h2>
 <p>Windows does not have a built-in SSH client, but a number are available from third parties:</p>
@@ -140,7 +173,7 @@
 <p><a href="https://mosh.org/">Mosh</a> is an alternative to SSH for Linux and macOS clients. It uses SSH for authentication, so you may want to review the suggested SSH configuration above. Mosh has some advantages, including predictive display, which can be useful on high-latency connections, and improved network resiliency. Mosh connections can persist when you switch networks and can even survive putting your computer to sleep.</p>
 <h2 id="ondemand">OnDemand<a class="headerlink" href="#ondemand" title="Permanent link">&para;</a></h2>
 <p><a href="https://ondemand.farmshare.stanford.edu/">Open OnDemand</a> is a browser based interface to FarmShare. OnDemand offers terminal, file manager, editor, desktop, and GUI applications right from your web browser!</p>
-<p>Note: If you have never logged into Farmshare before you won&rsquo;t be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down then FarmShare Shell Access.</p>
+<p><strong>Note: If you have never logged into Farmshare before you won&rsquo;t be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down then FarmShare Shell Access.</strong></p>
               
             </div>
           </div>
