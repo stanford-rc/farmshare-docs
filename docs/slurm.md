@@ -22,10 +22,10 @@ main Slurm commands to submit jobs are listed in the table below:
 
 Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the [`srun`](https://slurm.schedmd.com/srun.html) command to request one:
 
-~~~
+``` shell
 ta5@rice-04:~$ srun --qos=interactive --pty bash
 ta5@wheat-01:~$ 
-~~~
+```
 
 ## Batch Jobs
 
@@ -41,7 +41,7 @@ The [`sbatch`](https://slurm.schedmd.com/sbatch.html) command is used to submit 
 
 Sample batch script to submit a job:
 
-~~~
+``` shell
 ta5@rice-04:~$ cat hello_world.sh 
 #!/bin/bash
 
@@ -60,13 +60,13 @@ ta5@rice-04:~$
 ta5@rice-04:~$ cat slurm-177987.out 
 Hello World!
 ta5@rice-04:~$ 
-~~~
+```
 
 ## Partition Info
 
-| Partition   | Max Mem     | Max CPU       |
-| :---        |    :----:   |          ---: |
-| normal      | 188GB       | 256           |
-| bigmem      | 768GB       | 344           |
-| interactive | 188GB       | 16            |
+| Partition | Max Memory | Max CPU |
+| -------- | ----------- | -------- |
+| normal | 188GB | 256 |
+| bigmem | 768GB | 344 |
+| interactive | 188GB | 16 |
 
