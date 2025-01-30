@@ -150,7 +150,7 @@ main Slurm commands to submit jobs are listed in the table below:</p>
 </table>
 <h2 id="interactive-jobs">Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permanent link">&para;</a></h2>
 <p>Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the <a href="https://slurm.schedmd.com/srun.html"><code>srun</code></a> command to request one:</p>
-<pre><code>ta5@rice-04:~$ srun --qos=interactive --pty bash
+<pre><code class="language-shell">ta5@rice-04:~$ srun --qos=interactive --pty bash
 ta5@wheat-01:~$ 
 </code></pre>
 <h2 id="batch-jobs">Batch Jobs<a class="headerlink" href="#batch-jobs" title="Permanent link">&para;</a></h2>
@@ -160,7 +160,7 @@ ta5@wheat-01:~$
 <p><strong>time:</strong> How long will it take for your code to run to completion?</p>
 <p><strong>partition:</strong> What set of compute nodes on FarmShare will you run on, normal, interactive, bigmem? The default partition on FarmShare is the normal partition.</p>
 <p>Sample batch script to submit a job:</p>
-<pre><code>ta5@rice-04:~$ cat hello_world.sh 
+<pre><code class="language-shell">ta5@rice-04:~$ cat hello_world.sh 
 #!/bin/bash
 
 #SBATCH --job-name=hello_world
@@ -183,26 +183,26 @@ ta5@rice-04:~$
 <table>
 <thead>
 <tr>
-<th align="left">Partition</th>
-<th align="center">Max Mem</th>
-<th align="right">Max CPU</th>
+<th>Partition</th>
+<th>Max Memory</th>
+<th>Max CPU</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">normal</td>
-<td align="center">188GB</td>
-<td align="right">256</td>
+<td>normal</td>
+<td>188GB</td>
+<td>256</td>
 </tr>
 <tr>
-<td align="left">bigmem</td>
-<td align="center">768GB</td>
-<td align="right">344</td>
+<td>bigmem</td>
+<td>768GB</td>
+<td>344</td>
 </tr>
 <tr>
-<td align="left">interactive</td>
-<td align="center">188GB</td>
-<td align="right">16</td>
+<td>interactive</td>
+<td>188GB</td>
+<td>16</td>
 </tr>
 </tbody>
 </table>
