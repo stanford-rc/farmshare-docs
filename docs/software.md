@@ -25,7 +25,85 @@ FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Jamm
 
 ### Modules
 
-To provide up-to-date software, we use modules. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. To see a listing of available software, run the module available command:
+To provide up-to-date software, FarmShare uses loadable *environment modules*. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. This mechanism allows us to provide multiple versions of the same software concurrently, and gives users the possibility to easily switch between software versions.
+
+The module system is used to manage the user environment and to *activate* software packages on demand. In order to use software installed on FarmShare, you must first load the corresponding software module.
+
+When you load a module, the system will set or modify your user environment variables to enable access to the software package provided by that module. For instance, the `$PATH` environment variable might be updated so that appropriate executable for that package can be used.
+
+The example below shows how to load `r` module for the [R](https://www.r-project.org/) software:
+
+~~~
+ta5@rice-04:~$ module load r
+ta5@rice-04:~$ R --version
+R version 4.4.0 (2024-04-24) -- "Puppy Cup"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under the terms of the
+GNU General Public License versions 2 or 3.
+For more information about these matters see
+https://www.gnu.org/licenses/.
+~~~
+
+#### Module usage
+
+The most common `module` commands are outlined in the following table. `module` commands may be shortened with the `ml` alias.
+
+
+
+| Module\ command | Short\ version | Description    |
+| --------------- | -------------- | -------------- |
+| `module avail` | `ml av` | List available software |
+| `module spider r` | `ml spider r` | Search for particular software|
+| `module keyword blas` | `ml key blas` | Search for `blas` in module names and descriptions|
+| `module whatis gcc` | `ml whatis gcc` | Display information about the `gcc` module |
+| `module help gcc` | `ml help gcc` | Display module specific help |
+| `module load gcc` | `ml gcc` | Load a module to use the associated software |
+| `module load r/4.3.3` | `ml r/4.3.3` | Load specific version of a module |
+| `module unload gcc` | `ml -gcc` | Unload a module |
+| `module purge` | `ml purge` | Remove all modules |
+| `module save foo` | `ml save foo` | Save the state of all loaded modules in a collection named `foo` |
+| `module restore foo` | `ml restore foo` | Restore the state of saved modules from the `foo` collection |
+
+Additional module sub-commands are documented in the `module help` command. For complete reference, please refer to the official [Lmod documentation]([https://lmod.readthedocs.io)
+
+
+#### Module properties
+
+To quickly see some of the modules characteristics, `module avail` will display colored property attributes next to the module names. The main module properties are:
+
+* `S`: Module is sticky, requires `--force` to unload or purge
+* `L`: Indicate currently loaded module
+* `D`: Default module that will be loaded when multiple versions are available
+* `g`: GPU-accelerated software, will only run on GPU nodes
+
+#### Searching for modules
+
+You can search through all the available modules for either:
+
+* a module name (if you already know it), using `module spider`
+* any string within modules names and descriptions, using `module keyword`
+
+For instance, if you want to know how to load the `apptainer` module, you can do:
+
+``` shell
+ta5@rice-04:~$ module spider apptainer
+```
+
+If you don't know the module name, or want to list all the modules that contain
+a specific string of characters in their name or description, you can use
+`module keyword`. For instance, the following command will list all the modules
+providing a BLAS library:
+
+``` shell
+ta5@rice-04:~$ module keyword blas
+```
+
+#### Listing
+
+For a complete list of available software modules, run the `module available` command:
 
 ~~~no-highlight
 ta5@rice-01:~$ module available
@@ -50,6 +128,7 @@ ta5@rice-01:~$ module available
    gaussian/g16-a.03        mathematica/13.3.1    matlab/r2023b      (D)    schrodinger/2024-4 (g)
    gaussian/g16-b.01 (D)    mathematica/14.0.0    matlab/r2024a             stata/now          (D)
 ~~~
+
 
 ### Build Your Own
 
