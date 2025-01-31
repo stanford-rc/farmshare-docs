@@ -129,7 +129,7 @@
 <p>Users on Linux, macOS, and Windows can use the built-in Terminal application and run ssh. Replace SUNetID with your own SUNet ID:</p>
 <pre><code class="language-shell">ssh SUNetID@login.farmshare.stanford.edu
 </code></pre>
-<p>The example below shows how to login in using your SUNet ID and password plus two-step authentication. To logout, type <code>exit</code> or <code>logout</code>:</p>
+<p>The example below shows how to login in using your SUNet ID and password along with two-step authentication. To logout, type <code>exit</code> or <code>logout</code>:</p>
 <pre><code class="language-shell">$ ssh ta5@login.farmshare.stanford.edu
 ta5@login.farmshare.stanford.edu's password: 
 (ta5@login.farmshare.stanford.edu) Duo two-factor login for ta5
@@ -167,8 +167,9 @@ Shared connection to login.farmshare.stanford.edu closed.
 <h3 id="mobaxterm">MobaXterm<a class="headerlink" href="#mobaxterm" title="Permanent link">&para;</a></h3>
 <p><a href="http://mobaxterm.mobatek.net/">MobaXterm</a> is an SSH client with a built-in X server, making remote display extremely convenient, and the Home Edition is free for personal use.</p>
 <h3 id="putty">PuTTY<a class="headerlink" href="#putty" title="Permanent link">&para;</a></h3>
-<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> is a popular, freely available SSH client for Windows. The default settings are appropriate for most users, so all you need to do is specify the host name and click the Open button to connect. Aat the login as: prompt, enter your SUNet ID, and authenticate by password if asked. A number of configuration options are available, and PuTTY allows you to customize your connection settings and save them as a session. The next time you start the application you can load the saved configuration by selecting the desired session and clicking the Load button.</p>
-<p>PuTTY supports GSSAPI authentication as of version 0.61 and will automatically use your existing Kerberos credentials for login, if available. You may also want to enable Kerberos ticket forwarding by checking the Connection → SSH → Auth → GSSAPI → Allow GSSAPI credential delegation box.</p>
+<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> is a popular, freely available SSH client for Windows. The default settings are appropriate for most users, so all you need to do is specify the host name and click the Open button to connect. Aat the login as: prompt, enter your SUNet ID, and authenticate by password if asked. A number of configuration options are available, and PuTTY allows you to customize your connection settings and save them as a session. The next time you start the application you can load the saved configuration by selecting the desired session and clicking the Load button.
+G
+PuTTY supports GSSAPI authentication as of version 0.61 and will automatically use your existing Kerberos credentials for login, if available. You may also want to enable Kerberos ticket forwarding by checking the Connection → SSH → Auth → GSSAPI → Allow GSSAPI credential delegation box.</p>
 <h3 id="mobile-shell-mosh">Mobile Shell (Mosh)<a class="headerlink" href="#mobile-shell-mosh" title="Permanent link">&para;</a></h3>
 <p><a href="https://mosh.org/">Mosh</a> is an alternative to SSH for Linux and macOS clients. It uses SSH for authentication, so you may want to review the suggested SSH configuration above. Mosh has some advantages, including predictive display, which can be useful on high-latency connections, and improved network resiliency. Mosh connections can persist when you switch networks and can even survive putting your computer to sleep.</p>
 <h2 id="open-ondemand">Open OnDemand<a class="headerlink" href="#open-ondemand" title="Permanent link">&para;</a></h2>
@@ -177,7 +178,7 @@ Shared connection to login.farmshare.stanford.edu closed.
 <h3 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h3>
 <p>To use the FarmShare OnDemand interface:</p>
 <ul>
-<li>Connect to https://ondemand.farmshare.stanford.edu</li>
+<li>Connect to <a href="https://ondemand.farmshare.stanford.edu">https://ondemand.farmshare.stanford.edu</a></li>
 <li>Use your SUNetID credentials and go through the two-step authentication process</li>
 </ul>
               
