@@ -67,7 +67,7 @@ The most common `module` commands are outlined in the following table. `module` 
 | `module save foo` | `ml save foo` | Save the state of all loaded modules in a collection named `foo` |
 | `module restore foo` | `ml restore foo` | Restore the state of saved modules from the `foo` collection |
 
-Additional module sub-commands are documented in the `module help` command. For complete reference, please refer to the official [Lmod documentation]([https://lmod.readthedocs.io)
+Additional module sub-commands are documented in the `module help` command. For complete reference, please refer to the official [Lmod documentation](https://lmod.readthedocs.io)
 
 
 #### Module properties
