@@ -101,6 +101,10 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#running-apptainer">Running Apptainer</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#apptainer-usage">Apptainer usage</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#batch-job-example">Batch job example</a>
+    </li>
         </ul>
     </li>
     </ul>
@@ -180,8 +184,8 @@ https://www.gnu.org/licenses/.
 <table>
 <thead>
 <tr>
-<th>Module\ command</th>
-<th>Short\ version</th>
+<th>Module command</th>
+<th>Short version</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -407,7 +411,7 @@ Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernel
 <li><a href="https://cloud.sylabs.io/library">Sylabs</a></li>
 </ul>
 <h3 id="running-apptainer">Running Apptainer<a class="headerlink" href="#running-apptainer" title="Permanent link">&para;</a></h3>
-<p>This example will use the Docker container <a href="https://hub.docker.com/_/python">python/3.13.1-alpine3.21</a> from DockerHub. This container provides the latest release of python in an Alpine OS environment.</p>
+<p>This example will request an <a href="slurm/#interactive-jobs">interactive</a> session and use the Docker container <a href="https://hub.docker.com/_/python">python/3.13.1-alpine3.21</a> from DockerHub. This container provides the latest release of python in an Alpine OS environment.</p>
 <p>The first step is to request an interactive session with multiple cores:</p>
 <pre><code class="language-shell">ta5@rice-04:~$ srun --partition=interactive --cpus-per-task=4 --qos=interactive --pty bash
 ta5@iron-06:~$ 
@@ -464,6 +468,60 @@ Apptainer&gt; exit
 ta5@iron-06:/scratch/users/ta5/lxc$ 
 ta5@iron-06:/scratch/users/ta5/lxc$ cat /etc/issue
 Ubuntu 22.04.5 LTS \n \l
+</code></pre>
+<h3 id="apptainer-usage">Apptainer usage<a class="headerlink" href="#apptainer-usage" title="Permanent link">&para;</a></h3>
+<p>The most common <code>apptainer</code> commands are outlined in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>apptainer run &lt;image&gt;</code></td>
+<td>run predefined script within container</td>
+</tr>
+<tr>
+<td><code>apptainer exec &lt;image&gt;</code></td>
+<td>execute any command within container</td>
+</tr>
+<tr>
+<td><code>apptainer shell &lt;image&gt;</code></td>
+<td>run bash shell within container</td>
+</tr>
+</tbody>
+</table>
+<h3 id="batch-job-example">Batch job example<a class="headerlink" href="#batch-job-example" title="Permanent link">&para;</a></h3>
+<p>In the example <a href="#running-apptainer">above</a> Apptainer was running interactively. In the example below shows to run it as a <a href="/slurm/#batch-jobs">batch</a> job and calculate the sum of one to five using the apptainer image <code>python_3.13.1-alpine3.21.sif</code>:</p>
+<pre><code class="language-shell">ta5@iron-03:/scratch/users/ta5/lxc$ cat sum.py 
+a = (1, 2, 3, 4, 5)
+x = sum(a)
+print(x)
+</code></pre>
+<p>To submit <code>sum.py</code> script as a batch job, create a sbatch script:</p>
+<pre><code class="language-shell">ta5@rice-03:/scratch/users/ta5/lxc$ cat ~/tutorial_lxc.sh 
+#!/bin/bash
+
+#SBATCH --job-name=tutorial_lxc
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --partition=normal
+
+# Load apptainer
+module load apptainer
+
+# Run script with apptainer exec
+apptainer exec python_3.13.1-alpine3.21.sif python sum.py
+
+ta5@rice-03:/scratch/users/ta5/lxc$ 
+ta5@rice-03:/scratch/users/ta5/lxc$ sbatch ~/tutorial_lxc.sh
+Submitted batch job 299057
+
+ta5@rice-03:/scratch/users/ta5/lxc$ cat slurm-299057.out
+15
 </code></pre>
               
             </div>
