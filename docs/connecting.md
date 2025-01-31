@@ -1,12 +1,12 @@
 # Getting Connected
 
-## SSH on Linux and macOS
+## SSH
 
 SSH provides a secure, remote terminal connection to the login nodes. There are a number of rice servers providing login service (e.g., rice-01, rice-02); the easiest way to connect is using the load-balanced name, *login.farmshare.stanford.edu*, which will select one for you according to recent utilization.
 
 Depending on your environment and configuration you may be prompted for your SUNet ID password, and you'll need to complete your login using [two-step authentication](https://uit.stanford.edu/service/webauth/twostep).
 
-Open up your favorite terminal program (on macOS you can use the built-in Terminal application or something like iTerm) and run the ssh command like so, replacing SUNetID with your own SUNet ID:
+Users on Linux, macOS, and Windows can use the built-in Terminal application and run ssh. Replace SUNetID with your own SUNet ID:
 
 ``` shell
 ssh SUNetID@login.farmshare.stanford.edu
@@ -36,11 +36,6 @@ FarmShare (https://docs.farmshare.stanford.edu/)
 
 ...
 
-Last login: Tue Jan 28 11:11:51 2025 from 24.155.46.245
-ta5@rice-02:~$ 
-ta5@rice-02:~$ cat /etc/issue
-Ubuntu 22.04.5 LTS \n \l
-
 ta5@rice-02:~$ 
 ta5@rice-02:~$ 
 ta5@rice-02:~$ exit
@@ -48,7 +43,7 @@ logout
 Shared connection to login.farmshare.stanford.edu closed.
 ```
 
-## Host keys
+### Host keys
 
 For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:
 
@@ -60,9 +55,7 @@ SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)
 SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
 ```
 
-## SSH on Windows
-
-Windows does not have a built-in SSH client, but a number are available from third parties:
+## Other SSH clients
 
 ### MobaXterm
 
@@ -74,14 +67,23 @@ Windows does not have a built-in SSH client, but a number are available from thi
 
 PuTTY supports GSSAPI authentication as of version 0.61 and will automatically use your existing Kerberos credentials for login, if available. You may also want to enable Kerberos ticket forwarding by checking the Connection → SSH → Auth → GSSAPI → Allow GSSAPI credential delegation box.
 
-## Mobile Shell (Mosh)
+### Mobile Shell (Mosh)
 
 [Mosh](https://mosh.org/) is an alternative to SSH for Linux and macOS clients. It uses SSH for authentication, so you may want to review the suggested SSH configuration above. Mosh has some advantages, including predictive display, which can be useful on high-latency connections, and improved network resiliency. Mosh connections can persist when you switch networks and can even survive putting your computer to sleep.
 
-## OnDemand
+## Open OnDemand
 
-[Open OnDemand](https://ondemand.farmshare.stanford.edu/) is a browser based interface to FarmShare. OnDemand offers terminal, file manager, editor, desktop, and GUI applications right from your web browser!
+[Open OnDemand](https://openondemand.org/) is a browser based interface to FarmShare. Open OnDemand offers terminal, file manager, editor, desktop, and GUI applications right from your web browser!
 
 **Note: If you have never logged into Farmshare before you won't be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down then FarmShare Shell Access.**
+
+### Logging in
+
+To use the FarmShare OnDemand interface:
+
+* Connect to https://ondemand.farmshare.stanford.edu
+* Use your SUNetID credentials and go through the two-step authentication process
+
+
 
 
