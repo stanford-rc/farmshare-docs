@@ -12,7 +12,7 @@ Users on Linux, macOS, and Windows can use the built-in Terminal application and
 ssh SUNetID@login.farmshare.stanford.edu
 ```
 
-The example below shows how to login in using your SUNet ID and password plus two-step authentication. To logout, type `exit` or `logout`:
+The example below shows how to login in using your SUNet ID and password along with two-step authentication. To logout, type `exit` or `logout`:
 
 ``` shell
 $ ssh ta5@login.farmshare.stanford.edu
@@ -64,7 +64,7 @@ SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
 ### PuTTY
 
 [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) is a popular, freely available SSH client for Windows. The default settings are appropriate for most users, so all you need to do is specify the host name and click the Open button to connect. Aat the login as: prompt, enter your SUNet ID, and authenticate by password if asked. A number of configuration options are available, and PuTTY allows you to customize your connection settings and save them as a session. The next time you start the application you can load the saved configuration by selecting the desired session and clicking the Load button.
-
+G
 PuTTY supports GSSAPI authentication as of version 0.61 and will automatically use your existing Kerberos credentials for login, if available. You may also want to enable Kerberos ticket forwarding by checking the Connection → SSH → Auth → GSSAPI → Allow GSSAPI credential delegation box.
 
 ### Mobile Shell (Mosh)
@@ -81,7 +81,7 @@ PuTTY supports GSSAPI authentication as of version 0.61 and will automatically u
 
 To use the FarmShare OnDemand interface:
 
-* Connect to https://ondemand.farmshare.stanford.edu
+* Connect to [https://ondemand.farmshare.stanford.edu](https://ondemand.farmshare.stanford.edu)
 * Use your SUNetID credentials and go through the two-step authentication process
 
 
