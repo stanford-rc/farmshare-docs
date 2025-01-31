@@ -262,11 +262,11 @@ Pandas version = 2.2.3
 
 ## JupyterLab
 
-JupyterLab is [Project Jupyter's](https://jupyter.org/)  web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our [OnDemand](https://ondemand.farmshare.stanford.edu) interface and supports computation with Python 3.
+JupyterLab is [Project Jupyter's](https://jupyter.org/)  web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our [OnDemand](/connecting/#open-ondemand) interface and supports computation with Python 3.
 
 ### Accessing JupyterLab
 
-Login in to [OnDemand](https://ondemand.farmshare.stanford.edu) and select **Interactive Apps > JupyterLab**
+Login in to [OnDemand](/connecting/#logging-in) and select **Interactive Apps > JupyterLab**
 
 If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. To do this, start an interactive terminal session and activate your environment (if you do not have an environment, refer to the sections above on how to do so). 
 
