@@ -6,7 +6,7 @@ SSH provides a secure, remote terminal connection to the login nodes. There are 
 
 Depending on your environment and configuration you may be prompted for your SUNet ID password, and you'll need to complete your login using [two-step authentication](https://uit.stanford.edu/service/webauth/twostep).
 
-Users on Linux, macOS, and Windows can use the built-in Terminal application and run ssh. Replace SUNetID with your own SUNet ID:
+Users on Linux, macOS, and Windows can use the built-in Terminal application and run `ssh`. Replace SUNetID with your own SUNet ID:
 
 ``` shell
 ssh SUNetID@login.farmshare.stanford.edu
@@ -75,7 +75,7 @@ PuTTY supports GSSAPI authentication as of version 0.61 and will automatically u
 
 [Open OnDemand](https://openondemand.org/) is a browser based interface to FarmShare. Open OnDemand offers terminal, file manager, editor, desktop, and GUI applications right from your web browser!
 
-**Note: If you have never logged into Farmshare before you won't be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down then FarmShare Shell Access.**
+**Note: If you have never logged into Farmshare before you won't be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down > FarmShare Shell Access.**
 
 ### Logging in
 

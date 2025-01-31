@@ -291,7 +291,7 @@ Containers are isolated environments packaged together with an executable so tha
 
 ### Running Apptainer
 
-This example will request an [interactive](slurm/#interactive-jobs) session and use the Docker container [python/3.13.1-alpine3.21](https://hub.docker.com/_/python) from DockerHub. This container provides the latest release of python in an Alpine OS environment.
+This example will request an [interactive](/slurm/#interactive-jobs) session and use the Docker container [python/3.13.1-alpine3.21](https://hub.docker.com/_/python) from DockerHub. This container provides the latest release of python in an Alpine OS environment.
 
 The first step is to request an interactive session with multiple cores:
 
@@ -334,7 +334,7 @@ python_3.13.1-alpine3.21.sif
 ta5@iron-06:/scratch/users/ta5/lxc$ 
 ```
 
-Once the image is downloaded, you can run the container using:
+Once the image is downloaded, you can run the container using `apptainer run`:
 
 ``` shell
 ta5@iron-06:/scratch/users/ta5/lxc$ apptainer run python_3.13.1-alpine3.21.sif 
@@ -348,7 +348,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ta5@iron-06:/scratch/users/ta5/lxc$ 
 ```
 
-To launch a shell within the container and to verify the OS environment:
+To launch a shell within the container using `apptainer shell`:
 
 ``` shell
 ta5@iron-06:/scratch/users/ta5/lxc$ apptainer shell python_3.13.1-alpine3.21.sif 
@@ -373,7 +373,7 @@ The most common `apptainer` commands are outlined in the following table.
  
 ### Batch job example
 
-In the example [above](#running-apptainer) Apptainer was running interactively. In the example below shows to run it as a [batch](/slurm/#batch-jobs) job and calculate the sum of one to five using the apptainer image `python_3.13.1-alpine3.21.sif`:
+In the example [above](#running-apptainer) Apptainer was running interactively. The example below shows how to run it as a [batch](/slurm/#batch-jobs) job to calculates the sum of one to five:
 
 ``` shell
 ta5@iron-03:/scratch/users/ta5/lxc$ cat sum.py 
@@ -382,7 +382,7 @@ x = sum(a)
 print(x)
 ```
 
-To submit `sum.py` script as a batch job, create a sbatch script:
+To submit this script using apptainer, create a sbatch script to run `apptainer exec`: 
 
 ``` shell
 ta5@rice-03:/scratch/users/ta5/lxc$ cat ~/tutorial_lxc.sh 
