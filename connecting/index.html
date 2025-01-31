@@ -126,7 +126,7 @@
 <h2 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
 <p>SSH provides a secure, remote terminal connection to the login nodes. There are a number of rice servers providing login service (e.g., rice-01, rice-02); the easiest way to connect is using the load-balanced name, <em>login.farmshare.stanford.edu</em>, which will select one for you according to recent utilization.</p>
 <p>Depending on your environment and configuration you may be prompted for your SUNet ID password, and you&rsquo;ll need to complete your login using <a href="https://uit.stanford.edu/service/webauth/twostep">two-step authentication</a>.</p>
-<p>Users on Linux, macOS, and Windows can use the built-in Terminal application and run ssh. Replace SUNetID with your own SUNet ID:</p>
+<p>Users on Linux, macOS, and Windows can use the built-in Terminal application and run <code>ssh</code>. Replace SUNetID with your own SUNet ID:</p>
 <pre><code class="language-shell">ssh SUNetID@login.farmshare.stanford.edu
 </code></pre>
 <p>The example below shows how to login in using your SUNet ID and password along with two-step authentication. To logout, type <code>exit</code> or <code>logout</code>:</p>
@@ -174,7 +174,7 @@ PuTTY supports GSSAPI authentication as of version 0.61 and will automatically u
 <p><a href="https://mosh.org/">Mosh</a> is an alternative to SSH for Linux and macOS clients. It uses SSH for authentication, so you may want to review the suggested SSH configuration above. Mosh has some advantages, including predictive display, which can be useful on high-latency connections, and improved network resiliency. Mosh connections can persist when you switch networks and can even survive putting your computer to sleep.</p>
 <h2 id="open-ondemand">Open OnDemand<a class="headerlink" href="#open-ondemand" title="Permanent link">&para;</a></h2>
 <p><a href="https://openondemand.org/">Open OnDemand</a> is a browser based interface to FarmShare. Open OnDemand offers terminal, file manager, editor, desktop, and GUI applications right from your web browser!</p>
-<p><strong>Note: If you have never logged into Farmshare before you won&rsquo;t be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down then FarmShare Shell Access.</strong></p>
+<p><strong>Note: If you have never logged into Farmshare before you won&rsquo;t be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down &gt; FarmShare Shell Access.</strong></p>
 <h3 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h3>
 <p>To use the FarmShare OnDemand interface:</p>
 <ul>
