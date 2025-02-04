@@ -113,6 +113,10 @@
                 <h1 id="running-jobs">Running Jobs<a class="headerlink" href="#running-jobs" title="Permanent link">&para;</a></h1>
 <h2 id="slurm">Slurm<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h2>
 <p>FarmShare uses <a href="https://slurm.schedmd.com/">Slurm</a> for job (resource) management. Full <a href="https://slurm.schedmd.com/documentation.html">documentation</a> and detailed usage information is provided in the man pages for the srun, sbatch, squeue, scancel, sinfo, and scontrol commands.</p>
+<blockquote>
+<p>[!NOTE]
+This is a Note block</p>
+</blockquote>
 <p>Jobs are scheduled according to a priority which depends on a number of factors, including how long a job has been waiting, its size, and a fair-share value that tracks recent per-user utilization of cluster resources. Lower-priority jobs, and jobs requiring access to resources not currently available, may wait some time before starting to run. The scheduler may reserve resources so that pending jobs can start; while it will try to backfill these resources with smaller, shorter jobs (even those at lower priorities), this behavior can sometimes cause nodes to appear to be idle even when there are jobs that are ready to run. You can use <code>squeue --start</code> to get an estimate of when pending jobs will start.</p>
 <h2 id="slurm-commands">Slurm commands<a class="headerlink" href="#slurm-commands" title="Permanent link">&para;</a></h2>
 <p>Slurm allows requesting resources and submitting jobs in a variety of ways. The
