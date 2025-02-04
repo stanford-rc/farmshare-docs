@@ -20,3 +20,4 @@ nav:
   - "Running Jobs": slurm.md
   - "Using Software": software.md
   - "Adding Capacity": capacity.md
+  - Policy: policy.md
