@@ -65,7 +65,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#batch-jobs">Batch Jobs</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#partition-info">Partition Info</a>
+    <li class="toctree-l2"><a class="reference internal" href="#partitionqos-info">Partition/QoS Info</a>
     </li>
     </ul>
                     </li>
@@ -127,34 +127,44 @@ main Slurm commands to submit jobs are listed in the table below:</p>
 </thead>
 <tbody>
 <tr>
-<td><code>salloc</code></td>
+<td><a href="https://slurm.schedmd.com/salloc.html"><code>salloc</code></a></td>
 <td>Request resources and allocates them to a job</td>
 <td>Starts a new shell, but does not execute anything</td>
 </tr>
 <tr>
-<td><code>srun</code></td>
+<td><a href="https://slurm.schedmd.com/srun.html"><code>srun</code></a></td>
 <td>Request resources and runs a command on the allocated compute node(s)</td>
-<td>Blocking command: will not return until the job ends</td>
+<td>Execute command on compute node</td>
 </tr>
 <tr>
-<td><code>sbatch</code></td>
+<td><a href="https://slurm.schedmd.com/sbatch.html"><code>sbatch</code></a></td>
 <td>Request resources and runs a script on the allocated compute node(s)</td>
-<td>Asynchronous command: will return as soon as the job is submitted</td>
+<td>Submit a batch script to Slurm</td>
 </tr>
 <tr>
-<td><code>squeue</code></td>
+<td><a href="https://slurm.schedmd.com/squeue.html"><code>squeue</code></a></td>
 <td>View job and job step information</td>
 <td>Displays job information</td>
+</tr>
+<tr>
+<td><a href="https://slurm.schedmd.com/scancel.html"><code>scancel</code></a></td>
+<td>Signal or cancel jobs, job arrays or job steps</td>
+<td>Cancel running job</td>
+</tr>
+<tr>
+<td><a href="https://slurm.schedmd.com/sinfo.html"><code>sinfo</code></a></td>
+<td>View information about Slurm nodes and partitions</td>
+<td>Displays partition information</td>
 </tr>
 </tbody>
 </table>
 <h2 id="interactive-jobs">Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permanent link">&para;</a></h2>
-<p>Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the <a href="https://slurm.schedmd.com/srun.html"><code>srun</code></a> command to request one:</p>
+<p>Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the <code>srun</code> command to request one:</p>
 <pre><code class="language-shell">ta5@rice-04:~$ srun --qos=interactive --pty bash
 ta5@wheat-01:~$ 
 </code></pre>
 <h2 id="batch-jobs">Batch Jobs<a class="headerlink" href="#batch-jobs" title="Permanent link">&para;</a></h2>
-<p>The <a href="https://slurm.schedmd.com/sbatch.html"><code>sbatch</code></a> command is used to submit a batch job. A job is simply an instance of your program, for example your R, Python or Matlab script that is submitted to and executed by the scheduler (Slurm). When you submit a job with the sbatch command it&rsquo;s called a batch job and it will either run immediately or will pend (wait) in the queue. Options are used to request specific resources (including runtime), and can be provided either on the command line or, using a special syntax, in the script file itself. sbatch can also be used to submit many similar jobs, each perhaps varying in only one or two parameters, in a single invocation using the &ndash;array option; each job in an array has access to environment variables identifying its rank.</p>
+<p>The <code>sbatch</code> command is used to submit a batch job. A job is simply an instance of your program, for example your R, Python or Matlab script that is submitted to and executed by the scheduler (Slurm). When you submit a job with the sbatch command it&rsquo;s called a batch job and it will either run immediately or will pend (wait) in the queue. Options are used to request specific resources (including runtime), and can be provided either on the command line or, using a special syntax, in the script file itself. sbatch can also be used to submit many similar jobs, each perhaps varying in only one or two parameters, in a single invocation using the &ndash;array option; each job in an array has access to environment variables identifying its rank.</p>
 <p><strong>CPUs:</strong> How many CPUs the program you are calling the in the sbatch script needs, unless it can utilize multiple CPUs at once you should request a single CPU. Check your code&rsquo;s documentation or try running in an interactive session with and run <code>htop</code> if you are unsure.</p>
 <p><strong>memory (RAM):</strong> How much memory your job will consume. Some things to consider, will it load a large file or matrix into memory? Does it consume a lot of memory on your laptop? Often the default memory is sufficient for many jobs.</p>
 <p><strong>time:</strong> How long will it take for your code to run to completion?</p>
@@ -179,7 +189,19 @@ ta5@rice-04:~$ cat slurm-177987.out
 Hello World!
 ta5@rice-04:~$ 
 </code></pre>
-<h2 id="partition-info">Partition Info<a class="headerlink" href="#partition-info" title="Permanent link">&para;</a></h2>
+<h2 id="partitionqos-info">Partition/QoS Info<a class="headerlink" href="#partitionqos-info" title="Permanent link">&para;</a></h2>
+<p>FarmShare provides the following partitions and <a href="https://slurm.schedmd.com/qos.html">QoS</a>:</p>
+<pre><code class="language-shell">ta5@rice-02:~$ sacctmgr show qos format=name%11,maxsubmitjobspu,maxjobspu,mintres%10,maxtrespu%25,maxwall
+       Name MaxSubmitPU MaxJobsPU    MinTRES                 MaxTRESPU     MaxWall 
+----------- ----------- --------- ---------- ------------------------- ----------- 
+     normal        1024       128                   cpu=256,gres/gpu=3             
+interactive           3         3            cpu=16,gres/gpu=1,mem=64G             
+        dev           1         1             cpu=8,gres/gpu=1,mem=32G    08:00:00 
+       long          32         4                               cpu=32  7-00:00:00 
+ caddyshack           1         1                        cpu=8,mem=32G             
+     bigmem          32         4   mem=192G                  mem=768G             
+        gpu          32         4 gres/gpu=1                gres/gpu=6             
+</code></pre>
 <table>
 <thead>
 <tr>

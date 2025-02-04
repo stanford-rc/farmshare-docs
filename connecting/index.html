@@ -61,9 +61,9 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#other-ssh-clients">Other SSH clients</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#mobaxterm">MobaXterm</a>
-    </li>
     <li class="toctree-l3"><a class="reference internal" href="#putty">PuTTY</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#mobaxterm">MobaXterm</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#mobile-shell-mosh">Mobile Shell (Mosh)</a>
     </li>
@@ -164,12 +164,10 @@ Shared connection to login.farmshare.stanford.edu closed.
 <pre><code class="language-shell">SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
 </code></pre>
 <h2 id="other-ssh-clients">Other SSH clients<a class="headerlink" href="#other-ssh-clients" title="Permanent link">&para;</a></h2>
+<h3 id="putty">PuTTY<a class="headerlink" href="#putty" title="Permanent link">&para;</a></h3>
+<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> is a popular, freely available SSH client for Windows. The default settings are appropriate for most users, so all you need to do is specify the host name and click the Open button to connect.</p>
 <h3 id="mobaxterm">MobaXterm<a class="headerlink" href="#mobaxterm" title="Permanent link">&para;</a></h3>
 <p><a href="http://mobaxterm.mobatek.net/">MobaXterm</a> is an SSH client with a built-in X server, making remote display extremely convenient, and the Home Edition is free for personal use.</p>
-<h3 id="putty">PuTTY<a class="headerlink" href="#putty" title="Permanent link">&para;</a></h3>
-<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> is a popular, freely available SSH client for Windows. The default settings are appropriate for most users, so all you need to do is specify the host name and click the Open button to connect. Aat the login as: prompt, enter your SUNet ID, and authenticate by password if asked. A number of configuration options are available, and PuTTY allows you to customize your connection settings and save them as a session. The next time you start the application you can load the saved configuration by selecting the desired session and clicking the Load button.
-G
-PuTTY supports GSSAPI authentication as of version 0.61 and will automatically use your existing Kerberos credentials for login, if available. You may also want to enable Kerberos ticket forwarding by checking the Connection → SSH → Auth → GSSAPI → Allow GSSAPI credential delegation box.</p>
 <h3 id="mobile-shell-mosh">Mobile Shell (Mosh)<a class="headerlink" href="#mobile-shell-mosh" title="Permanent link">&para;</a></h3>
 <p><a href="https://mosh.org/">Mosh</a> is an alternative to SSH for Linux and macOS clients. It uses SSH for authentication, so you may want to review the suggested SSH configuration above. Mosh has some advantages, including predictive display, which can be useful on high-latency connections, and improved network resiliency. Mosh connections can persist when you switch networks and can even survive putting your computer to sleep.</p>
 <h2 id="open-ondemand">Open OnDemand<a class="headerlink" href="#open-ondemand" title="Permanent link">&para;</a></h2>

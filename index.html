@@ -113,36 +113,38 @@
 <p>FarmShare evolved from the old, public UNIX cluster, once located on the second floor of Sweet Hall, which was itself a successor to systems like the University&rsquo;s original timeshare service, LOTS. The latest iteration of FarmShare with hardware and major OS update came online early 2024.</p>
 <p>Resources on FarmShare are focused on making it easier to learn how to use research computing including “scheduler” or “distributed resource management system” to submit compute jobs. By using FarmShare, new researchers can more easily adapt to using larger clusters when they have big projects that involve using federally funded resources, shared Stanford clusters, or on a small grant funded cluster. Full SUNet (or sponsorship) required.</p>
 <h2 id="whats-new">What&rsquo;s New<a class="headerlink" href="#whats-new" title="Permanent link">&para;</a></h2>
-<p>Key changes on the new Farmshare environment include:</p>
+<p>Key changes on the new FarmShare environment include:</p>
 <ul>
 <li>Major OS upgrade to <a href="https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes">Ubuntu 22.04 LTS</a> which brings many changes, improvements and provides LTS stability.</li>
 <li>New Hardware with CPU and memory improvements.</li>
 <li>New browser based access with <a href="/connecting/#open-ondemand">Open OnDemand v3</a>. </li>
 <li>Updated Open Ondemand apps: JupyterLabs, RStudio, and VS Code.</li>
-<li>Updated Scheduler (resource manager) to <a href="https://slurm.schedmd.com/">Slurm v24.05</a></li>
+<li>Updated Scheduler (resource manager) to <a href="https://slurm.schedmd.com/">Slurm v24.11</a></li>
 <li>Home directory path updated to <code>/home/users/USER</code>. Please use the variable <code>$HOME</code> instead of hard coding directory paths.</li>
 </ul>
 <h2 id="cluster-components">Cluster Components<a class="headerlink" href="#cluster-components" title="Permanent link">&para;</a></h2>
 <p>FarmShare consists of three classes of servers:</p>
 <ul>
 <li>
-<p>The <strong>rice</strong> servers are <em>login</em> nodes where you log in to run commands, access files, submit jobs, and review results. The rice servers also have access to <a href="https://uit.stanford.edu/service/afs">Stanford AFS</a>. These servers can be used for interactive work, but some resource limits are enforced, so if you need to run a long-running or compute- and/or memory-intensive process you should submit a job. Remember, these are servers for research and academic use, not for administrative or business functions.  </p>
+<p><em>Login</em> nodes called <strong>rice</strong> servers where you log in to run commands, access files, submit jobs, and review results. The rice servers also have access to <a href="https://uit.stanford.edu/service/afs">Stanford AFS</a>. These servers can be accessed via <a href="/connecting/#ssh"><code>ssh</code></a> and can be used for interactive work. Some resource limits are enforced, so if you need to run a long-running or compute- and/or memory-intensive process you should submit a <a href="/slurm/#slurm"><em>job</em></a>  </p>
 </li>
 <li>
-<p>The <strong>iron</strong>, <strong>rye</strong> and <strong>wheat</strong> servers are <em>compute</em> nodes. They have more CPU power and more memory than the rice servers, and are meant for both interactive jobs (where you log in to control what happens) and batch jobs (where everything runs from a script that you submit). Some wheat and iron nodes also have significantly more memory than others. Like the rice servers, these are available for use for coursework or research purposes.</p>
+<p><em>Compute</em> nodes called <strong>iron</strong>, <strong>rye</strong> and <strong>wheat</strong> servers. They have more CPU power and more memory than the rice servers, and are meant for both <a href="/slurm/#interactive-jobs">interactive</a> jobs (where you log in to control what happens) and <a href="/slurm/#batch-jobs">batch</a> jobs (where everything runs from a script that you submit)</p>
 </li>
 <li>
-<p>The <strong>oat</strong> servers are <em>GPU</em> compute nodes. They are similar to the compute nodes mentioned above, except that they also have GPUs installed. These nodes are meant for computational academic or research work that is able to take advantage of a GPU (e.g., TensorFlow jobs fit into this category). </p>
+<p><em>GPU compute nodes</em> called <strong>oat</strong> servers. They are similar to the compute nodes mentioned above, except that they also have GPUs installed </p>
 </li>
 </ul>
-<p>All FarmShare servers run <a href="https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes">Ubuntu 22.04 LTS</a></p>
-<p>FarmShare currently has 4 rice servers (login nodes) along with 26 compute nodes (wheat, iron, oat nodes).</p>
+<p>FarmShare currently has 4 rice servers (login nodes) along with 26 compute nodes (iron, rye, wheat, oat nodes). User storage for <code>$HOME</code> along with global <code>/scratch</code> space is available on all nodes.</p>
+<p>All FarmShare servers run <a href="https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes">Ubuntu 22.04 LTS</a> and get patched/updated on a regular basis.</p>
 <h2 id="eligibility">Eligibility<a class="headerlink" href="#eligibility" title="Permanent link">&para;</a></h2>
 <p>FarmShare is available to anyone who has a full-service SUNetID. A full-service SUNetID is one that has email service; if you can successfully get to <a href="https://webmail.stanford.edu/">Stanford Webmail</a>, then you are eligible to use FarmShare for academic work and small research jobs! If you do not already have a full-service SUNetID (maybe because you are a visiting researcher), you can get a sponsored full-service SUNetID. Read more about <a href="https://uit.stanford.edu/service/accounts/sunetids">SUNetID levels</a>.</p>
 <p>Note that, in order to get a sponsored SUNetID, a monthly fee will be charged by University IT. Only people with spending authority may sponsor a SUNetID. Sponsorships can be obtained and paid for through <a href="https://uit.stanford.edu/service/sponsorship/">Sponsorship Manager</a>.  Current rates are available from the Sponsored Account <a href="https://uit.stanford.edu/rates/sponsorship">Rates page</a>.</p>
-<p>FarmShare is meant for <a href="https://uit.stanford.edu/guide/riskclassifications">low- or moderate-risk data</a>, and is primarily intended for class work and for other general- and personal-use work (research and training). It is not meant for sponsored research (where you have a dedicated source of funding), and is not approved for handling high-risk data.</p>
+<p>FarmShare is meant for <a href="https://uit.stanford.edu/guide/riskclassifications"><strong>low- or moderate-risk data</strong></a>, and is primarily intended for coursework or research purposes. It is not meant for sponsored research (where you have a dedicated source of funding), and is <em>not</em> approved for handling high-risk data.</p>
 <h2 id="sponsored-research">Sponsored Research<a class="headerlink" href="#sponsored-research" title="Permanent link">&para;</a></h2>
-<p>If you are doing sponsored or departmental research, then FarmShare might not be the right place for you. Instead, if the data you are working with is all low-risk, then you should consider getting access to our Sherlock Cluster! The <a href="https://www.sherlock.stanford.edu/docs/getting-started/#how-to-request-an-account">Sherlock web site</a> has more information about how to get access.</p>
+<p>If you are doing sponsored or departmental research, then FarmShare might not be the right place for you. Instead, if the data you are working with is all low-risk, then you should consider our <a href="https://www.sherlock.stanford.edu/">Sherlock</a> Cluster. </p>
+<p>If you are working with high-risk data then you should consider our <a href="https://nero-docs.stanford.edu/gcp-overview.html">Nero GCP</a> or <a href="https://carinadocs.sites.stanford.edu/">Carina</a> Computing platform. </p>
+<p>If you are working with complex AI you should consider our <a href="https://docs.marlowe.stanford.edu/">Marlowe</a> Cluster.</p>
 <h1 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h1>
 <p>Most FarmShare support is provided during business hours, either via email or during academic-year office hours.</p>
 <p>For email support, send a message to <a href="mailto:srcc-support@stanford.edu?subject=FarmShare support">srcc-support</a>. Make sure you have &ldquo;FarmShare&rdquo; somewhere in the subject line, and please be as detailed as possible with your request.</p>
@@ -199,5 +201,5 @@
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2025-01-31 15:00:56.582719+00:00
+Build Date UTC : 2025-02-04 19:27:52.866464+00:00
 -->

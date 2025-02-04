@@ -87,7 +87,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#virtual-environments">Virtual Environments</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#using-virtual-environment-in-slurm">Using Virtual Environment in Slurm</a>
+    <li class="toctree-l3"><a class="reference internal" href="#virtual-environment-in-slurm">Virtual Environment in Slurm</a>
     </li>
         </ul>
     </li>
@@ -164,7 +164,7 @@ Python 3.10.12
 <p>FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the <a href="http://packages.ubuntu.com/jammy">Ubuntu Jammy package repository</a> is available to be installed.</p>
 <h3 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h3>
 <p>To provide up-to-date software, FarmShare uses loadable <em>environment modules</em>. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. This mechanism allows us to provide multiple versions of the same software concurrently, and gives users the possibility to easily switch between software versions.</p>
-<p>The module system is used to manage the user environment and to <em>activate</em> software packages on demand. In order to use software installed on FarmShare, you must first load the corresponding software module.</p>
+<p>The module system is used to manage the user environment and to <em>activate</em> software packages on demand. In order to use modules based software installed on FarmShare, you must first load the corresponding software module.</p>
 <p>When you load a module, the system will set or modify your user environment variables to enable access to the software package provided by that module. For instance, the <code>$PATH</code> environment variable might be updated so that appropriate executable for that package can be used.</p>
 <p>The example below shows how to load <code>r</code> module for the <a href="https://www.r-project.org/">R</a> software:</p>
 <pre><code class="language-shell">ta5@rice-04:~$ module load r
@@ -353,7 +353,7 @@ wheel==0.45.1
 <p>To deactivate or leave the environment <code>tutorial_env</code>:</p>
 <pre><code class="language-shell">(tutorial_env) ta5@rice-02:~$ deactivate 
 </code></pre>
-<h3 id="using-virtual-environment-in-slurm">Using Virtual Environment in Slurm<a class="headerlink" href="#using-virtual-environment-in-slurm" title="Permanent link">&para;</a></h3>
+<h3 id="virtual-environment-in-slurm">Virtual Environment in <a href="/slurm/#slurm">Slurm</a><a class="headerlink" href="#virtual-environment-in-slurm" title="Permanent link">&para;</a></h3>
 <p>Python virtual environments can be used in slurm jobs. To submit a <code>sbatch</code> job using a venv environment, you can <code>source</code> the environment at the top of the sbatch script.</p>
 <p>Sample python script that prints versions of packages:</p>
 <pre><code class="language-shell">ta5@rice-02:~$ cat test.py 
