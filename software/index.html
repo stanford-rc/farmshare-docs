@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../style.css" rel="stylesheet" />
+        <link href="../stylesheets/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -150,7 +151,10 @@
 <pre><code class="language-shell">ta5@rice-01:~$ python3 --version
 Python 3.10.12
 </code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the <a href="http://packages.ubuntu.com/jammy">Ubuntu Jammy package repository</a> is available to be installed.</p>
+</div>
 <h3 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h3>
 <p>To provide up-to-date software, FarmShare uses loadable <em>environment modules</em>. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. This mechanism allows us to provide multiple versions of the same software concurrently, and gives users the possibility to easily switch between software versions.</p>
 <p>The module system is used to manage the user environment and to <em>activate</em> software packages on demand. In order to use modules based software installed on FarmShare, you must first load the corresponding software module.</p>
@@ -236,7 +240,10 @@ https://www.gnu.org/licenses/.
 </tr>
 </tbody>
 </table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
 <p>Additional module sub-commands are documented in the <code>module help</code> command. For complete reference, please refer to the official <a href="https://lmod.readthedocs.io">Lmod documentation</a></p>
+</div>
 <h4 id="module-properties">Module properties<a class="headerlink" href="#module-properties" title="Permanent link">&para;</a></h4>
 <p>To quickly see some of the modules characteristics, <code>module avail</code> will display colored property attributes next to the module names. The main module properties are:</p>
 <ul>
@@ -291,7 +298,7 @@ providing a BLAS library:</p>
 <p>We install commonly used Python packages (such as NumPy, SciPy) globally that are available when you load Python with the module command.</p>
 <p>To install packages that are not already installed you can use <code>pip</code></p>
 <h3 id="pip">pip<a class="headerlink" href="#pip" title="Permanent link">&para;</a></h3>
-<p><code>pip</code> is available as a module on FarmShare. You will need to use the <code>--user</code> flag which places the package installation under your $HOME directory.</p>
+<p><code>pip</code> is available as a module on FarmShare. You will need to use the <a href="https://packaging.python.org/en/latest/tutorials/installing-packages/#installing-to-the-user-site"><code>--user</code></a> flag which places the package installation under your $HOME directory.</p>
 <p>The example below shows how to install <code>pandas</code>:</p>
 <pre><code class="language-shell">ta5@rice-02:~$ module load py-pip/23.1.2_python/3.13.0
 ta5@rice-02:~$ module load python/3.13.0

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../style.css" rel="stylesheet" />
+        <link href="../stylesheets/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -116,8 +117,10 @@
 <p>SSH provides a secure, remote terminal connection to the login nodes. There are a number of rice servers providing login service (e.g., rice-01, rice-02); the easiest way to connect is using the load-balanced name, <em>login.farmshare.stanford.edu</em>, which will select one for you according to recent utilization.</p>
 <p>Depending on your environment and configuration you may be prompted for your SUNet ID password, and you&rsquo;ll need to complete your login using <a href="https://uit.stanford.edu/service/webauth/twostep">two-step authentication</a>.</p>
 <p>Users on Linux, macOS, and Windows can use the built-in Terminal application and run <code>ssh</code>. Replace SUNetID with your own SUNet ID:</p>
-<pre><code class="language-shell">ssh SUNetID@login.farmshare.stanford.edu
-</code></pre>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>ssh SUNetID@login.farmshare.stanford.edu</p>
+</div>
 <p>The example below shows how to login in using your SUNet ID and password along with two-step authentication. To logout, type <code>exit</code> or <code>logout</code>:</p>
 <pre><code class="language-shell">$ ssh ta5@login.farmshare.stanford.edu
 ta5@login.farmshare.stanford.edu's password: 
@@ -167,7 +170,10 @@ Shared connection to login.farmshare.stanford.edu closed.
 <li>Connect to <a href="https://ondemand.farmshare.stanford.edu">https://ondemand.farmshare.stanford.edu</a></li>
 <li>Use your SUNetID credentials and go through the two-step authentication process</li>
 </ul>
-<p><strong>Note: If you have never logged into Farmshare before you won&rsquo;t be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down &gt; <a href="https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh">FarmShare Shell Access</a>.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you have never logged into Farmshare before you won&rsquo;t be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down &gt; <a href="https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh">FarmShare Shell Access</a>.**</p>
+</div>
               
             </div>
           </div><footer>
