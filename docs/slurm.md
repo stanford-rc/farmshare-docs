@@ -13,14 +13,16 @@ main Slurm commands to submit jobs are listed in the table below:
 
 | Command  | Description | Behavior |
 | -------- | ----------- | -------- |
-| `salloc` | Request resources and allocates them to a job | Starts a new shell, but does not execute anything |
-| `srun`   | Request resources and runs a command on the allocated compute node(s) | Blocking command: will not return until the job ends |
-| `sbatch` | Request resources and runs a script on the allocated compute node(s) | Asynchronous command: will return as soon as the job is submitted |
-| `squeue` | View job and job step information | Displays job information | 
+| [`salloc`](https://slurm.schedmd.com/salloc.html) | Request resources and allocates them to a job | Starts a new shell, but does not execute anything |
+| [`srun`](https://slurm.schedmd.com/srun.html) | Request resources and runs a command on the allocated compute node(s) | Execute command on compute node |
+| [`sbatch`](https://slurm.schedmd.com/sbatch.html) | Request resources and runs a script on the allocated compute node(s) | Submit a batch script to Slurm |
+| [`squeue`](https://slurm.schedmd.com/squeue.html) | View job and job step information | Displays job information |
+| [`scancel`](https://slurm.schedmd.com/scancel.html) | Signal or cancel jobs, job arrays or job steps | Cancel running job |
+| [`sinfo`](https://slurm.schedmd.com/sinfo.html) | View information about Slurm nodes and partitions | Displays partition information |
 
 ## Interactive Jobs
 
-Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the [`srun`](https://slurm.schedmd.com/srun.html) command to request one:
+Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the `srun` command to request one:
 
 ``` shell
 ta5@rice-04:~$ srun --qos=interactive --pty bash
@@ -29,7 +31,7 @@ ta5@wheat-01:~$
 
 ## Batch Jobs
 
-The [`sbatch`](https://slurm.schedmd.com/sbatch.html) command is used to submit a batch job. A job is simply an instance of your program, for example your R, Python or Matlab script that is submitted to and executed by the scheduler (Slurm). When you submit a job with the sbatch command it's called a batch job and it will either run immediately or will pend (wait) in the queue. Options are used to request specific resources (including runtime), and can be provided either on the command line or, using a special syntax, in the script file itself. sbatch can also be used to submit many similar jobs, each perhaps varying in only one or two parameters, in a single invocation using the --array option; each job in an array has access to environment variables identifying its rank.
+The `sbatch` command is used to submit a batch job. A job is simply an instance of your program, for example your R, Python or Matlab script that is submitted to and executed by the scheduler (Slurm). When you submit a job with the sbatch command it's called a batch job and it will either run immediately or will pend (wait) in the queue. Options are used to request specific resources (including runtime), and can be provided either on the command line or, using a special syntax, in the script file itself. sbatch can also be used to submit many similar jobs, each perhaps varying in only one or two parameters, in a single invocation using the --array option; each job in an array has access to environment variables identifying its rank.
 
 **CPUs:** How many CPUs the program you are calling the in the sbatch script needs, unless it can utilize multiple CPUs at once you should request a single CPU. Check your code's documentation or try running in an interactive session with and run `htop` if you are unsure.
 
@@ -62,7 +64,23 @@ Hello World!
 ta5@rice-04:~$ 
 ```
 
-## Partition Info
+## Partition/QoS Info
+
+FarmShare provides the following partitions and [QoS](https://slurm.schedmd.com/qos.html):
+
+``` shell
+ta5@rice-02:~$ sacctmgr show qos format=name%11,maxsubmitjobspu,maxjobspu,mintres%10,maxtrespu%25,maxwall
+       Name MaxSubmitPU MaxJobsPU    MinTRES                 MaxTRESPU     MaxWall 
+----------- ----------- --------- ---------- ------------------------- ----------- 
+     normal        1024       128                   cpu=256,gres/gpu=3             
+interactive           3         3            cpu=16,gres/gpu=1,mem=64G             
+        dev           1         1             cpu=8,gres/gpu=1,mem=32G    08:00:00 
+       long          32         4                               cpu=32  7-00:00:00 
+ caddyshack           1         1                        cpu=8,mem=32G             
+     bigmem          32         4   mem=192G                  mem=768G             
+        gpu          32         4 gres/gpu=1                gres/gpu=6             
+```
+
 
 | Partition | Max Memory | Max CPU |
 | -------- | ----------- | -------- |

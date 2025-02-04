@@ -27,7 +27,7 @@ FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Jamm
 
 To provide up-to-date software, FarmShare uses loadable *environment modules*. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. This mechanism allows us to provide multiple versions of the same software concurrently, and gives users the possibility to easily switch between software versions.
 
-The module system is used to manage the user environment and to *activate* software packages on demand. In order to use software installed on FarmShare, you must first load the corresponding software module.
+The module system is used to manage the user environment and to *activate* software packages on demand. In order to use modules based software installed on FarmShare, you must first load the corresponding software module.
 
 When you load a module, the system will set or modify your user environment variables to enable access to the software package provided by that module. For instance, the `$PATH` environment variable might be updated so that appropriate executable for that package can be used.
 
@@ -214,7 +214,7 @@ To deactivate or leave the environment `tutorial_env`:
 (tutorial_env) ta5@rice-02:~$ deactivate 
 ```
 
-### Using Virtual Environment in Slurm
+### Virtual Environment in [Slurm](/slurm/#slurm)
 
 Python virtual environments can be used in slurm jobs. To submit a `sbatch` job using a venv environment, you can `source` the environment at the top of the sbatch script.
 
