@@ -21,7 +21,8 @@ ta5@rice-01:~$ python3 --version
 Python 3.10.12
 ```
 
-FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Jammy package repository](http://packages.ubuntu.com/jammy) is available to be installed.
+!!! note
+    FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Jammy package repository](http://packages.ubuntu.com/jammy) is available to be installed.
 
 ### Modules
 
@@ -67,7 +68,8 @@ The most common `module` commands are outlined in the following table. `module` 
 | `module save foo` | `ml save foo` | Save the state of all loaded modules in a collection named `foo` |
 | `module restore foo` | `ml restore foo` | Restore the state of saved modules from the `foo` collection |
 
-Additional module sub-commands are documented in the `module help` command. For complete reference, please refer to the official [Lmod documentation](https://lmod.readthedocs.io)
+!!! info
+    Additional module sub-commands are documented in the `module help` command. For complete reference, please refer to the official [Lmod documentation](https://lmod.readthedocs.io)
 
 
 #### Module properties
@@ -144,7 +146,7 @@ To install packages that are not already installed you can use `pip`
 
 ### pip
 
-`pip` is available as a module on FarmShare. You will need to use the `--user` flag which places the package installation under your $HOME directory.
+`pip` is available as a module on FarmShare. You will need to use the [`--user`](https://packaging.python.org/en/latest/tutorials/installing-packages/#installing-to-the-user-site) flag which places the package installation under your $HOME directory.
 
 The example below shows how to install `pandas`:
 

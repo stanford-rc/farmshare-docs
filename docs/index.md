@@ -23,16 +23,16 @@ FarmShare consists of three classes of servers:
 
 * *Login* nodes called **rice** servers where you log in to run commands, access files, submit jobs, and review results. The rice servers also have access to [Stanford AFS](https://uit.stanford.edu/service/afs). These servers can be accessed via [`ssh`](/connecting/#ssh) and can be used for interactive work. Some resource limits are enforced, so if you need to run a long-running or compute- and/or memory-intensive process you should submit a [*job*](/slurm/#slurm)
 
-  
+
 * *Compute* nodes called **iron**, **rye** and **wheat** servers. They have more CPU power and more memory than the rice servers, and are meant for both [interactive](/slurm/#interactive-jobs) jobs (where you log in to control what happens) and [batch](/slurm/#batch-jobs) jobs (where everything runs from a script that you submit)
 
 
 * *GPU compute nodes* called **oat** servers. They are similar to the compute nodes mentioned above, except that they also have GPUs installed 
 
-
 FarmShare currently has 4 rice servers (login nodes) along with 26 compute nodes (iron, rye, wheat, oat nodes). User storage for `$HOME` along with global `/scratch` space is available on all nodes.
 
-All FarmShare servers run [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes) and get patched/updated on a regular basis.
+!!! info
+    All FarmShare servers run [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes) and get patched/updated on a regular basis
 
 ## Eligibility
 
