@@ -6,12 +6,13 @@ extra_css:
   - style.css
 
 markdown_extensions:
-    - smarty
-    - toc:
-        permalink: True
-    - tables
+    - admonition
     - fenced_code
     - nl2br
+    - smarty
+    - tables
+    - toc:
+        permalink: True
 
 nav:
   - Introduction: index.md
