@@ -49,11 +49,10 @@ https://www.gnu.org/licenses/.
 
 #### Module usage
 
+!!! info "Lmod user guide"
+    Additional module sub-commands are documented in the `module help` command. For complete reference, please refer to the official [Lmod documentation](https://lmod.readthedocs.io/en/latest/010_user.html)
+    
 The most common `module` commands are outlined in the following table. `module` commands may be shortened with the `ml` alias.
-
-!!! info
-    Additional module sub-commands are documented in the `module help` command. For complete reference, please refer to the official [Lmod documentation](https://lmod.readthedocs.io)
-
 
 | Module command | Short version | Description |
 | --------------- | -------------- | -------------- |

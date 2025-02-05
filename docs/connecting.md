@@ -2,16 +2,26 @@
 
 ## SSH
 
-SSH provides a secure, remote terminal connection to the login nodes. There are a number of rice servers providing login service (e.g., rice-01, rice-02); the easiest way to connect is using the load-balanced name, *login.farmshare.stanford.edu*, which will select one for you according to recent utilization.
+SSH provides a secure, remote terminal connection to the login nodes. To connect use the load-balanced name, *login.farmshare.stanford.edu* which will select of the login nodes based on load and utilization.
 
-Depending on your environment and configuration you may be prompted for your SUNet ID password, and you'll need to complete your login using [two-step authentication](https://uit.stanford.edu/service/webauth/twostep).
-
-Users on Linux, macOS, and Windows can use the built-in Terminal application and run `ssh`. Replace SUNetID with your own SUNet ID:
+FarmShare implements Stanford's [Minimum Security Standards](https://uit.stanford.edu/guide/securitystandards) policy which requires [two-step authentication](https://uit.stanford.edu/service/authentication/twostep) to access the cluster.
 
 !!! example "login"
     ssh SUNetID@login.farmshare.stanford.edu
+    
+### Host keys
 
-The example below shows how to login in using your SUNet ID and password along with two-step authentication. To logout, type `exit` or `logout`:
+For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:
+
+!!! caution "SHA256 hash"
+    SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)
+    SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
+
+### Login
+
+Users on Linux, macOS, and Windows can use the built-in Terminal application and run `ssh`. Replace SUNetID with your own SUNet ID:
+
+The example below shows how to login using your SUNet ID and password along with two-step authentication. To logout, type `exit` or `logout`:
 
 ``` shell
 $ ssh ta5@login.farmshare.stanford.edu
@@ -42,14 +52,6 @@ logout
 Shared connection to login.farmshare.stanford.edu closed.
 ```
 
-### Host keys
-
-For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:
-
-!!! caution "SHA256 hash"
-    SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)
-    SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
-
 ## Other SSH clients
 
 ### PuTTY
@@ -71,7 +73,7 @@ For those who wish to verify the new FarmShare host keys when connecting, use th
 ### Logging in
 
 !!! important
-    If you have never logged into Farmshare before you won't be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down > [FarmShare Shell Access](https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh).**
+    If this is your very first time connecting to Farmshare you won't be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a [login](#login) node. You can do that from Ondemand by selecting the Clusters drop down > [FarmShare Shell Access](https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh).**
 
 To use the FarmShare OnDemand interface:
 
