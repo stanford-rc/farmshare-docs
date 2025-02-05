@@ -79,5 +79,5 @@ To use the FarmShare OnDemand interface:
 * Connect to [https://ondemand.farmshare.stanford.edu](https://ondemand.farmshare.stanford.edu)
 * Use your SUNetID credentials and go through the two-step authentication process
 
-!!! note
+!!! important
     If you have never logged into Farmshare before you won't be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down > [FarmShare Shell Access](https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh).**

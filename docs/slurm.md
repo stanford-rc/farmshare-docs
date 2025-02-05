@@ -2,9 +2,10 @@
 
 ## Slurm
 
-FarmShare uses [Slurm](https://slurm.schedmd.com/) for job (resource) management. Full [documentation](https://slurm.schedmd.com/documentation.html) and detailed usage information is provided in the man pages for the srun, sbatch, squeue, scancel, sinfo, and scontrol commands.
+FarmShare uses [Slurm](https://slurm.schedmd.com/) for job (resource) management. Jobs are scheduled according to a priority which depends on a number of factors, including how long a job has been waiting, its size, and a fair-share value that tracks recent per-user utilization of cluster resources. Lower-priority jobs, and jobs requiring access to resources not currently available, may wait some time before starting to run. The scheduler may reserve resources so that pending jobs can start; while it will try to backfill these resources with smaller, shorter jobs (even those at lower priorities), this behavior can sometimes cause nodes to appear to be idle even when there are jobs that are ready to run. You can use `squeue --start` to get an estimate of when pending jobs will start.
 
-Jobs are scheduled according to a priority which depends on a number of factors, including how long a job has been waiting, its size, and a fair-share value that tracks recent per-user utilization of cluster resources. Lower-priority jobs, and jobs requiring access to resources not currently available, may wait some time before starting to run. The scheduler may reserve resources so that pending jobs can start; while it will try to backfill these resources with smaller, shorter jobs (even those at lower priorities), this behavior can sometimes cause nodes to appear to be idle even when there are jobs that are ready to run. You can use `squeue --start` to get an estimate of when pending jobs will start.
+!!! info
+    Full [documentation](https://slurm.schedmd.com/documentation.html) and detailed usage information is provided in the man pages for the srun, sbatch, squeue, scancel, sinfo, and scontrol commands.
 
 ## Slurm commands
 
@@ -14,11 +15,12 @@ main Slurm commands to submit jobs are listed in the table below:
 | Command  | Description | Behavior |
 | -------- | ----------- | -------- |
 | [`salloc`](https://slurm.schedmd.com/salloc.html) | Request resources and allocates them to a job | Starts a new shell, but does not execute anything |
-| [`srun`](https://slurm.schedmd.com/srun.html) | Request resources and runs a command on the allocated compute node(s) | Execute command on compute node |
-| [`sbatch`](https://slurm.schedmd.com/sbatch.html) | Request resources and runs a script on the allocated compute node(s) | Submit a batch script to Slurm |
+| [`srun`](https://slurm.schedmd.com/srun.html) | Request resources and runs a command on the allocated compute node | Execute command on compute node |
+| [`sbatch`](https://slurm.schedmd.com/sbatch.html) | Request resources and runs a script on the allocated compute node | Submit a batch script to Slurm |
 | [`squeue`](https://slurm.schedmd.com/squeue.html) | View job and job step information | Displays job information |
 | [`scancel`](https://slurm.schedmd.com/scancel.html) | Signal or cancel jobs, job arrays or job steps | Cancel running job |
 | [`sinfo`](https://slurm.schedmd.com/sinfo.html) | View information about Slurm nodes and partitions | Displays partition information |
+| [`scontrol`](https://slurm.schedmd.com/scontrol.html) | View detailed information on job, node, partition, reservation and configuration | Displays detailed Slurm information |
 
 ## Interactive Jobs
 
