@@ -102,8 +102,11 @@
               
                 <h1 id="running-jobs">Running Jobs<a class="headerlink" href="#running-jobs" title="Permanent link">&para;</a></h1>
 <h2 id="slurm">Slurm<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h2>
-<p>FarmShare uses <a href="https://slurm.schedmd.com/">Slurm</a> for job (resource) management. Full <a href="https://slurm.schedmd.com/documentation.html">documentation</a> and detailed usage information is provided in the man pages for the srun, sbatch, squeue, scancel, sinfo, and scontrol commands.</p>
-<p>Jobs are scheduled according to a priority which depends on a number of factors, including how long a job has been waiting, its size, and a fair-share value that tracks recent per-user utilization of cluster resources. Lower-priority jobs, and jobs requiring access to resources not currently available, may wait some time before starting to run. The scheduler may reserve resources so that pending jobs can start; while it will try to backfill these resources with smaller, shorter jobs (even those at lower priorities), this behavior can sometimes cause nodes to appear to be idle even when there are jobs that are ready to run. You can use <code>squeue --start</code> to get an estimate of when pending jobs will start.</p>
+<p>FarmShare uses <a href="https://slurm.schedmd.com/">Slurm</a> for job (resource) management. Jobs are scheduled according to a priority which depends on a number of factors, including how long a job has been waiting, its size, and a fair-share value that tracks recent per-user utilization of cluster resources. Lower-priority jobs, and jobs requiring access to resources not currently available, may wait some time before starting to run. The scheduler may reserve resources so that pending jobs can start; while it will try to backfill these resources with smaller, shorter jobs (even those at lower priorities), this behavior can sometimes cause nodes to appear to be idle even when there are jobs that are ready to run. You can use <code>squeue --start</code> to get an estimate of when pending jobs will start.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Full <a href="https://slurm.schedmd.com/documentation.html">documentation</a> and detailed usage information is provided in the man pages for the srun, sbatch, squeue, scancel, sinfo, and scontrol commands.</p>
+</div>
 <h2 id="slurm-commands">Slurm commands<a class="headerlink" href="#slurm-commands" title="Permanent link">&para;</a></h2>
 <p>Slurm allows requesting resources and submitting jobs in a variety of ways. The<br />
 main Slurm commands to submit jobs are listed in the table below:</p>
@@ -123,12 +126,12 @@ main Slurm commands to submit jobs are listed in the table below:</p>
 </tr>
 <tr>
 <td><a href="https://slurm.schedmd.com/srun.html"><code>srun</code></a></td>
-<td>Request resources and runs a command on the allocated compute node(s)</td>
+<td>Request resources and runs a command on the allocated compute node</td>
 <td>Execute command on compute node</td>
 </tr>
 <tr>
 <td><a href="https://slurm.schedmd.com/sbatch.html"><code>sbatch</code></a></td>
-<td>Request resources and runs a script on the allocated compute node(s)</td>
+<td>Request resources and runs a script on the allocated compute node</td>
 <td>Submit a batch script to Slurm</td>
 </tr>
 <tr>
@@ -145,6 +148,11 @@ main Slurm commands to submit jobs are listed in the table below:</p>
 <td><a href="https://slurm.schedmd.com/sinfo.html"><code>sinfo</code></a></td>
 <td>View information about Slurm nodes and partitions</td>
 <td>Displays partition information</td>
+</tr>
+<tr>
+<td><a href="https://slurm.schedmd.com/scontrol.html"><code>scontrol</code></a></td>
+<td>View detailed information on job, node, partition, reservation and configuration</td>
+<td>Displays detailed Slurm information</td>
 </tr>
 </tbody>
 </table>
