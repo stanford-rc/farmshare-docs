@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
         <link href="../style.css" rel="stylesheet" />
-        <link href="../stylesheets/extra.css" rel="stylesheet" />
     
       <script>
         // Current page data
@@ -51,6 +50,8 @@
     <li class="toctree-l2"><a class="reference internal" href="#ssh">SSH</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#host-keys">Host keys</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#login">Login</a>
     </li>
         </ul>
     </li>
@@ -114,14 +115,22 @@
               
                 <h1 id="getting-connected">Getting Connected<a class="headerlink" href="#getting-connected" title="Permanent link">&para;</a></h1>
 <h2 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
-<p>SSH provides a secure, remote terminal connection to the login nodes. There are a number of rice servers providing login service (e.g., rice-01, rice-02); the easiest way to connect is using the load-balanced name, <em>login.farmshare.stanford.edu</em>, which will select one for you according to recent utilization.</p>
-<p>Depending on your environment and configuration you may be prompted for your SUNet ID password, and you&rsquo;ll need to complete your login using <a href="https://uit.stanford.edu/service/webauth/twostep">two-step authentication</a>.</p>
-<p>Users on Linux, macOS, and Windows can use the built-in Terminal application and run <code>ssh</code>. Replace SUNetID with your own SUNet ID:</p>
+<p>SSH provides a secure, remote terminal connection to the login nodes. To connect use the load-balanced name, <em>login.farmshare.stanford.edu</em> which will select of the login nodes based on load and utilization.</p>
+<p>FarmShare implements Stanford&rsquo;s <a href="https://uit.stanford.edu/guide/securitystandards">Minimum Security Standards</a> policy which requires <a href="https://uit.stanford.edu/service/authentication/twostep">two-step authentication</a> to access the cluster.</p>
 <div class="admonition example">
 <p class="admonition-title">login</p>
 <p>ssh SUNetID@login.farmshare.stanford.edu</p>
 </div>
-<p>The example below shows how to login in using your SUNet ID and password along with two-step authentication. To logout, type <code>exit</code> or <code>logout</code>:</p>
+<h3 id="host-keys">Host keys<a class="headerlink" href="#host-keys" title="Permanent link">&para;</a></h3>
+<p>For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:</p>
+<div class="admonition caution">
+<p class="admonition-title">SHA256 hash</p>
+<p>SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)<br />
+SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)</p>
+</div>
+<h3 id="login">Login<a class="headerlink" href="#login" title="Permanent link">&para;</a></h3>
+<p>Users on Linux, macOS, and Windows can use the built-in Terminal application and run <code>ssh</code>. Replace SUNetID with your own SUNet ID:</p>
+<p>The example below shows how to login using your SUNet ID and password along with two-step authentication. To logout, type <code>exit</code> or <code>logout</code>:</p>
 <pre><code class="language-shell">$ ssh ta5@login.farmshare.stanford.edu
 ta5@login.farmshare.stanford.edu's password: 
 (ta5@login.farmshare.stanford.edu) Duo two-factor login for ta5
@@ -149,13 +158,6 @@ ta5@rice-02:~$ exit
 logout
 Shared connection to login.farmshare.stanford.edu closed.
 </code></pre>
-<h3 id="host-keys">Host keys<a class="headerlink" href="#host-keys" title="Permanent link">&para;</a></h3>
-<p>For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:</p>
-<div class="admonition caution">
-<p class="admonition-title">SHA256 hash</p>
-<p>SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)<br />
-SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)</p>
-</div>
 <h2 id="other-ssh-clients">Other SSH clients<a class="headerlink" href="#other-ssh-clients" title="Permanent link">&para;</a></h2>
 <h3 id="putty">PuTTY<a class="headerlink" href="#putty" title="Permanent link">&para;</a></h3>
 <p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> is a popular, freely available SSH client for Windows. The default settings are appropriate for most users, so all you need to do is specify the host name and click the Open button to connect.</p>
@@ -168,7 +170,7 @@ SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)</p>
 <h3 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h3>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>If you have never logged into Farmshare before you won&rsquo;t be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down &gt; <a href="https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh">FarmShare Shell Access</a>.**</p>
+<p>If this is your very first time connecting to Farmshare you won&rsquo;t be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a <a href="#login">login</a> node. You can do that from Ondemand by selecting the Clusters drop down &gt; <a href="https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh">FarmShare Shell Access</a>.**</p>
 </div>
 <p>To use the FarmShare OnDemand interface:</p>
 <ul>
