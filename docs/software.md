@@ -264,7 +264,7 @@ JupyterLab is [Project Jupyter's](https://jupyter.org/)  web-based development i
 
 Login in to [OnDemand](connecting.md#logging-in) and select **Interactive Apps > JupyterLab**
 
-If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. To do this, start an interactive terminal session and activate your environment (if you do not have an environment, refer to the sections above on how to do so). 
+If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. To do this, start an interactive terminal session and activate your environment (if you do not have an environment, refer to the sections [above](software.md/#virtual-environments) on how to do so). 
 
 ``` shell
 ta5@rice-02:~$ source tutorial_env/bin/activate
@@ -275,6 +275,77 @@ Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernel
 ```
 
 Once you've successfully created your kernel, you should see your environment (custom kernel name) at the Notebook Launcher!
+
+## Micromamba (Conda) Environments
+
+Micromamba is a drop-in replacement for [Conda](https://conda.io/). It is a package management system and environment management system that allows users to create reproducible software environments.
+
+!!! note "Micromamba User Guide"
+    For complete reference, please refer to the official [Micromamba documentation](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)
+
+### Setup
+
+In an [interactive session](slurm.md#interactive-jobs), Load the `micromamba` module and initialize it with `micromamba shell init` command:
+
+``` shell
+ta5@iron-12:~$ module load micromamba
+ta5@iron-12:~$ 
+
+ta5@iron-12:~$ micromamba shell init -s bash
+Modifying RC file "/home/users/ta5/.bashrc"
+Generating config for root prefix "/home/users/ta5/.micromamba"
+Setting mamba executable to: "/software/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/micromamba-1.4.2-z67vm7a7mwsxyezqwchvviipkvgaujxm/bin/micromamba"
+Adding (or replacing) the following in your "/home/users/ta5/.bashrc" file
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="/software/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/micromamba-1.4.2-z67vm7a7mwsxyezqwchvviipkvgaujxm/bin/micromamba";
+export MAMBA_ROOT_PREFIX="/home/users/ta5/.micromamba";
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    if [ -f "/home/users/ta5/.micromamba/etc/profile.d/micromamba.sh" ]; then
+        . "/home/users/ta5/.micromamba/etc/profile.d/micromamba.sh"
+    else
+        export  PATH="/home/users/ta5/.micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
+    fi
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+ta5@iron-12:~$ 
+ta5@iron-12:~$ source .bashrc 
+```
+
+This initialized a shell (.bashrc) and a new root environment ("/home/users/ta5/.micromamba). 
+
+### Installing packages 
+
+After initializing micromamba, you can activate the base environment and install new packages, or create other environments. 
+
+``` shell
+ta5@iron-12:~$ micromamba env list
+...
+
+  Name      Active  Path                                     
+───────────────────────────────────────────────────────────────
+  base              /home/users/ta5/.micromamba              
+ta5@iron-12:~$ 
+ta5@iron-12:~$ micromamba activate
+(base) ta5@iron-12:~$ micromamba install pytorch
+...
+
+(base) ta5@iron-12:~$ 
+(base) ta5@iron-12:~$ python
+Python 3.13.1 | packaged by conda-forge | (main, Jan 13 2025, 09:53:10) [GCC 13.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> 
+>>> exit()
+(base) ta5@iron-12:~$ micromamba deactivate 
+ta5@iron-12:~$ 
+```
 
 ## Apptainer
 
