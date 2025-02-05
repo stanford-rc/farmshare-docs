@@ -113,31 +113,31 @@
 <li>Home directory path updated to <code>/home/users/USER</code>. Please use the variable <code>$HOME</code> instead of hard coding directory paths.</li>
 </ul>
 <h2 id="cluster-components">Cluster Components<a class="headerlink" href="#cluster-components" title="Permanent link">&para;</a></h2>
+<div class="admonition info">
+<p class="admonition-title">Ubuntu OS</p>
+<p>All FarmShare servers run <a href="https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes">Ubuntu 22.04 LTS</a> and get patched/updated on a regular basis</p>
+</div>
 <p>FarmShare consists of three classes of servers:</p>
 <ul>
 <li>
-<p><em>Login</em> nodes called <strong>rice</strong> servers where you log in to run commands, access files, submit jobs, and review results. The rice servers also have access to <a href="https://uit.stanford.edu/service/afs">Stanford AFS</a>. These servers can be accessed via <a href="connecting/#ssh"><code>ssh</code></a> and can be used for interactive work. Some resource limits are enforced, so if you need to run a long-running or compute- and/or memory-intensive process you should submit a <a href="/slurm/#slurm"><em>job</em></a></p>
+<p><em>Login</em> nodes called <strong>rice</strong> servers where you log in to run commands, access files, submit jobs, and review results. The rice servers also have access to <a href="https://uit.stanford.edu/service/afs">Stanford AFS</a>. These servers can be accessed via <a href="connecting/#ssh"><code>ssh</code></a> and can be used for interactive work. Some resource limits are enforced, so if you need to run a long-running or compute- and/or memory-intensive process you should submit a <a href="slurm/#slurm"><em>job</em></a></p>
 </li>
 <li>
-<p><em>Compute</em> nodes called <strong>iron</strong>, <strong>rye</strong> and <strong>wheat</strong> servers. They have more CPU power and more memory than the rice servers, and are meant for both <a href="/slurm/#interactive-jobs">interactive</a> jobs (where you log in to control what happens) and <a href="/slurm/#batch-jobs">batch</a> jobs (where everything runs from a script that you submit)</p>
+<p><em>Compute</em> nodes called <strong>iron</strong>, <strong>rye</strong> and <strong>wheat</strong> servers. They have more CPU power and more memory than the rice servers, and are meant for both <a href="slurm/#interactive-jobs">interactive</a> jobs (where you log in to control what happens) and <a href="slurm/#batch-jobs">batch</a> jobs (where everything runs from a script that you submit)</p>
 </li>
 <li>
 <p><em>GPU compute nodes</em> called <strong>oat</strong> servers. They are similar to the compute nodes mentioned above, except that they also have GPUs installed </p>
 </li>
 </ul>
 <p>FarmShare currently has 4 rice servers (login nodes) along with 26 compute nodes (iron, rye, wheat, oat nodes). User storage for <code>$HOME</code> along with global <code>/scratch</code> space is available on all nodes.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>All FarmShare servers run <a href="https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes">Ubuntu 22.04 LTS</a> and get patched/updated on a regular basis</p>
-</div>
 <h2 id="eligibility">Eligibility<a class="headerlink" href="#eligibility" title="Permanent link">&para;</a></h2>
+<div class="admonition important">
+<p class="admonition-title">FarmShare Usage Policy</p>
+<p>Visit our <a href="policy/">Policy</a> section for details</p>
+</div>
 <p>FarmShare is available to anyone who has a full-service SUNetID. A full-service SUNetID is one that has email service; if you can successfully get to <a href="https://webmail.stanford.edu/">Stanford Webmail</a>, then you are eligible to use FarmShare for academic work. If you do not already have a full-service SUNetID (maybe because you are a visiting researcher), you can get a sponsored full-service SUNetID. Read more about <a href="https://uit.stanford.edu/service/accounts/sunetids">SUNetID levels</a>.</p>
 <p>Note that, in order to get a sponsored SUNetID, a monthly fee will be charged by University IT. Only people with spending authority may sponsor a SUNetID. Sponsorships can be obtained and paid for through <a href="https://uit.stanford.edu/service/sponsorship/">Sponsorship Manager</a>.  Current rates are available from the Sponsored Account <a href="https://uit.stanford.edu/rates/sponsorship">Rates page</a>.</p>
 <p>FarmShare is meant for <a href="https://uit.stanford.edu/guide/riskclassifications"><strong>low- or moderate-risk data</strong></a>, and is primarily intended for coursework or research purposes. It is not meant for sponsored research (where you have a dedicated source of funding), and is <em>not</em> approved for handling high-risk data.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>See our <a href="policy/">Policy</a> section for details</p>
-</div>
 <h2 id="sponsored-research">Sponsored Research<a class="headerlink" href="#sponsored-research" title="Permanent link">&para;</a></h2>
 <p>If you are doing sponsored or departmental research, then FarmShare might not be the right place for you. Instead, if the data you are working with is all low-risk, then you should consider our <a href="https://www.sherlock.stanford.edu/">Sherlock</a> Cluster. </p>
 <p>If you are working with high-risk data then you should consider our <a href="https://nero-docs.stanford.edu/gcp-overview.html">Nero GCP</a> or <a href="https://carinadocs.sites.stanford.edu/">Carina</a> Computing platform. </p>
@@ -193,5 +193,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-02-05 00:13:56.549069+00:00
+Build Date UTC : 2025-02-05 03:16:45.811101+00:00
 -->

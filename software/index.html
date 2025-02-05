@@ -146,14 +146,16 @@
 <li>Build your own</li>
 </ul>
 <h3 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Ubuntu repo</p>
+<p>FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the <a href="http://packages.ubuntu.com/jammy">Ubuntu Jammy package repository</a> is available to be installed.</p>
+</div>
 <p>Packaged software is easiest to use, because you don&rsquo;t have to do anything. Packaged software has already been installed on all of the systems in the environment, so to use the software, you just have to run the command.</p>
 <p>For example, to run the packaged version of Python, you just need to run the <code>python3</code> command:</p>
-<pre><code class="language-shell">ta5@rice-01:~$ python3 --version
-Python 3.10.12
-</code></pre>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the <a href="http://packages.ubuntu.com/jammy">Ubuntu Jammy package repository</a> is available to be installed.</p>
+<div class="admonition example">
+<p class="admonition-title">System Python</p>
+<p>$ python3 &ndash;version<br />
+Python 3.10.12</p>
 </div>
 <h3 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h3>
 <p>To provide up-to-date software, FarmShare uses loadable <em>environment modules</em>. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. This mechanism allows us to provide multiple versions of the same software concurrently, and gives users the possibility to easily switch between software versions.</p>
@@ -174,6 +176,10 @@ https://www.gnu.org/licenses/.
 </code></pre>
 <h4 id="module-usage">Module usage<a class="headerlink" href="#module-usage" title="Permanent link">&para;</a></h4>
 <p>The most common <code>module</code> commands are outlined in the following table. <code>module</code> commands may be shortened with the <code>ml</code> alias.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Additional module sub-commands are documented in the <code>module help</code> command. For complete reference, please refer to the official <a href="https://lmod.readthedocs.io">Lmod documentation</a></p>
+</div>
 <table>
 <thead>
 <tr>
@@ -240,10 +246,6 @@ https://www.gnu.org/licenses/.
 </tr>
 </tbody>
 </table>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>Additional module sub-commands are documented in the <code>module help</code> command. For complete reference, please refer to the official <a href="https://lmod.readthedocs.io">Lmod documentation</a></p>
-</div>
 <h4 id="module-properties">Module properties<a class="headerlink" href="#module-properties" title="Permanent link">&para;</a></h4>
 <p>To quickly see some of the modules characteristics, <code>module avail</code> will display colored property attributes next to the module names. The main module properties are:</p>
 <ul>
@@ -259,17 +261,21 @@ https://www.gnu.org/licenses/.
 <li>any string within modules names and descriptions, using <code>module keyword</code></li>
 </ul>
 <p>For instance, if you want to know how to load the <code>apptainer</code> module, you can do:</p>
-<pre><code class="language-shell">ta5@rice-04:~$ module spider apptainer
-</code></pre>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>$ module spider apptainer</p>
+</div>
 <p>If you don&rsquo;t know the module name, or want to list all the modules that contain<br />
 a specific string of characters in their name or description, you can use<br />
 <code>module keyword</code>. For instance, the following command will list all the modules<br />
 providing a BLAS library:</p>
-<pre><code class="language-shell">ta5@rice-04:~$ module keyword blas
-</code></pre>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>$ module keyword blas</p>
+</div>
 <h4 id="listing">Listing<a class="headerlink" href="#listing" title="Permanent link">&para;</a></h4>
 <p>For a complete list of available software modules, run the <code>module available</code> command:</p>
-<pre><code class="language-shell">ta5@rice-01:~$ module available
+<pre><code class="language-shell">$ module available
 
 ---------------------------------------------- /software/modules/linux-ubuntu22.04-x86_64/Core -----------------------------------------------
    apptainer/1.1.9                   intel-oneapi-compilers/2024.1.0        micromamba/1.4.2                    python/3.11.7
@@ -349,7 +355,7 @@ wheel==0.45.1
 <p>To deactivate or leave the environment <code>tutorial_env</code>:</p>
 <pre><code class="language-shell">(tutorial_env) ta5@rice-02:~$ deactivate 
 </code></pre>
-<h3 id="virtual-environment-in-slurm">Virtual Environment in <a href="/slurm/#slurm">Slurm</a><a class="headerlink" href="#virtual-environment-in-slurm" title="Permanent link">&para;</a></h3>
+<h3 id="virtual-environment-in-slurm">Virtual Environment in <a href="../slurm/#slurm">Slurm</a><a class="headerlink" href="#virtual-environment-in-slurm" title="Permanent link">&para;</a></h3>
 <p>Python virtual environments can be used in slurm jobs. To submit a <code>sbatch</code> job using a venv environment, you can <code>source</code> the environment at the top of the sbatch script.</p>
 <p>Sample python script that prints versions of packages:</p>
 <pre><code class="language-shell">ta5@rice-02:~$ cat test.py 
@@ -388,9 +394,9 @@ Numpy version = 2.2.2
 Pandas version = 2.2.3
 </code></pre>
 <h2 id="jupyterlab">JupyterLab<a class="headerlink" href="#jupyterlab" title="Permanent link">&para;</a></h2>
-<p>JupyterLab is <a href="https://jupyter.org/">Project Jupyter&rsquo;s</a>  web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our <a href="/connecting/#open-ondemand">OnDemand</a> interface and supports computation with Python 3.</p>
+<p>JupyterLab is <a href="https://jupyter.org/">Project Jupyter&rsquo;s</a>  web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our <a href="../connecting/#open-ondemand">OnDemand</a> interface and supports computation with Python 3.</p>
 <h3 id="accessing-jupyterlab">Accessing JupyterLab<a class="headerlink" href="#accessing-jupyterlab" title="Permanent link">&para;</a></h3>
-<p>Login in to <a href="/connecting/#logging-in">OnDemand</a> and select <strong>Interactive Apps &gt; JupyterLab</strong></p>
+<p>Login in to <a href="../connecting/#logging-in">OnDemand</a> and select <strong>Interactive Apps &gt; JupyterLab</strong></p>
 <p>If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. To do this, start an interactive terminal session and activate your environment (if you do not have an environment, refer to the sections above on how to do so). </p>
 <pre><code class="language-shell">ta5@rice-02:~$ source tutorial_env/bin/activate
 (tutorial_env) ta5@rice-02:~$ pip install ipykernel
@@ -407,7 +413,7 @@ Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernel
 <li><a href="https://cloud.sylabs.io/library">Sylabs</a></li>
 </ul>
 <h3 id="running-apptainer">Running Apptainer<a class="headerlink" href="#running-apptainer" title="Permanent link">&para;</a></h3>
-<p>This example will request an <a href="/slurm/#interactive-jobs">interactive</a> session and use the Docker container <a href="https://hub.docker.com/_/python">python/3.13.1-alpine3.21</a> from DockerHub. This container provides the latest release of python in an Alpine OS environment.</p>
+<p>This example will request an <a href="../slurm/#interactive-jobs">interactive</a> session and use the Docker container <a href="https://hub.docker.com/_/python">python/3.13.1-alpine3.21</a> from DockerHub. This container provides the latest release of python in an Alpine OS environment.</p>
 <p>The first step is to request an interactive session with multiple cores:</p>
 <pre><code class="language-shell">ta5@rice-04:~$ srun --partition=interactive --cpus-per-task=4 --qos=interactive --pty bash
 ta5@iron-06:~$ 
@@ -490,7 +496,7 @@ Ubuntu 22.04.5 LTS \n \l
 </tbody>
 </table>
 <h3 id="batch-job-example">Batch job example<a class="headerlink" href="#batch-job-example" title="Permanent link">&para;</a></h3>
-<p>In the example <a href="#running-apptainer">above</a> Apptainer was running interactively. The example below shows how to run it as a <a href="/slurm/#batch-jobs">batch</a> job to calculates the sum of one to five:</p>
+<p>In the example <a href="#running-apptainer">above</a> Apptainer was running interactively. The example below shows how to run it as a <a href="../slurm/#batch-jobs">batch</a> job to calculates the sum of one to five:</p>
 <pre><code class="language-shell">ta5@iron-03:/scratch/users/ta5/lxc$ cat sum.py 
 a = (1, 2, 3, 4, 5)
 x = sum(a)

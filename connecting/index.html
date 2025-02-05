@@ -118,7 +118,7 @@
 <p>Depending on your environment and configuration you may be prompted for your SUNet ID password, and you&rsquo;ll need to complete your login using <a href="https://uit.stanford.edu/service/webauth/twostep">two-step authentication</a>.</p>
 <p>Users on Linux, macOS, and Windows can use the built-in Terminal application and run <code>ssh</code>. Replace SUNetID with your own SUNet ID:</p>
 <div class="admonition example">
-<p class="admonition-title">Example</p>
+<p class="admonition-title">login</p>
 <p>ssh SUNetID@login.farmshare.stanford.edu</p>
 </div>
 <p>The example below shows how to login in using your SUNet ID and password along with two-step authentication. To logout, type <code>exit</code> or <code>logout</code>:</p>
@@ -151,10 +151,11 @@ Shared connection to login.farmshare.stanford.edu closed.
 </code></pre>
 <h3 id="host-keys">Host keys<a class="headerlink" href="#host-keys" title="Permanent link">&para;</a></h3>
 <p>For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:</p>
-<pre><code class="language-shell">SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)
-</code></pre>
-<pre><code class="language-shell">SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
-</code></pre>
+<div class="admonition caution">
+<p class="admonition-title">SHA256 hash</p>
+<p>SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)<br />
+SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)</p>
+</div>
 <h2 id="other-ssh-clients">Other SSH clients<a class="headerlink" href="#other-ssh-clients" title="Permanent link">&para;</a></h2>
 <h3 id="putty">PuTTY<a class="headerlink" href="#putty" title="Permanent link">&para;</a></h3>
 <p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a> is a popular, freely available SSH client for Windows. The default settings are appropriate for most users, so all you need to do is specify the host name and click the Open button to connect.</p>
@@ -165,15 +166,15 @@ Shared connection to login.farmshare.stanford.edu closed.
 <h2 id="open-ondemand">Open OnDemand<a class="headerlink" href="#open-ondemand" title="Permanent link">&para;</a></h2>
 <p><a href="https://openondemand.org/">Open OnDemand</a> is a browser based interface to FarmShare. Open OnDemand offers terminal, file manager, editor, desktop, and GUI applications right from your web browser!</p>
 <h3 id="logging-in">Logging in<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h3>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you have never logged into Farmshare before you won&rsquo;t be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down &gt; <a href="https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh">FarmShare Shell Access</a>.**</p>
+</div>
 <p>To use the FarmShare OnDemand interface:</p>
 <ul>
 <li>Connect to <a href="https://ondemand.farmshare.stanford.edu">https://ondemand.farmshare.stanford.edu</a></li>
 <li>Use your SUNetID credentials and go through the two-step authentication process</li>
 </ul>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>If you have never logged into Farmshare before you won&rsquo;t be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down &gt; <a href="https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh">FarmShare Shell Access</a>.**</p>
-</div>
               
             </div>
           </div><footer>
