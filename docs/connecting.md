@@ -8,7 +8,7 @@ Depending on your environment and configuration you may be prompted for your SUN
 
 Users on Linux, macOS, and Windows can use the built-in Terminal application and run `ssh`. Replace SUNetID with your own SUNet ID:
 
-!!! example
+!!! example "login"
     ssh SUNetID@login.farmshare.stanford.edu
 
 The example below shows how to login in using your SUNet ID and password along with two-step authentication. To logout, type `exit` or `logout`:
@@ -46,13 +46,9 @@ Shared connection to login.farmshare.stanford.edu closed.
 
 For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:
 
-``` shell
-SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)
-```
-
-``` shell
-SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
-```
+!!! caution "SHA256 hash"
+    SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)
+    SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
 
 ## Other SSH clients
 
@@ -74,10 +70,10 @@ SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
 
 ### Logging in
 
+!!! important
+    If you have never logged into Farmshare before you won't be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down > [FarmShare Shell Access](https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh).**
+
 To use the FarmShare OnDemand interface:
 
 * Connect to [https://ondemand.farmshare.stanford.edu](https://ondemand.farmshare.stanford.edu)
 * Use your SUNetID credentials and go through the two-step authentication process
-
-!!! important
-    If you have never logged into Farmshare before you won't be able to run apps/jobs until your Slurm account is created. This is done when you first connect to a login node. You can do that from Ondemand by selecting the Clusters drop down > [FarmShare Shell Access](https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh).**

@@ -12,17 +12,16 @@ Software on FarmShare comes from three sources:
 
 ### Packages
 
+!!! info "Ubuntu repo"
+    FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Jammy package repository](http://packages.ubuntu.com/jammy) is available to be installed.
+
 Packaged software is easiest to use, because you don't have to do anything. Packaged software has already been installed on all of the systems in the environment, so to use the software, you just have to run the command.
 
 For example, to run the packaged version of Python, you just need to run the `python3` command:
 
-``` shell
-ta5@rice-01:~$ python3 --version
-Python 3.10.12
-```
-
-!!! note
-    FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Jammy package repository](http://packages.ubuntu.com/jammy) is available to be installed.
+!!! example "System Python"
+    $ python3 --version
+    Python 3.10.12
 
 ### Modules
 
@@ -52,6 +51,8 @@ https://www.gnu.org/licenses/.
 
 The most common `module` commands are outlined in the following table. `module` commands may be shortened with the `ml` alias.
 
+!!! info
+    Additional module sub-commands are documented in the `module help` command. For complete reference, please refer to the official [Lmod documentation](https://lmod.readthedocs.io)
 
 
 | Module command | Short version | Description |
@@ -67,10 +68,6 @@ The most common `module` commands are outlined in the following table. `module` 
 | `module purge` | `ml purge` | Remove all modules |
 | `module save foo` | `ml save foo` | Save the state of all loaded modules in a collection named `foo` |
 | `module restore foo` | `ml restore foo` | Restore the state of saved modules from the `foo` collection |
-
-!!! info
-    Additional module sub-commands are documented in the `module help` command. For complete reference, please refer to the official [Lmod documentation](https://lmod.readthedocs.io)
-
 
 #### Module properties
 
@@ -90,25 +87,23 @@ You can search through all the available modules for either:
 
 For instance, if you want to know how to load the `apptainer` module, you can do:
 
-``` shell
-ta5@rice-04:~$ module spider apptainer
-```
+!!! example
+    $ module spider apptainer
 
 If you don't know the module name, or want to list all the modules that contain
 a specific string of characters in their name or description, you can use
 `module keyword`. For instance, the following command will list all the modules
 providing a BLAS library:
 
-``` shell
-ta5@rice-04:~$ module keyword blas
-```
+!!! example
+    $ module keyword blas
 
 #### Listing
 
 For a complete list of available software modules, run the `module available` command:
 
 ``` shell
-ta5@rice-01:~$ module available
+$ module available
 
 ---------------------------------------------- /software/modules/linux-ubuntu22.04-x86_64/Core -----------------------------------------------
    apptainer/1.1.9                   intel-oneapi-compilers/2024.1.0        micromamba/1.4.2                    python/3.11.7
@@ -216,7 +211,7 @@ To deactivate or leave the environment `tutorial_env`:
 (tutorial_env) ta5@rice-02:~$ deactivate 
 ```
 
-### Virtual Environment in [Slurm](/slurm/#slurm)
+### Virtual Environment in [Slurm](slurm.md#slurm)
 
 Python virtual environments can be used in slurm jobs. To submit a `sbatch` job using a venv environment, you can `source` the environment at the top of the sbatch script.
 
@@ -264,11 +259,11 @@ Pandas version = 2.2.3
 
 ## JupyterLab
 
-JupyterLab is [Project Jupyter's](https://jupyter.org/)  web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our [OnDemand](/connecting/#open-ondemand) interface and supports computation with Python 3.
+JupyterLab is [Project Jupyter's](https://jupyter.org/)  web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our [OnDemand](connecting.md#open-ondemand) interface and supports computation with Python 3.
 
 ### Accessing JupyterLab
 
-Login in to [OnDemand](/connecting/#logging-in) and select **Interactive Apps > JupyterLab**
+Login in to [OnDemand](connecting.md#logging-in) and select **Interactive Apps > JupyterLab**
 
 If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. To do this, start an interactive terminal session and activate your environment (if you do not have an environment, refer to the sections above on how to do so). 
 
@@ -293,7 +288,7 @@ Containers are isolated environments packaged together with an executable so tha
 
 ### Running Apptainer
 
-This example will request an [interactive](/slurm/#interactive-jobs) session and use the Docker container [python/3.13.1-alpine3.21](https://hub.docker.com/_/python) from DockerHub. This container provides the latest release of python in an Alpine OS environment.
+This example will request an [interactive](slurm.md#interactive-jobs) session and use the Docker container [python/3.13.1-alpine3.21](https://hub.docker.com/_/python) from DockerHub. This container provides the latest release of python in an Alpine OS environment.
 
 The first step is to request an interactive session with multiple cores:
 
@@ -375,7 +370,7 @@ The most common `apptainer` commands are outlined in the following table.
  
 ### Batch job example
 
-In the example [above](#running-apptainer) Apptainer was running interactively. The example below shows how to run it as a [batch](/slurm/#batch-jobs) job to calculates the sum of one to five:
+In the example [above](#running-apptainer) Apptainer was running interactively. The example below shows how to run it as a [batch](slurm.md#batch-jobs) job to calculates the sum of one to five:
 
 ``` shell
 ta5@iron-03:/scratch/users/ta5/lxc$ cat sum.py 

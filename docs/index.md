@@ -12,38 +12,36 @@ Key changes on the new FarmShare environment include:
 
 * Major OS upgrade to [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes) which brings many changes, improvements and provides LTS stability.
 * New Hardware with CPU and memory improvements.
-* New browser based access with [Open OnDemand v3](connecting/#open-ondemand). 
+* New browser based access with [Open OnDemand v3](connecting.md#open-ondemand). 
 * Updated Open Ondemand apps: JupyterLabs, RStudio, and VS Code.
 * Updated Scheduler (resource manager) to [Slurm v24.11](https://slurm.schedmd.com/)
 * Home directory path updated to `/home/users/USER`. Please use the variable `$HOME` instead of hard coding directory paths.
 
 ## Cluster Components
 
+!!! info "Ubuntu OS"
+    All FarmShare servers run [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes) and get patched/updated on a regular basis
+
 FarmShare consists of three classes of servers:
 
-* *Login* nodes called **rice** servers where you log in to run commands, access files, submit jobs, and review results. The rice servers also have access to [Stanford AFS](https://uit.stanford.edu/service/afs). These servers can be accessed via [`ssh`](connecting/#ssh) and can be used for interactive work. Some resource limits are enforced, so if you need to run a long-running or compute- and/or memory-intensive process you should submit a [*job*](/slurm/#slurm)
+* *Login* nodes called **rice** servers where you log in to run commands, access files, submit jobs, and review results. The rice servers also have access to [Stanford AFS](https://uit.stanford.edu/service/afs). These servers can be accessed via [`ssh`](connecting.md#ssh) and can be used for interactive work. Some resource limits are enforced, so if you need to run a long-running or compute- and/or memory-intensive process you should submit a [*job*](slurm.md#slurm)
 
-
-* *Compute* nodes called **iron**, **rye** and **wheat** servers. They have more CPU power and more memory than the rice servers, and are meant for both [interactive](/slurm/#interactive-jobs) jobs (where you log in to control what happens) and [batch](/slurm/#batch-jobs) jobs (where everything runs from a script that you submit)
-
+* *Compute* nodes called **iron**, **rye** and **wheat** servers. They have more CPU power and more memory than the rice servers, and are meant for both [interactive](slurm.md#interactive-jobs) jobs (where you log in to control what happens) and [batch](slurm.md#batch-jobs) jobs (where everything runs from a script that you submit)
 
 * *GPU compute nodes* called **oat** servers. They are similar to the compute nodes mentioned above, except that they also have GPUs installed 
 
 FarmShare currently has 4 rice servers (login nodes) along with 26 compute nodes (iron, rye, wheat, oat nodes). User storage for `$HOME` along with global `/scratch` space is available on all nodes.
 
-!!! info
-    All FarmShare servers run [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes) and get patched/updated on a regular basis
-
 ## Eligibility
+
+!!! important "FarmShare Usage Policy"
+    Visit our [Policy](policy.md) section for details
 
 FarmShare is available to anyone who has a full-service SUNetID. A full-service SUNetID is one that has email service; if you can successfully get to [Stanford Webmail](https://webmail.stanford.edu/), then you are eligible to use FarmShare for academic work. If you do not already have a full-service SUNetID (maybe because you are a visiting researcher), you can get a sponsored full-service SUNetID. Read more about [SUNetID levels](https://uit.stanford.edu/service/accounts/sunetids).
 
 Note that, in order to get a sponsored SUNetID, a monthly fee will be charged by University IT. Only people with spending authority may sponsor a SUNetID. Sponsorships can be obtained and paid for through [Sponsorship Manager](https://uit.stanford.edu/service/sponsorship/).  Current rates are available from the Sponsored Account [Rates page](https://uit.stanford.edu/rates/sponsorship).
 
 FarmShare is meant for [**low- or moderate-risk data**](https://uit.stanford.edu/guide/riskclassifications), and is primarily intended for coursework or research purposes. It is not meant for sponsored research (where you have a dedicated source of funding), and is *not* approved for handling high-risk data.
-
-!!! important
-    See our [Policy](policy/) section for details
 
 ## Sponsored Research
 

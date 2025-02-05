@@ -4,10 +4,10 @@
 
 FarmShare uses [Slurm](https://slurm.schedmd.com/) for job (resource) management. Jobs are scheduled according to a priority which depends on a number of factors, including how long a job has been waiting, its size, and a fair-share value that tracks recent per-user utilization of cluster resources. Lower-priority jobs, and jobs requiring access to resources not currently available, may wait some time before starting to run. The scheduler may reserve resources so that pending jobs can start; while it will try to backfill these resources with smaller, shorter jobs (even those at lower priorities), this behavior can sometimes cause nodes to appear to be idle even when there are jobs that are ready to run. You can use `squeue --start` to get an estimate of when pending jobs will start.
 
-!!! info
-    Full [documentation](https://slurm.schedmd.com/documentation.html) and detailed usage information is provided in the man pages for the srun, sbatch, squeue, scancel, sinfo, and scontrol commands.
-
 ## Slurm commands
+
+!!! info "Slurm Man Pages"
+    Full [documentation](https://slurm.schedmd.com/documentation.html) and detailed usage information is provided in the man pages for the srun, sbatch, squeue, scancel, sinfo, and scontrol commands.
 
 Slurm allows requesting resources and submitting jobs in a variety of ways. The
 main Slurm commands to submit jobs are listed in the table below:
@@ -26,10 +26,9 @@ main Slurm commands to submit jobs are listed in the table below:
 
 Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the `srun` command to request one:
 
-``` shell
-ta5@rice-04:~$ srun --qos=interactive --pty bash
-ta5@wheat-01:~$ 
-```
+!!! example "srun"
+    ta5@rice-04:~$ srun --qos=interactive --pty bash
+    ta5@wheat-01:~$ 
 
 ## Batch Jobs
 
@@ -70,8 +69,15 @@ ta5@rice-04:~$
 
 FarmShare provides the following partitions and [QoS](https://slurm.schedmd.com/qos.html):
 
+| Partition | Max Memory | Max CPU |
+| -------- | ----------- | -------- |
+| normal | 188GB | 256 |
+| bigmem | 768GB | 344 |
+| interactive | 188GB | 16 |
+
+
 ``` shell
-ta5@rice-02:~$ sacctmgr show qos format=name%11,maxsubmitjobspu,maxjobspu,mintres%10,maxtrespu%25,maxwall
+$ sacctmgr show qos format=name%11,maxsubmitjobspu,maxjobspu,mintres%10,maxtrespu%25,maxwall
        Name MaxSubmitPU MaxJobsPU    MinTRES                 MaxTRESPU     MaxWall 
 ----------- ----------- --------- ---------- ------------------------- ----------- 
      normal        1024       128                   cpu=256,gres/gpu=3             
@@ -82,11 +88,3 @@ interactive           3         3            cpu=16,gres/gpu=1,mem=64G
      bigmem          32         4   mem=192G                  mem=768G             
         gpu          32         4 gres/gpu=1                gres/gpu=6             
 ```
-
-
-| Partition | Max Memory | Max CPU |
-| -------- | ----------- | -------- |
-| normal | 188GB | 256 |
-| bigmem | 768GB | 344 |
-| interactive | 188GB | 16 |
-
