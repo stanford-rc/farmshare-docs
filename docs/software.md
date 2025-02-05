@@ -276,7 +276,7 @@ Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernel
 
 Once you've successfully created your kernel, you should see your environment (custom kernel name) at the Notebook Launcher!
 
-## Micromamba (Conda) Environments
+## Micromamba
 
 Micromamba is a drop-in replacement for [Conda](https://conda.io/). It is a package management system and environment management system that allows users to create reproducible software environments.
 
