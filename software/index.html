@@ -91,6 +91,14 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#micromamba">Micromamba</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installing-packages">Installing packages</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#apptainer">Apptainer</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#running-apptainer">Running Apptainer</a>
@@ -396,7 +404,7 @@ Pandas version = 2.2.3
 <p>JupyterLab is <a href="https://jupyter.org/">Project Jupyter&rsquo;s</a>  web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our <a href="../connecting/#open-ondemand">OnDemand</a> interface and supports computation with Python 3.</p>
 <h3 id="accessing-jupyterlab">Accessing JupyterLab<a class="headerlink" href="#accessing-jupyterlab" title="Permanent link">&para;</a></h3>
 <p>Login in to <a href="../connecting/#logging-in">OnDemand</a> and select <strong>Interactive Apps &gt; JupyterLab</strong></p>
-<p>If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. To do this, start an interactive terminal session and activate your environment (if you do not have an environment, refer to the sections above on how to do so). </p>
+<p>If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. To do this, start an interactive terminal session and activate your environment (if you do not have an environment, refer to the sections <a href="./#virtual-environments">above</a> on how to do so). </p>
 <pre><code class="language-shell">ta5@rice-02:~$ source tutorial_env/bin/activate
 (tutorial_env) ta5@rice-02:~$ pip install ipykernel
 ta5@rice-02:~$ 
@@ -404,6 +412,67 @@ ta5@rice-02:~$
 Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernels/tutorial_env
 </code></pre>
 <p>Once you&rsquo;ve successfully created your kernel, you should see your environment (custom kernel name) at the Notebook Launcher!</p>
+<h2 id="micromamba">Micromamba<a class="headerlink" href="#micromamba" title="Permanent link">&para;</a></h2>
+<p>Micromamba is a drop-in replacement for <a href="https://conda.io/">Conda</a>. It is a package management system and environment management system that allows users to create reproducible software environments.</p>
+<div class="admonition note">
+<p class="admonition-title">Micromamba User Guide</p>
+<p>For complete reference, please refer to the official <a href="https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html">Micromamba documentation</a></p>
+</div>
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
+<p>In an <a href="../slurm/#interactive-jobs">interactive session</a>, Load the <code>micromamba</code> module and initialize it with <code>micromamba shell init</code> command:</p>
+<pre><code class="language-shell">ta5@iron-12:~$ module load micromamba
+ta5@iron-12:~$ 
+
+ta5@iron-12:~$ micromamba shell init -s bash
+Modifying RC file &quot;/home/users/ta5/.bashrc&quot;
+Generating config for root prefix &quot;/home/users/ta5/.micromamba&quot;
+Setting mamba executable to: &quot;/software/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/micromamba-1.4.2-z67vm7a7mwsxyezqwchvviipkvgaujxm/bin/micromamba&quot;
+Adding (or replacing) the following in your &quot;/home/users/ta5/.bashrc&quot; file
+
+# &gt;&gt;&gt; mamba initialize &gt;&gt;&gt;
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE=&quot;/software/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-13.2.0/micromamba-1.4.2-z67vm7a7mwsxyezqwchvviipkvgaujxm/bin/micromamba&quot;;
+export MAMBA_ROOT_PREFIX=&quot;/home/users/ta5/.micromamba&quot;;
+__mamba_setup=&quot;$(&quot;$MAMBA_EXE&quot; shell hook --shell bash --prefix &quot;$MAMBA_ROOT_PREFIX&quot; 2&gt; /dev/null)&quot;
+if [ $? -eq 0 ]; then
+    eval &quot;$__mamba_setup&quot;
+else
+    if [ -f &quot;/home/users/ta5/.micromamba/etc/profile.d/micromamba.sh&quot; ]; then
+        . &quot;/home/users/ta5/.micromamba/etc/profile.d/micromamba.sh&quot;
+    else
+        export  PATH=&quot;/home/users/ta5/.micromamba/bin:$PATH&quot;  # extra space after export prevents interference from conda init
+    fi
+fi
+unset __mamba_setup
+# &lt;&lt;&lt; mamba initialize &lt;&lt;&lt;
+
+ta5@iron-12:~$ 
+ta5@iron-12:~$ source .bashrc 
+</code></pre>
+<p>This initialized a shell (.bashrc) and a new root environment (&ldquo;/home/users/ta5/.micromamba). </p>
+<h3 id="installing-packages">Installing packages<a class="headerlink" href="#installing-packages" title="Permanent link">&para;</a></h3>
+<p>After initializing micromamba, you can activate the base environment and install new packages, or create other environments. </p>
+<pre><code class="language-shell">ta5@iron-12:~$ micromamba env list
+...
+
+  Name      Active  Path                                     
+───────────────────────────────────────────────────────────────
+  base              /home/users/ta5/.micromamba              
+ta5@iron-12:~$ 
+ta5@iron-12:~$ micromamba activate
+(base) ta5@iron-12:~$ micromamba install pytorch
+...
+
+(base) ta5@iron-12:~$ 
+(base) ta5@iron-12:~$ python
+Python 3.13.1 | packaged by conda-forge | (main, Jan 13 2025, 09:53:10) [GCC 13.3.0] on linux
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import torch
+&gt;&gt;&gt; 
+&gt;&gt;&gt; exit()
+(base) ta5@iron-12:~$ micromamba deactivate 
+ta5@iron-12:~$ 
+</code></pre>
 <h2 id="apptainer">Apptainer<a class="headerlink" href="#apptainer" title="Permanent link">&para;</a></h2>
 <p>Containers are isolated environments packaged together with an executable so that no additional installation or setup is required for running on any system.</p>
 <p><a href="https://apptainer.org/">Apptainer</a> (formerly known as Singularity), is a container runtime that is available on FarmShare. Apptainer, and Linux containers in general allow sharing pipelines in a portable, reproducible way. You can create and customize your own containers, and because Apptainer also supports Docker containers, you have immediate access to a very large number of Apptainer and Docker containers available via repositories:</p>
