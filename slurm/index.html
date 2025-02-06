@@ -168,7 +168,13 @@ ta5@wheat-01:~$ </p>
 <p><strong>memory (RAM):</strong> How much memory your job will consume. Some things to consider, will it load a large file or matrix into memory? Does it consume a lot of memory on your laptop? Often the default memory is sufficient for many jobs.</p>
 <p><strong>time:</strong> How long will it take for your code to run to completion?</p>
 <p><strong>partition:</strong> What set of compute nodes on FarmShare will you run on, normal, interactive, bigmem? The default partition on FarmShare is the normal partition.</p>
-<p>Sample batch script to submit a job:</p>
+<p>To submit batch jobs to the scheduler:</p>
+<ol>
+<li>Create an application script </li>
+<li>Create a Slurm job script that runs the application script</li>
+<li>Submit the job script to the job scheduler using sbatch</li>
+</ol>
+<p>A Slurm job script is a special type of shell script that the job scheduler recognizes as a job. The example below is requesting one cpu on one node and using the normal partition to run the <code>echo</code> command: </p>
 <pre><code class="language-shell">ta5@rice-04:~$ cat hello_world.sh 
 #!/bin/bash
 
@@ -178,6 +184,7 @@ ta5@wheat-01:~$ </p>
 #SBATCH --cpus-per-task=1
 #SBATCH --partition=normal
 
+# Run echo command 
 echo 'Hello World!'
 ta5@rice-04:~$ 
 ta5@rice-04:~$ 
