@@ -383,7 +383,7 @@ print(f&quot;Python version = {sys.version}&quot;)
 print(f&quot;Numpy version = {np.version.version}&quot;)
 print(f&quot;Pandas version = {pd.__version__}&quot;)
 </code></pre>
-<p>To submit this script using the venv <code>tutorial_env</code> create a sbatch script to load the venv and run <code>test.py</code>:</p>
+<p>To submit this script using the venv <code>tutorial_env</code> create a batch job script to load the venv and run <code>test.py</code>:</p>
 <pre><code class="language-shell">ta5@rice-02:~$ cat tutorial_env.sh 
 #!/bin/bash
 
@@ -487,7 +487,7 @@ ta5@iron-12:~$ source .bashrc
                platform : linux-64
 </code></pre>
 <h3 id="installing-packages">Installing packages<a class="headerlink" href="#installing-packages" title="Permanent link">&para;</a></h3>
-<p>After initializing micromamba, you can activate the base environment and install new packages, or create other environments.</p>
+<p>After initializing micromamba, you can activate the base environment with <code>micromamba activate</code> and install new packages with <code>micromamba install</code>:</p>
 <pre><code class="language-shell">ta5@iron-12:~$ micromamba env list
 ...
 
