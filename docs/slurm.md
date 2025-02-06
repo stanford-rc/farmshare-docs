@@ -36,7 +36,7 @@ The [`sbatch`](https://slurm.schedmd.com/sbatch.html) command is used to submit 
 
 Common options are outlined below. Some options have a short and long version. Refer to the man page for all options.
 
-**CPUs:** `-c, --cpus-per-task` How many CPUs the application you are calling the in the sbatch script needs, unless it can utilize multiple CPUs at once you should request a single CPU. Check your code's documentation or try running in an interactive session with and run `htop` if you are unsure.
+**CPUs:** `-c, --cpus-per-task` How many CPUs the application you are calling the in the sbatch script needs, unless it can utilize multiple CPUs at once you should request a single CPU. Confirm Check your code's documentation or try running in an interactive session with `htop` if you are unsure.
 
 **memory (RAM):** `--mem` How much memory your job will consume. Some things to consider, will it load a large file or matrix into memory? Does it consume a lot of memory on your laptop? Often the default memory is sufficient for many jobs.
 
