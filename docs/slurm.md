@@ -2,12 +2,12 @@
 
 ## Slurm
 
-FarmShare uses [Slurm](https://slurm.schedmd.com/) for job (resource) management. Jobs are scheduled according to a priority which depends on a number of factors, including how long a job has been waiting, its size, and a fair-share value that tracks recent per-user utilization of cluster resources. Lower-priority jobs, and jobs requiring access to resources not currently available, may wait some time before starting to run. The scheduler may reserve resources so that pending jobs can start; while it will try to backfill these resources with smaller, shorter jobs (even those at lower priorities), this behavior can sometimes cause nodes to appear to be idle even when there are jobs that are ready to run. You can use `squeue --start` to get an estimate of when pending jobs will start.
+FarmShare uses [Slurm](https://slurm.schedmd.com/) for job (resource) management. Jobs are scheduled according to a priority which depends on a number of factors, including how long a job has been waiting, its size, and a fair-share value that tracks recent per-user utilization of cluster resources. Lower-priority jobs, and jobs requiring access to resources not currently available, may wait some time before starting to run. The scheduler may reserve resources so that pending jobs can start; while it will try to backfill these resources with smaller, shorter jobs (even those at lower priorities), this behavior can sometimes cause nodes to appear to be idle even when there are jobs that are ready to run.
 
 ## Slurm commands
 
 !!! info "Slurm Man Pages"
-    Full [documentation](https://slurm.schedmd.com/documentation.html) and detailed usage information is provided in the man pages for the srun, sbatch, squeue, scancel, sinfo, and scontrol commands.
+    Full [documentation](https://slurm.schedmd.com/documentation.html) and detailed usage information is provided in the man pages.
 
 Slurm allows requesting resources and submitting jobs in a variety of ways. The
 main Slurm commands to submit jobs are listed in the table below:
@@ -22,7 +22,7 @@ main Slurm commands to submit jobs are listed in the table below:
 | [`sinfo`](https://slurm.schedmd.com/sinfo.html) | View information about Slurm nodes and partitions | Displays partition information |
 | [`scontrol`](https://slurm.schedmd.com/scontrol.html) | View detailed information on job, node, partition, reservation and configuration | Displays detailed Slurm information |
 
-## Interactive Jobs
+## Interactive Job
 
 Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the `srun` command to request one:
 
@@ -30,47 +30,55 @@ Interactive sessions that require resources in excess of limits on the login nod
     ta5@rice-04:~$ srun --qos=interactive --pty bash
     ta5@wheat-01:~$ 
 
-## Batch Jobs
+## Batch Job
 
-The `sbatch` command is used to submit a batch job. A job is simply an instance of your program, for example your R, Python or Matlab script that is submitted to and executed by the scheduler (Slurm). When you submit a job with the sbatch command it's called a batch job and it will either run immediately or will pend (wait) in the queue. Options are used to request specific resources (including runtime), and can be provided either on the command line or, using a special syntax, in the script file itself. sbatch can also be used to submit many similar jobs, each perhaps varying in only one or two parameters, in a single invocation using the --array option; each job in an array has access to environment variables identifying its rank.
+The [`sbatch`](https://slurm.schedmd.com/sbatch.html) command is used to submit a batch job. A job is simply an instance of your application (for example your R or Python script) that is submitted to and executed by the job scheduler (Slurm). When you submit a job with the `sbatch` command it's called a batch job. Options are used to request specific resources (including runtime), and can be provided either on the command line or, using a special syntax, in the script file itself. 
 
-**CPUs:** How many CPUs the program you are calling the in the sbatch script needs, unless it can utilize multiple CPUs at once you should request a single CPU. Check your code's documentation or try running in an interactive session with and run `htop` if you are unsure.
+Common options are outlined below. Some options have a short and long version. Refer to the man page for all options.
 
-**memory (RAM):** How much memory your job will consume. Some things to consider, will it load a large file or matrix into memory? Does it consume a lot of memory on your laptop? Often the default memory is sufficient for many jobs.
+**CPUs:** `-c, --cpus-per-task` How many CPUs the program you are calling the in the sbatch script needs, unless it can utilize multiple CPUs at once you should request a single CPU. Check your code's documentation or try running in an interactive session with and run `htop` if you are unsure.
 
-**time:** How long will it take for your code to run to completion?
+**memory (RAM):** `--mem` How much memory your job will consume. Some things to consider, will it load a large file or matrix into memory? Does it consume a lot of memory on your laptop? Often the default memory is sufficient for many jobs.
 
-**partition:** What set of compute nodes on FarmShare will you run on, normal, interactive, bigmem? The default partition on FarmShare is the normal partition.
+**time:** `-t, --time` How long will it take for your code to run to completion?
+
+**partition:** `-p, --partition` What set of compute nodes on FarmShare will you run on, normal, interactive, bigmem? The default partition on FarmShare is the normal partition.
+
+### Example
 
 To submit batch jobs to the scheduler:
 
 1. Create an application script 
 2. Create a Slurm job script that runs the application script
-3. Submit the job script to the job scheduler using sbatch
+3. Submit the job script to the job scheduler using `sbatch`
 
-A Slurm job script is a special type of shell script that the job scheduler recognizes as a job. The example below is requesting one cpu on one node and using the normal partition to run the `echo` command: 
+Sample python script `sum.py` to calculate the sum of one to five:
 
 ``` shell
-ta5@rice-04:~$ cat hello_world.sh 
+a = (1, 2, 3, 4, 5)
+x = sum(a)
+print(x)
+```
+
+Sample job submit script `tutorial.sh` requesting one cpu on one node using the normal partition to run `sum.py` script:
+
+``` shell
 #!/bin/bash
 
-#SBATCH --job-name=hello_world
+#SBATCH --job-name=tutorial
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --partition=normal
 
-# Run echo command 
-echo 'Hello World!'
-ta5@rice-04:~$ 
-ta5@rice-04:~$ 
-ta5@rice-04:~$ sbatch hello_world.sh 
-Submitted batch job 177987
-ta5@rice-04:~$ 
-ta5@rice-04:~$ cat slurm-177987.out 
-Hello World!
-ta5@rice-04:~$ 
+python3 sum.py
 ```
+
+Sumit the job with `sbatch`:
+
+ta5@rice-01:~$ 
+ta5@rice-01:~$ sbatch tutorial.sh
+Submitted batch job 300992
 
 ## Partition/QoS Info
 

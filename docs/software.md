@@ -231,7 +231,7 @@ print(f"Numpy version = {np.version.version}")
 print(f"Pandas version = {pd.__version__}")
 ```
 
-To submit this script using the venv `tutorial_env` create a sbatch script to load the venv and run `test.py`:
+To submit this script using the venv `tutorial_env` create a batch job script to load the venv and run `test.py`:
 
 ``` shell
 ta5@rice-02:~$ cat tutorial_env.sh 
@@ -355,7 +355,7 @@ $ micromamba info
 
 ### Installing packages 
 
-After initializing micromamba, you can activate the base environment and install new packages, or create other environments.
+After initializing micromamba, you can activate the base environment with `micromamba activate` and install new packages with `micromamba install`:
 
 
 ``` shell
