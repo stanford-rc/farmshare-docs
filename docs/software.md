@@ -166,12 +166,16 @@ tzdata==2025.1
 
 Virtual environment is an isolated space for your Python projects, allowing you to manage dependencies separately for each project. You can create a personal Python environment that will persist each time you log in. There is no risk of packages being updated and allows greater control over your environment. 
 
-To create python virtual environments, start by loading your preferred version of Python and use the `venv` command:
+The process of creating and using virtual environments has a few basic steps:
+
+1. Create an environment with `python -m venv`
+2. Activate the environment with `source <project_name>/bin/activate`
+3. Install packages into the environment with `pip install`
 
 ``` shell
 ta5@rice-02:~$ module load python/3.13.0
 ta5@rice-02:~$ 
-ta5@rice-02:~$ python3 -m venv tutorial_env
+ta5@rice-02:~$ python -m venv tutorial_env
 ta5@rice-02:~$ source tutorial_env/bin/activate
 (tutorial_env) ta5@rice-02:~$ 
 (tutorial_env) ta5@rice-02:~$ python --version
@@ -179,7 +183,7 @@ Python 3.13.0
 (tutorial_env) ta5@rice-02:~$ 
 ```
 
-This will create a new virtual environment in the tutorial_env (the name inside the parentheses) subdirectory, and configure the current shell to use it as the default python environment.
+This will create a new virtual environment in the tutorial_env subdirectory, and configure the current shell to use it as the default python environment. Notice in the example above the prompt changed to `(tutorial_env)`
 
 Here you can install packages with `pip`:
 
@@ -210,9 +214,9 @@ To deactivate or leave the environment `tutorial_env`:
 (tutorial_env) ta5@rice-02:~$ deactivate 
 ```
 
-### Virtual Environment in [Slurm](slurm.md#slurm)
+### Virtual Environment batch job
 
-Python virtual environments can be used in slurm jobs. To submit a `sbatch` job using a venv environment, you can `source` the environment at the top of the sbatch script.
+Python virtual environments can be used in [batch](slurm.md#batch-jobs) jobs. To submit a job using venv environment, `source` the environment in your job script, then run python script.
 
 Sample python script that prints versions of packages:
 
@@ -278,14 +282,14 @@ Once you've successfully created your kernel, you should see your environment (c
 
 ## Micromamba
 
-Micromamba is a drop-in replacement for [Conda](https://conda.io/). It is a package management system and environment management system that allows users to create reproducible software environments.
+Micromamba is a drop-in replacement for [Conda](https://conda.io/) which is a package management system and environment management system that allows users to create reproducible software environments.
 
 !!! note "Micromamba User Guide"
     For complete reference, please refer to the official [Micromamba documentation](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html)
 
 ### Setup
 
-In an [interactive session](slurm.md#interactive-jobs), Load the `micromamba` module and initialize it with `micromamba shell init` command:
+In an [interactive session](slurm.md#interactive-jobs), load the `micromamba` module and initialize it with `micromamba shell init` command. This will initialize a shell (.bashrc) and a new root environment: 
 
 ``` shell
 ta5@iron-12:~$ module load micromamba
@@ -318,11 +322,41 @@ ta5@iron-12:~$
 ta5@iron-12:~$ source .bashrc 
 ```
 
-This initialized a shell (.bashrc) and a new root environment ("/home/users/ta5/.micromamba). 
+View your micromamba config information with `micromamba info`:
+
+``` shell
+$ micromamba info
+
+                                           __
+          __  ______ ___  ____ _____ ___  / /_  ____ _
+         / / / / __ `__ \/ __ `/ __ `__ \/ __ \/ __ `/
+        / /_/ / / / / / / /_/ / / / / / / /_/ / /_/ /
+       / .___/_/ /_/ /_/\__,_/_/ /_/ /_/_.___/\__,_/
+      /_/
+
+
+            environment : base (active)
+           env location : /home/users/ta5/.micromamba
+      user config files : /home/users/ta5/.mambarc
+ populated config files : /home/users/ta5/.condarc
+       libmamba version : 1.4.2
+     micromamba version : 1.4.2
+           curl version : libcurl/8.7.1 OpenSSL/3.3.0 zlib/1.3.0.zlib-ng nghttp2/1.57.0
+     libarchive version : libarchive 3.7.1 zlib/1.3.0.zlib-ng liblzma/5.4.6 bz2lib/1.0.8 liblz4/1.9.4 libzstd/1.5.6
+       virtual packages : __unix=0=0
+                          __linux=6.8.0=0
+                          __glibc=2.35=0
+                          __archspec=1=x86_64
+               channels : https://conda.anaconda.org/conda-forge/linux-64
+                          https://conda.anaconda.org/conda-forge/noarch
+       base environment : /home/users/ta5/.micromamba
+               platform : linux-64
+```
 
 ### Installing packages 
 
-After initializing micromamba, you can activate the base environment and install new packages, or create other environments. 
+After initializing micromamba, you can activate the base environment and install new packages, or create other environments.
+
 
 ``` shell
 ta5@iron-12:~$ micromamba env list
@@ -345,6 +379,80 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> exit()
 (base) ta5@iron-12:~$ micromamba deactivate 
 ta5@iron-12:~$ 
+```
+
+### Environmnets
+
+Micromamba environments are isolated project environments designed to manage distinct package requirements and dependencies for different projects. 
+
+!!! info
+    For a detailed reference on all available commands, please refer to the official [Conda Documentation for managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
+
+Creating and using environments has a few basic steps:
+
+1. Create an environment with `micromamba create`
+2. Activate the environment with `micromamba activate`
+3. Install packages into the environment with `micromamba install`
+
+``` shell
+ta5@rice-04:~$ module load micromamba
+ta5@rice-04:~$ 
+ta5@rice-04:~$ micromamba create -n tutorial_env
+...
+
+Empty environment created at prefix: /home/users/ta5/.micromamba/envs/tutorial_env
+ta5@rice-04:~$ 
+ta5@rice-04:~$ micromamba env list
+...
+   
+  Name          Active  Path                                         
+───────────────────────────────────────────────────────────────────────
+  base                  /home/users/ta5/.micromamba                  
+  tutorial_env          /home/users/ta5/.micromamba/envs/tutorial_env
+ta5@rice-04:~$ 
+ta5@rice-04:~$ micromamba activate tutorial_env
+(tutorial_env) ta5@rice-04:~$ 
+```
+
+Your command prompt should always show your current active environment. In the example above the prompt changed to `(tutorial_env)`.
+
+### Batch job
+
+Micromamba can be used in batch jobs. Use the `micromamba run` command in your job submit script. 
+
+The example below shows how to run `micromamba` in a [batch](slurm.md#batch-jobs) job to calculate the sum of one to five:
+
+``` shell
+ta5@iron-07:~$ cat sum.py 
+a = (1, 2, 3, 4, 5)
+x = sum(a)
+print(x)
+```
+
+To submit `sum.py` using micromamba, create a job script using `micromamba run -n tutorial_env python3 sum.py`:
+
+``` shell
+ta5@iron-07:~$ cat tutorial_umamba.sh 
+#!/bin/bash
+
+#SBATCH --job-name=tutorial_lxc
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+#SBATCH --partition=normal
+
+# Load module
+module load micromamba
+
+# Activate micromamba environment
+micromamba run -n tutorial_env python3 sum.py
+ta5@iron-07:~$ 
+ta5@iron-07:~$ sbatch tutorial_umamba.sh
+Submitted batch job 300936
+ta5@iron-07:~$ 
+ta5@iron-07:~$ cat slurm-300936.out 
+15
 ```
 
 ## Apptainer
@@ -438,9 +546,9 @@ The most common `apptainer` commands are outlined in the following table.
 | `apptainer exec <image>` | execute any command within container |
 | `apptainer shell <image>` | run bash shell within container |
  
-### Batch job example
+### Batch job
 
-In the example [above](#running-apptainer) Apptainer was running interactively. The example below shows how to run it as a [batch](slurm.md#batch-jobs) job to calculates the sum of one to five:
+The example below shows how to run `apptainer` in a [batch](slurm.md#batch-jobs) job to calculate the sum of one to five:
 
 ``` shell
 ta5@iron-03:/scratch/users/ta5/lxc$ cat sum.py 
@@ -449,7 +557,7 @@ x = sum(a)
 print(x)
 ```
 
-To submit this script using apptainer, create a sbatch script to run `apptainer exec`: 
+To submit `sum.py` script using apptainer, create a sbatch script to run `apptainer exec`: 
 
 ``` shell
 ta5@rice-03:/scratch/users/ta5/lxc$ cat ~/tutorial_lxc.sh 

@@ -42,7 +42,13 @@ The `sbatch` command is used to submit a batch job. A job is simply an instance 
 
 **partition:** What set of compute nodes on FarmShare will you run on, normal, interactive, bigmem? The default partition on FarmShare is the normal partition.
 
-Sample batch script to submit a job:
+To submit batch jobs to the scheduler:
+
+1. Create an application script 
+2. Create a Slurm job script that runs the application script
+3. Submit the job script to the job scheduler using sbatch
+
+A Slurm job script is a special type of shell script that the job scheduler recognizes as a job. The example below is requesting one cpu on one node and using the normal partition to run the `echo` command: 
 
 ``` shell
 ta5@rice-04:~$ cat hello_world.sh 
@@ -54,6 +60,7 @@ ta5@rice-04:~$ cat hello_world.sh
 #SBATCH --cpus-per-task=1
 #SBATCH --partition=normal
 
+# Run echo command 
 echo 'Hello World!'
 ta5@rice-04:~$ 
 ta5@rice-04:~$ 
