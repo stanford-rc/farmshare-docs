@@ -60,7 +60,7 @@ x = sum(a)
 print(x)
 ```
 
-Sample job submit script `tutorial.sh` requesting one cpu on one node using the normal partition to run `sum.py` script:
+Sample job submit script `tutorial.sh` requesting one cpu on one node using the normal partition to run `python sum.py`:
 
 ``` shell
 #!/bin/bash
@@ -71,14 +71,15 @@ Sample job submit script `tutorial.sh` requesting one cpu on one node using the 
 #SBATCH --cpus-per-task=1
 #SBATCH --partition=normal
 
-python3 sum.py
+python sum.py
 ```
 
-Sumit the job with `sbatch`:
+Submit the job with `sbatch`:
 
-ta5@rice-01:~$ 
-ta5@rice-01:~$ sbatch tutorial.sh
+``` shell
+$ sbatch tutorial.sh
 Submitted batch job 300992
+```
 
 ## Partition/QoS Info
 
