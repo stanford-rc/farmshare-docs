@@ -22,7 +22,7 @@ main Slurm commands to submit jobs are listed in the table below:
 | [`sinfo`](https://slurm.schedmd.com/sinfo.html) | View information about Slurm nodes and partitions | Displays partition information |
 | [`scontrol`](https://slurm.schedmd.com/scontrol.html) | View detailed information on job, node, partition, reservation and configuration | Displays detailed Slurm information |
 
-## Interactive Job
+## Interactive Jobd
 
 Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the `srun` command to request one:
 
@@ -30,7 +30,7 @@ Interactive sessions that require resources in excess of limits on the login nod
     ta5@rice-04:~$ srun --qos=interactive --pty bash
     ta5@wheat-01:~$ 
 
-## Batch Job
+## Batch Jobd
 
 The [`sbatch`](https://slurm.schedmd.com/sbatch.html) command is used to submit a batch job. A job is simply an instance of your application (for example your R or Python script) that is submitted to and executed by the job scheduler (Slurm). When you submit a job with the `sbatch` command it's called a batch job. Options are used to request specific resources (including runtime), and can be provided either on the command line or, using a special syntax, in the script file itself. 
 
