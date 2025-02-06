@@ -185,7 +185,7 @@ ta5@wheat-01:~$ </p>
 x = sum(a)
 print(x)
 </code></pre>
-<p>Sample job submit script <code>tutorial.sh</code> requesting one cpu on one node using the normal partition to run <code>sum.py</code> script:</p>
+<p>Sample job submit script <code>tutorial.sh</code> requesting one cpu on one node using the normal partition to run <code>python sum.py</code>:</p>
 <pre><code class="language-shell">#!/bin/bash
 
 #SBATCH --job-name=tutorial
@@ -194,12 +194,12 @@ print(x)
 #SBATCH --cpus-per-task=1
 #SBATCH --partition=normal
 
-python3 sum.py
+python sum.py
 </code></pre>
-<p>Sumit the job with <code>sbatch</code>:</p>
-<p>ta5@rice-01:~$ <br />
-ta5@rice-01:~$ sbatch tutorial.sh<br />
-Submitted batch job 300992</p>
+<p>Submit the job with <code>sbatch</code>:</p>
+<pre><code class="language-shell">$ sbatch tutorial.sh
+Submitted batch job 300992
+</code></pre>
 <h2 id="partitionqos-info">Partition/QoS Info<a class="headerlink" href="#partitionqos-info" title="Permanent link">&para;</a></h2>
 <p>FarmShare provides the following partitions and <a href="https://slurm.schedmd.com/qos.html">QoS</a>:</p>
 <table>
