@@ -260,26 +260,6 @@ Numpy version = 2.2.2
 Pandas version = 2.2.3
 ```
 
-## JupyterLab
-
-JupyterLab is [Project Jupyter's](https://jupyter.org/)  web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our [OnDemand](connecting.md#open-ondemand) interface and supports computation with Python 3.
-
-### Accessing JupyterLab
-
-Login in to [OnDemand](connecting.md#logging-in) and select **Interactive Apps > JupyterLab**
-
-If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. To do this, start an interactive terminal session and activate your environment (if you do not have an environment, refer to the sections [above](software.md/#virtual-environments) on how to do so). 
-
-``` shell
-ta5@rice-02:~$ source tutorial_env/bin/activate
-(tutorial_env) ta5@rice-02:~$ pip install ipykernel
-ta5@rice-02:~$ 
-(tutorial_env) ta5@rice-02:~$ python3 -m ipykernel install --user --name tutorial_env
-Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernels/tutorial_env
-```
-
-Once you've successfully created your kernel, you should see your environment (custom kernel name) at the Notebook Launcher!
-
 ## Micromamba
 
 Micromamba is a drop-in replacement for [Conda](https://conda.io/) which is a package management system and environment management system that allows users to create reproducible software environments.
@@ -454,6 +434,41 @@ ta5@iron-07:~$
 ta5@iron-07:~$ cat slurm-300936.out 
 15
 ```
+
+## JupyterLab
+
+JupyterLab is [Project Jupyter's](https://jupyter.org/) web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our [OnDemand](connecting.md#open-ondemand) interface and supports computation with Python 3.
+
+### Accessing JupyterLab
+
+Login in to [OnDemand](connecting.md#logging-in) and select **Interactive Apps > JupyterLab**
+
+### Jupyter Kernels
+
+If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. Install `ipykernel` package and then create a kernel.
+
+In the example below venv `tutorial_env` is activated, then inside the environment custom kernel is installed with `python3 -m ipykernel install --user`
+
+``` shell
+ta5@rice-02:~$ source tutorial_env/bin/activate
+(tutorial_env) ta5@rice-02:~$ pip install ipykernel
+ta5@rice-02:~$ 
+(tutorial_env) ta5@rice-02:~$ python3 -m ipykernel install --user --name tutorial_env
+Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernels/tutorial_env
+```
+
+Once installed, `tutorial_env` will be available on the Notebook Launcher.
+
+If you are using [micromamba](#micromamba), the process is the same. 
+
+``` shell
+(tutorial_mamba) ta5@rice-02:~$ micromamba install ipykernel
+...
+(tutorial_mamba) ta5@rice-02:~$ 
+(tutorial_mamba) ta5@rice-02:~$ python -m ipykernel install --user --name tutorial_mamba
+Installed kernelspec tutorial_mamba in /home/users/ta5/.local/share/jupyter/kernels/tutorial_mamba
+```
+
 
 ## Apptainer
 
