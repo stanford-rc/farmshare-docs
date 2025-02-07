@@ -85,12 +85,6 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#jupyterlab">JupyterLab</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#accessing-jupyterlab">Accessing JupyterLab</a>
-    </li>
-        </ul>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#micromamba">Micromamba</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a>
@@ -100,6 +94,14 @@
     <li class="toctree-l3"><a class="reference internal" href="#environmnets">Environmnets</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#batch-job">Batch job</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#jupyterlab">JupyterLab</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#accessing-jupyterlab">Accessing JupyterLab</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#jupyter-kernels">Jupyter Kernels</a>
     </li>
         </ul>
     </li>
@@ -409,18 +411,6 @@ Python version = 3.13.0 (main, Dec 10 2024, 13:22:44) [GCC 13.2.0]
 Numpy version = 2.2.2
 Pandas version = 2.2.3
 </code></pre>
-<h2 id="jupyterlab">JupyterLab<a class="headerlink" href="#jupyterlab" title="Permanent link">&para;</a></h2>
-<p>JupyterLab is <a href="https://jupyter.org/">Project Jupyter&rsquo;s</a>  web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our <a href="../connecting/#open-ondemand">OnDemand</a> interface and supports computation with Python 3.</p>
-<h3 id="accessing-jupyterlab">Accessing JupyterLab<a class="headerlink" href="#accessing-jupyterlab" title="Permanent link">&para;</a></h3>
-<p>Login in to <a href="../connecting/#logging-in">OnDemand</a> and select <strong>Interactive Apps &gt; JupyterLab</strong></p>
-<p>If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. To do this, start an interactive terminal session and activate your environment (if you do not have an environment, refer to the sections <a href="./#virtual-environments">above</a> on how to do so). </p>
-<pre><code class="language-shell">ta5@rice-02:~$ source tutorial_env/bin/activate
-(tutorial_env) ta5@rice-02:~$ pip install ipykernel
-ta5@rice-02:~$ 
-(tutorial_env) ta5@rice-02:~$ python3 -m ipykernel install --user --name tutorial_env
-Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernels/tutorial_env
-</code></pre>
-<p>Once you&rsquo;ve successfully created your kernel, you should see your environment (custom kernel name) at the Notebook Launcher!</p>
 <h2 id="micromamba">Micromamba<a class="headerlink" href="#micromamba" title="Permanent link">&para;</a></h2>
 <p>Micromamba is a drop-in replacement for <a href="https://conda.io/">Conda</a> which is a package management system and environment management system that allows users to create reproducible software environments.</p>
 <div class="admonition note">
@@ -570,6 +560,27 @@ Submitted batch job 300936
 ta5@iron-07:~$ 
 ta5@iron-07:~$ cat slurm-300936.out 
 15
+</code></pre>
+<h2 id="jupyterlab">JupyterLab<a class="headerlink" href="#jupyterlab" title="Permanent link">&para;</a></h2>
+<p>JupyterLab is <a href="https://jupyter.org/">Project Jupyter&rsquo;s</a> web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our <a href="../connecting/#open-ondemand">OnDemand</a> interface and supports computation with Python 3.</p>
+<h3 id="accessing-jupyterlab">Accessing JupyterLab<a class="headerlink" href="#accessing-jupyterlab" title="Permanent link">&para;</a></h3>
+<p>Login in to <a href="../connecting/#logging-in">OnDemand</a> and select <strong>Interactive Apps &gt; JupyterLab</strong></p>
+<h3 id="jupyter-kernels">Jupyter Kernels<a class="headerlink" href="#jupyter-kernels" title="Permanent link">&para;</a></h3>
+<p>If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. Install <code>ipykernel</code> package and then create a kernel.</p>
+<p>In the example below venv <code>tutorial_env</code> is activated, then inside the environment custom kernel is installed with <code>python3 -m ipykernel install --user</code></p>
+<pre><code class="language-shell">ta5@rice-02:~$ source tutorial_env/bin/activate
+(tutorial_env) ta5@rice-02:~$ pip install ipykernel
+ta5@rice-02:~$ 
+(tutorial_env) ta5@rice-02:~$ python3 -m ipykernel install --user --name tutorial_env
+Installed kernelspec tutorial_env in /home/users/ta5/.local/share/jupyter/kernels/tutorial_env
+</code></pre>
+<p>Once installed, <code>tutorial_env</code> will be available on the Notebook Launcher.</p>
+<p>If you are using <a href="#micromamba">micromamba</a>, the process is the same. </p>
+<pre><code class="language-shell">(tutorial_mamba) ta5@rice-02:~$ micromamba install ipykernel
+...
+(tutorial_mamba) ta5@rice-02:~$ 
+(tutorial_mamba) ta5@rice-02:~$ python -m ipykernel install --user --name tutorial_mamba
+Installed kernelspec tutorial_mamba in /home/users/ta5/.local/share/jupyter/kernels/tutorial_mamba
 </code></pre>
 <h2 id="apptainer">Apptainer<a class="headerlink" href="#apptainer" title="Permanent link">&para;</a></h2>
 <p>Containers are isolated environments packaged together with an executable so that no additional installation or setup is required for running on any system.</p>
