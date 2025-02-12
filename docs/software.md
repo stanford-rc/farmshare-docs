@@ -132,7 +132,7 @@ In addition to the software that we provide for you to use, it is perfectly OK f
 
 ## Python
 
-Different versions of Python3 are available on FarmShare both as system modules as well as system software. To see a listing run `module spider python`
+Different versions of Python 3 are available as software [modules](#modules) as well as [system](#packages) software. To see a listing run `module spider python`
 
 We install commonly used Python packages (such as NumPy, SciPy) globally that are available when you load Python with the module command.
 
@@ -140,7 +140,7 @@ To install packages that are not already installed you can use `pip`
 
 ### pip
 
-`pip` is available as a module on FarmShare. You will need to use the [`--user`](https://packaging.python.org/en/latest/tutorials/installing-packages/#installing-to-the-user-site) flag which places the package installation under your $HOME directory.
+`pip` is available as a module on FarmShare. You will need to use the [`--user`](https://packaging.python.org/en/latest/tutorials/installing-packages/#installing-to-the-user-site) flag which places the package installation in your $HOME directory.
 
 The example below shows how to install `pandas`:
 
@@ -361,11 +361,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 ta5@iron-12:~$ 
 ```
 
-### Environmnets
+### Environments
 
 Micromamba environments are isolated project environments designed to manage distinct package requirements and dependencies for different projects. 
 
-!!! info
+!!! info "Managing Environments"
     For a detailed reference on all available commands, please refer to the official [Conda Documentation for managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 
 Creating and using environments has a few basic steps:
@@ -447,7 +447,7 @@ Login in to [OnDemand](connecting.md#logging-in) and select **Interactive Apps >
 
 If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. Install `ipykernel` package and then create a kernel.
 
-In the example below venv `tutorial_env` is activated, then inside the environment custom kernel is installed with `python3 -m ipykernel install --user`
+In the example below [venv](software.md#virtual-environments) `tutorial_env` is activated, then inside the environment custom kernel is installed with `python3 -m ipykernel install --user`
 
 ``` shell
 ta5@rice-02:~$ source tutorial_env/bin/activate
@@ -598,3 +598,19 @@ ta5@rice-03:/scratch/users/ta5/lxc$ cat slurm-299057.out
 15
 ```
 
+## R
+
+[R](https://www.r-project.org/) is available as a software [module](#modules). R provides a wide variety of statistical and graphical techniques and is highly extensible.
+
+!!! info "R Manuals"
+    For more complete documentation, please see the R documentation.
+
+### Setup library
+
+The system wide R package libraby is not writable but users can install packages in their home directory. When you run R interactively and try to install a package for the first time, you have the option to setup your personal library:
+
+``` shell
+Would you like to use a personal library instead? (yes/No/cancel) yes
+Would you like to create a personal library
+‘/home/users/ta5/R/x86_64-pc-linux-gnu-library/4.4’
+```
