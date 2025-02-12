@@ -91,9 +91,15 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#installing-packages">Installing packages</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#environmnets">Environmnets</a>
+    <li class="toctree-l3"><a class="reference internal" href="#environments">Environments</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#batch-job">Batch job</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#r">R</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#setup-library">Setup library</a>
     </li>
         </ul>
     </li>
@@ -313,11 +319,11 @@ providing a BLAS library:</p>
 <h3 id="build-your-own">Build Your Own<a class="headerlink" href="#build-your-own" title="Permanent link">&para;</a></h3>
 <p>In addition to the software that we provide for you to use, it is perfectly OK for you to build and use your own software.</p>
 <h2 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h2>
-<p>Different versions of Python3 are available on FarmShare both as system modules as well as system software. To see a listing run <code>module spider python</code></p>
+<p>Different versions of Python 3 are available as software <a href="#modules">modules</a> as well as <a href="#packages">system</a> software. To see a listing run <code>module spider python</code></p>
 <p>We install commonly used Python packages (such as NumPy, SciPy) globally that are available when you load Python with the module command.</p>
 <p>To install packages that are not already installed you can use <code>pip</code></p>
 <h3 id="pip">pip<a class="headerlink" href="#pip" title="Permanent link">&para;</a></h3>
-<p><code>pip</code> is available as a module on FarmShare. You will need to use the <a href="https://packaging.python.org/en/latest/tutorials/installing-packages/#installing-to-the-user-site"><code>--user</code></a> flag which places the package installation under your $HOME directory.</p>
+<p><code>pip</code> is available as a module on FarmShare. You will need to use the <a href="https://packaging.python.org/en/latest/tutorials/installing-packages/#installing-to-the-user-site"><code>--user</code></a> flag which places the package installation in your $HOME directory.</p>
 <p>The example below shows how to install <code>pandas</code>:</p>
 <pre><code class="language-shell">ta5@rice-02:~$ module load py-pip/23.1.2_python/3.13.0
 ta5@rice-02:~$ module load python/3.13.0
@@ -499,10 +505,10 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
 (base) ta5@iron-12:~$ micromamba deactivate 
 ta5@iron-12:~$ 
 </code></pre>
-<h3 id="environmnets">Environmnets<a class="headerlink" href="#environmnets" title="Permanent link">&para;</a></h3>
+<h3 id="environments">Environments<a class="headerlink" href="#environments" title="Permanent link">&para;</a></h3>
 <p>Micromamba environments are isolated project environments designed to manage distinct package requirements and dependencies for different projects. </p>
 <div class="admonition info">
-<p class="admonition-title">Info</p>
+<p class="admonition-title">Managing Environments</p>
 <p>For a detailed reference on all available commands, please refer to the official <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Conda Documentation for managing environments</a>.</p>
 </div>
 <p>Creating and using environments has a few basic steps:</p>
@@ -561,13 +567,25 @@ ta5@iron-07:~$
 ta5@iron-07:~$ cat slurm-300936.out 
 15
 </code></pre>
+<h2 id="r">R<a class="headerlink" href="#r" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.r-project.org/">R</a> is available as a software <a href="#modules">module</a>. R provides a wide variety of statistical and graphical techniques and is highly extensible.</p>
+<div class="admonition info">
+<p class="admonition-title">R Manuals</p>
+<p>For complete documentation, please see the <a href="https://cran.r-project.org/manuals.html">R documentation</a>.</p>
+</div>
+<h3 id="setup-library">Setup library<a class="headerlink" href="#setup-library" title="Permanent link">&para;</a></h3>
+<p>The system wide R package library is not writable but users can install packages in their home directory. When you run R interactively and try to install a package for the first time, you have the option to setup your personal library:</p>
+<pre><code class="language-shell">Would you like to use a personal library instead? (yes/No/cancel) yes
+Would you like to create a personal library
+‘/home/users/ta5/R/x86_64-pc-linux-gnu-library/4.4’
+</code></pre>
 <h2 id="jupyterlab">JupyterLab<a class="headerlink" href="#jupyterlab" title="Permanent link">&para;</a></h2>
 <p>JupyterLab is <a href="https://jupyter.org/">Project Jupyter&rsquo;s</a> web-based development interface for Jupyter Notebooks. On FarmShare, it is available as an app on our <a href="../connecting/#open-ondemand">OnDemand</a> interface and supports computation with Python 3.</p>
 <h3 id="accessing-jupyterlab">Accessing JupyterLab<a class="headerlink" href="#accessing-jupyterlab" title="Permanent link">&para;</a></h3>
 <p>Login in to <a href="../connecting/#logging-in">OnDemand</a> and select <strong>Interactive Apps &gt; JupyterLab</strong></p>
 <h3 id="jupyter-kernels">Jupyter Kernels<a class="headerlink" href="#jupyter-kernels" title="Permanent link">&para;</a></h3>
 <p>If you want to make one of your virtual environments available for use in Jupyter Notebooks, you can do so by creating a custom kernel. Install <code>ipykernel</code> package and then create a kernel.</p>
-<p>In the example below venv <code>tutorial_env</code> is activated, then inside the environment custom kernel is installed with <code>python3 -m ipykernel install --user</code></p>
+<p>In the example below <a href="./#virtual-environments">venv</a> <code>tutorial_env</code> is activated, then inside the environment custom kernel is installed with <code>python3 -m ipykernel install --user</code></p>
 <pre><code class="language-shell">ta5@rice-02:~$ source tutorial_env/bin/activate
 (tutorial_env) ta5@rice-02:~$ pip install ipykernel
 ta5@rice-02:~$ 
