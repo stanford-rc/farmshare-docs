@@ -434,6 +434,22 @@ ta5@iron-07:~$
 ta5@iron-07:~$ cat slurm-300936.out 
 15
 ```
+## R
+
+[R](https://www.r-project.org/) is available as a software [module](#modules). R provides a wide variety of statistical and graphical techniques and is highly extensible.
+
+!!! info "R Manuals"
+    For complete documentation, please see the [R documentation](https://cran.r-project.org/manuals.html).
+
+### Setup library
+
+The system wide R package library is not writable but users can install packages in their home directory. When you run R interactively and try to install a package for the first time, you have the option to setup your personal library:
+
+``` shell
+Would you like to use a personal library instead? (yes/No/cancel) yes
+Would you like to create a personal library
+‘/home/users/ta5/R/x86_64-pc-linux-gnu-library/4.4’
+```
 
 ## JupyterLab
 
@@ -596,21 +612,4 @@ Submitted batch job 299057
 
 ta5@rice-03:/scratch/users/ta5/lxc$ cat slurm-299057.out
 15
-```
-
-## R
-
-[R](https://www.r-project.org/) is available as a software [module](#modules). R provides a wide variety of statistical and graphical techniques and is highly extensible.
-
-!!! info "R Manuals"
-    For more complete documentation, please see the R documentation.
-
-### Setup library
-
-The system wide R package libraby is not writable but users can install packages in their home directory. When you run R interactively and try to install a package for the first time, you have the option to setup your personal library:
-
-``` shell
-Would you like to use a personal library instead? (yes/No/cancel) yes
-Would you like to create a personal library
-‘/home/users/ta5/R/x86_64-pc-linux-gnu-library/4.4’
 ```
