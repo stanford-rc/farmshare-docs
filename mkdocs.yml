@@ -19,5 +19,6 @@ nav:
   - "Getting Connected": connecting.md
   - "Running Jobs": slurm.md
   - "Using Software": software.md
+  - "Transferring Data": transfer.md
   - "Adding Capacity": capacity.md
   - Policy: policy.md
