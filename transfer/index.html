@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Transferring Data - FarmShare</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+        <link href="../style.css" rel="stylesheet" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Transferring Data";
+        var mkdocs_page_input_path = "transfer.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> FarmShare
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Introduction</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../connecting/">Getting Connected</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../slurm/">Running Jobs</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../software/">Using Software</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Transferring Data</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#scp">SCP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#globus">Globus</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#setup">Setup</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#tranfer">Tranfer</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../capacity/">Adding Capacity</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../policy/">Policy</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">FarmShare</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Transferring Data</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="transferring-research-data">Transferring Research Data<a class="headerlink" href="#transferring-research-data" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>A variety of methods are available for secure and efficient data transfer. There are two methods of data transfer: </p>
+<ul>
+<li>Command-line tools (scp, rsync, sftp, rclone)</li>
+<li>Graphical tools (<a href="https://winscp.net/">WinSCP</a>, <a href="https://cyberduck.io/">Cyberduck</a>, <a href="#globus">Globus</a>)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">For large transfers, using DTN is recommended</p>
+<p>Quick transfers are ok on the login nodes. The preferred (fastest) method for large transfers is our DTN (data transfer node): <code>dtn.farmshare.stanford.edu</code></p>
+</div>
+<h2 id="scp">SCP<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h2>
+<p>Secure Copy (scp) uses <a href="../connecting/#ssh">ssh</a> for data transfer and authentication. It works like the cp command, except it can work over the network to copy files between a local host and a remote host.</p>
+<p>Example to copy a single file from a local computer to your home directory (<code>~/</code>) on FarmShare:</p>
+<pre><code class="language-shell">$ scp alpine-standard-3.21.2-aarch64.iso ta5@dtn.farmshare.stanford.edu:~
+ta5@dtn.farmshare.stanford.edu's password: 
+Autopushing login request to phone...
+Success. Logging you in...
+alpine-standard-3.21.2-aarch64.iso            100%  253MB   1.3MB/s   03:18    
+</code></pre>
+<p>The process is similar for other ssh based tools like rsync, sftp.</p>
+<h2 id="globus">Globus<a class="headerlink" href="#globus" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.globus.org/data-transfer">Globus</a> is browser based interface for data management and transfers. It can be used for data transfers from a personal computer to FarmShare. It is useful for large transfers and will provide the best transfer speeds.</p>
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
+<p>To use Globus, you will first need to authenticate at <a href="https://www.globus.org/">Globus.org</a>. You can either sign up for a Globus account, or use your SUNet ID account for authentication to Globus (which will be required to authenticate to the FarmShare endpoint).</p>
+<p>To use your SUNet ID, choose &ldquo;Stanford University&rdquo; from the drop down menu at the Login page and follow the instructions from there.</p>
+<h3 id="tranfer">Tranfer<a class="headerlink" href="#tranfer" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">FarmShare Endpoint</p>
+<p>Connect to the <a href="https://app.globus.org/file-manager?origin_id=13818aec-5644-11e9-9e6e-0266b1fe9f9e">SRCC FarmShare</a> endpoint.</p>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../software/" class="btn btn-neutral float-left" title="Using Software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../capacity/" class="btn btn-neutral float-right" title="Adding Capacity">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../software/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../capacity/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
