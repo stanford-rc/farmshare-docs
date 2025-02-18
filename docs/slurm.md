@@ -24,11 +24,24 @@ main Slurm commands to submit jobs are listed in the table below:
 
 ## Interactive Jobs
 
-Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the `srun` command to request one:
+Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the [`srun`](https://slurm.schedmd.com/srun.html) command to request one:
 
-!!! example "srun"
-    ta5@rice-04:~$ srun --qos=interactive --pty bash
-    ta5@wheat-01:~$ 
+The example below shows how to request an interactive session using `srun`:
+
+``` shell
+ta5@rice-02:~$ srun --partition=interactive --qos=interactive --pty bash
+ta5@iron-03:~$ 
+```
+
+Notice that the prompt changed from `rice-02` (login node) to `iron-03` (compute node). Check your job info with `squeue`:
+
+``` shell
+ta5@iron-03:~$ squeue -a -u ta5
+       JOBID    PARTITION   NAME  USER ST TIME_LIMIT  NODES CPUS MIN_MEMORY
+      309641  interactive   bash  ta5  R  1:00:00     1    1      4000M
+```
+
+Here we can see the default limits of one cpu, 4000MB memory and one hour walltime.
 
 ## Batch Jobs
 
