@@ -164,12 +164,17 @@ main Slurm commands to submit jobs are listed in the table below:</p>
 </tbody>
 </table>
 <h2 id="interactive-jobs">Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permanent link">&para;</a></h2>
-<p>Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the <code>srun</code> command to request one:</p>
-<div class="admonition example">
-<p class="admonition-title">srun</p>
-<p>ta5@rice-04:~$ srun &ndash;qos=interactive &ndash;pty bash<br />
-ta5@wheat-01:~$ </p>
-</div>
+<p>Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the <a href="https://slurm.schedmd.com/srun.html"><code>srun</code></a> command to request one:</p>
+<p>The example below shows how to request an interactive session using <code>srun</code>:</p>
+<pre><code class="language-shell">ta5@rice-02:~$ srun --partition=interactive --qos=interactive --pty bash
+ta5@iron-03:~$ 
+</code></pre>
+<p>Notice that the prompt changed from <code>rice-02</code> (login node) to <code>iron-03</code> (compute node). Check your job info with <code>squeue</code>:</p>
+<pre><code class="language-shell">ta5@iron-03:~$ squeue -a -u ta5
+       JOBID    PARTITION   NAME  USER ST TIME_LIMIT  NODES CPUS MIN_MEMORY
+      309641  interactive   bash  ta5  R  1:00:00     1    1      4000M
+</code></pre>
+<p>Here we can see the default limits of one cpu, 4000MB memory and one hour walltime.</p>
 <h2 id="batch-jobs">Batch Jobs<a class="headerlink" href="#batch-jobs" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://slurm.schedmd.com/sbatch.html"><code>sbatch</code></a> command is used to submit a batch job. A job is simply an instance of your application (for example your R or Python script) that is submitted to and executed by the job scheduler (Slurm). When you submit a job with the <code>sbatch</code> command it&rsquo;s called a batch job. Options are used to request specific resources (including runtime), and can be provided either on the command line or, using a special syntax, in the script file itself. </p>
 <p>Common options are outlined below. Some options have a short and long version. Refer to the man page for all options.</p>
