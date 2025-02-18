@@ -12,7 +12,7 @@ A variety of methods are available for secure and efficient data transfer. There
 
 ## SCP
 
-Secure Copy (scp) uses [ssh](connecting.md#ssh) for data transfer and authentication. It works like the cp command, except it can work over the network to copy files between a local host and a remote host.
+Secure Copy (scp) uses [ssh](connecting.md#ssh) for data transfer and authentication. It works like the `cp` command, except it can work over the network to copy files between a local host and a remote host.
 
 Example to copy a single file from a local computer to your home directory (`~/`) on FarmShare:
 
@@ -39,5 +39,5 @@ To use your SUNet ID, choose "Stanford University" from the drop down menu at th
 ### Transfer
 
 !!! note "FarmShare Endpoint"
-    Connect to the [SRCC FarmShare](https://app.globus.org/file-manager?origin_id=13818aec-5644-11e9-9e6e-0266b1fe9f9e) endpoint.
+    Connect to the `SRCC FarmShare` endpoint: [https://app.globus.org](https://app.globus.org/file-manager?origin_id=13818aec-5644-11e9-9e6e-0266b1fe9f9e).
 
