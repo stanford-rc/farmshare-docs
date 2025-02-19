@@ -2,20 +2,34 @@
 
 ## SSH
 
-SSH provides a secure, remote terminal connection to the login nodes. To connect use the load-balanced name, *login.farmshare.stanford.edu* which will select of the login nodes based on load and utilization.
+SSH provides a secure, remote terminal connection to the login nodes. To connect use the load-balanced name, `login.farmshare.stanford.edu` which will select of the login nodes based on load and utilization.
 
 FarmShare implements Stanford's [Minimum Security Standards](https://uit.stanford.edu/guide/securitystandards) policy which requires [two-step authentication](https://uit.stanford.edu/service/authentication/twostep) to access the cluster.
 
 !!! example "login"
-    ssh SUNetID@login.farmshare.stanford.edu
+    `ssh SUNetID@login.farmshare.stanford.edu`
     
 ### Host keys
 
 For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:
 
 !!! caution "SHA256 hash"
-    SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)
-    SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)
+    `SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)`
+    `SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)`
+
+The first time you connect with `ssh`, compare the fingerprint or type it in when you see the message `Are you sure you want to continue connecting (yes/no/[fingerprint])?`: 
+
+``` shell
+$ ssh ta5@login.farmshare.stanford.edu
+The authenticity of host 'login.farmshare.stanford.edu (171.67.96.124)' can't be established.
+ED25519 key fingerprint is SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU
+Warning: Permanently added 'login.farmshare.stanford.edu' (ED25519) to the list of known hosts.
+ta5@login.farmshare.stanford.edu's password: 
+(ta5@login.farmshare.stanford.edu) Duo two-factor login for ta5
+...
+```
 
 ### Login
 
