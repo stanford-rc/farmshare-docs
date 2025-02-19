@@ -119,19 +119,30 @@
               
                 <h1 id="getting-connected">Getting Connected<a class="headerlink" href="#getting-connected" title="Permanent link">&para;</a></h1>
 <h2 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
-<p>SSH provides a secure, remote terminal connection to the login nodes. To connect use the load-balanced name, <em>login.farmshare.stanford.edu</em> which will select of the login nodes based on load and utilization.</p>
+<p>SSH provides a secure, remote terminal connection to the login nodes. To connect use the load-balanced name, <code>login.farmshare.stanford.edu</code> which will select of the login nodes based on load and utilization.</p>
 <p>FarmShare implements Stanford&rsquo;s <a href="https://uit.stanford.edu/guide/securitystandards">Minimum Security Standards</a> policy which requires <a href="https://uit.stanford.edu/service/authentication/twostep">two-step authentication</a> to access the cluster.</p>
 <div class="admonition example">
 <p class="admonition-title">login</p>
-<p>ssh SUNetID@login.farmshare.stanford.edu</p>
+<p><code>ssh SUNetID@login.farmshare.stanford.edu</code></p>
 </div>
 <h3 id="host-keys">Host keys<a class="headerlink" href="#host-keys" title="Permanent link">&para;</a></h3>
 <p>For those who wish to verify the new FarmShare host keys when connecting, use the following fingerprints:</p>
 <div class="admonition caution">
 <p class="admonition-title">SHA256 hash</p>
-<p>SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)<br />
-SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)</p>
+<p><code>SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU (ED25519)</code><br />
+<code>SHA256:o5E5OOkaxwF+CzKT5A2/DNSmDzljTYs/a1V7Fm6ssSw (RSA)</code></p>
 </div>
+<p>The first time you connect with <code>ssh</code>, compare the fingerprint or type it in when you see the message <code>Are you sure you want to continue connecting (yes/no/[fingerprint])?</code>: </p>
+<pre><code class="language-shell">$ ssh ta5@login.farmshare.stanford.edu
+The authenticity of host 'login.farmshare.stanford.edu (171.67.96.124)' can't be established.
+ED25519 key fingerprint is SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? SHA256:bKb1Znir/1tOg+TMyALDYWeK0lclsulriDN8aOvWteU
+Warning: Permanently added 'login.farmshare.stanford.edu' (ED25519) to the list of known hosts.
+ta5@login.farmshare.stanford.edu's password: 
+(ta5@login.farmshare.stanford.edu) Duo two-factor login for ta5
+...
+</code></pre>
 <h3 id="login">Login<a class="headerlink" href="#login" title="Permanent link">&para;</a></h3>
 <p>Users on Linux, macOS, and Windows can use the built-in Terminal application and run <code>ssh</code>. Replace SUNetID with your own SUNet ID:</p>
 <p>The example below shows how to login using your SUNet ID and password along with two-step authentication. To logout, type <code>exit</code> or <code>logout</code>:</p>
