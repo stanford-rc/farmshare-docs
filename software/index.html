@@ -171,15 +171,13 @@
 <h3 id="packages">Packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Ubuntu repo</p>
-<p>FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the <a href="http://packages.ubuntu.com/jammy">Ubuntu Jammy package repository</a> is available to be installed.</p>
+<p>FarmShare runs Ubuntu 24.04 LTS, which means almost anything in the <a href="https://packages.ubuntu.com/noble/">Ubuntu Noble package repository</a> is available to be installed.</p>
 </div>
 <p>Packaged software is easiest to use, because you don&rsquo;t have to do anything. Packaged software has already been installed on all of the systems in the environment, so to use the software, you just have to run the command.</p>
 <p>For example, to run the packaged version of Python, you just need to run the <code>python3</code> command:</p>
-<div class="admonition example">
-<p class="admonition-title">System Python</p>
-<p>$ python3 &ndash;version<br />
-Python 3.10.12</p>
-</div>
+<pre><code class="language-shell">$ python3 --version
+Python 3.10.12
+</code></pre>
 <h3 id="modules">Modules<a class="headerlink" href="#modules" title="Permanent link">&para;</a></h3>
 <p>To provide up-to-date software, FarmShare uses loadable <em>environment modules</em>. Modularized software lives in shared, network-connected storage, and is  built by the FarmShare support team. This mechanism allows us to provide multiple versions of the same software concurrently, and gives users the possibility to easily switch between software versions.</p>
 <p>The module system is used to manage the user environment and to <em>activate</em> software packages on demand. In order to use modules based software installed on FarmShare, you must first load the corresponding software module.</p>
@@ -284,18 +282,14 @@ https://www.gnu.org/licenses/.
 <li>any string within modules names and descriptions, using <code>module keyword</code></li>
 </ul>
 <p>For instance, if you want to know how to load the <code>apptainer</code> module, you can do:</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>$ module spider apptainer</p>
-</div>
+<pre><code class="language-shell">$ module spider apptainer
+</code></pre>
 <p>If you don&rsquo;t know the module name, or want to list all the modules that contain<br />
 a specific string of characters in their name or description, you can use<br />
 <code>module keyword</code>. For instance, the following command will list all the modules<br />
 providing a BLAS library:</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-<p>$ module keyword blas</p>
-</div>
+<pre><code class="language-shell">$ module keyword blas
+</code></pre>
 <h4 id="listing">Listing<a class="headerlink" href="#listing" title="Permanent link">&para;</a></h4>
 <p>For a complete list of available software modules, run the <code>module available</code> command:</p>
 <pre><code class="language-shell">$ module available
