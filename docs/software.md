@@ -13,15 +13,16 @@ Software on FarmShare comes from three sources:
 ### Packages
 
 !!! info "Ubuntu repo"
-    FarmShare runs Ubuntu 22.04 LTS, which means almost anything in the [Ubuntu Jammy package repository](http://packages.ubuntu.com/jammy) is available to be installed.
+    FarmShare runs Ubuntu 24.04 LTS, which means almost anything in the [Ubuntu Noble package repository](https://packages.ubuntu.com/noble/) is available to be installed.
 
 Packaged software is easiest to use, because you don't have to do anything. Packaged software has already been installed on all of the systems in the environment, so to use the software, you just have to run the command.
 
 For example, to run the packaged version of Python, you just need to run the `python3` command:
 
-!!! example "System Python"
-    $ python3 --version
-    Python 3.10.12
+``` shell
+$ python3 --version
+Python 3.10.12
+```
 
 ### Modules
 
@@ -86,16 +87,18 @@ You can search through all the available modules for either:
 
 For instance, if you want to know how to load the `apptainer` module, you can do:
 
-!!! example
-    $ module spider apptainer
+``` shell
+$ module spider apptainer
+```
 
 If you don't know the module name, or want to list all the modules that contain
 a specific string of characters in their name or description, you can use
 `module keyword`. For instance, the following command will list all the modules
 providing a BLAS library:
 
-!!! example
-    $ module keyword blas
+``` shell
+$ module keyword blas
+```
 
 #### Listing
 

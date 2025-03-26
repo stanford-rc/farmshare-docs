@@ -1,6 +1,3 @@
-!!! danger "Planned Downtime: *Wednesday, March 26, starting at 8:00 AM to 5:00 PM*"
-    **All FarmShare systems will be down for maintenance. Please make sure that running jobs have completed and you have saved any results, refrain from starting any long-running jobs that might not finish, and log out before the beginning of the maintenance window**
-
 # Welcome to FarmShare
 
 FarmShare is Stanford's community computing environment. It is intended for use in coursework and unsponsored research. It is not approved for use with high-risk data, or for use in sponsored research.
@@ -13,7 +10,7 @@ Resources on FarmShare are focused on making it easier to learn how to use resea
 
 Key changes on the new FarmShare environment include:
 
-* Major OS upgrade to [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes) which brings many changes, improvements and provides LTS stability.
+* Major OS upgrade to [Ubuntu 24.04 LTS](wiki.ubuntu.com/NobleNumbat/ReleaseNotes) which brings many changes, improvements and provides LTS stability.
 * New Hardware with CPU and memory improvements.
 * New browser based access with [Open OnDemand v3](connecting.md#open-ondemand). 
 * Updated Open Ondemand apps: JupyterLabs, RStudio, and VS Code.
@@ -23,7 +20,7 @@ Key changes on the new FarmShare environment include:
 ## Cluster Components
 
 !!! info "Ubuntu OS"
-    All FarmShare servers run [Ubuntu 22.04 LTS](https://wiki.ubuntu.com/JammyJellyfish/ReleaseNotes) and get patched/updated on a regular basis
+    All FarmShare servers run [Ubuntu 24.04 LTS](wiki.ubuntu.com/NobleNumbat/ReleaseNotes) and get patched/updated on a regular basis
 
 FarmShare consists of three classes of servers:
 
