@@ -10,17 +10,17 @@ Resources on FarmShare are focused on making it easier to learn how to use resea
 
 Key changes on the new FarmShare environment include:
 
-* Major OS upgrade to [Ubuntu 24.04 LTS](wiki.ubuntu.com/NobleNumbat/ReleaseNotes) which brings many changes, improvements and provides LTS stability.
+* Major OS upgrade to [Ubuntu 24.04 LTS](https://wiki.ubuntu.com/NobleNumbat/ReleaseNotes) which brings many changes, improvements and provides LTS stability.
 * New Hardware with CPU and memory improvements.
-* New browser based access with [Open OnDemand v3](connecting.md#open-ondemand). 
+* New browser based access with [Open OnDemand v4](connecting.md#open-ondemand). 
 * Updated Open Ondemand apps: JupyterLabs, RStudio, and VS Code.
-* Updated Scheduler (resource manager) to [Slurm v24.11](https://slurm.schedmd.com/)
+* Updated Scheduler (resource manager) to [Slurm v24.11](slurm.md#slurm)
 * Home directory path updated to `/home/users/USER`. Please use the variable `$HOME` instead of hard coding directory paths.
 
 ## Cluster Components
 
 !!! info "Ubuntu OS"
-    All FarmShare servers run [Ubuntu 24.04 LTS](wiki.ubuntu.com/NobleNumbat/ReleaseNotes) and get patched/updated on a regular basis
+    All FarmShare servers run [Ubuntu 24.04 LTS](https://wiki.ubuntu.com/NobleNumbat/ReleaseNotes) and get patched/updated on a regular basis
 
 FarmShare consists of three classes of servers:
 
