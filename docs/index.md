@@ -1,3 +1,6 @@
+!! danger "Extended Maintenance Period: *Wednesday, July 30 starting at 8AM through 5PM Thursday, July 31*"
+    **All FarmShare systems will be down for maintenance. Please make sure that running jobs have completed and you have saved any results, refrain from starting any long-running jobs that might not finish, and log out before the beginning of the maintenance window**
+
 # Welcome to FarmShare
 
 FarmShare is Stanford's community computing environment. It is intended for use in coursework and unsponsored research. It is not approved for use with high-risk data, or for use in sponsored research.
