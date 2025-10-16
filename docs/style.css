@@ -33,7 +33,7 @@ footer {
     color: #651C32;
 }
 .hljs-built_in, .hljs-symbol {
-    color: #D1660F;
+    color: #C04330;
 }
 .rst-content{
     color:#53565A
@@ -64,7 +64,7 @@ footer {
 }
 .rst-content a,.rst-content a code,.rst-content a:link {
     color: #006CB8;
-    text-decoration: none;
+    font-weight:500;
 }
 .rst-content a code {
     font-weight:600;
@@ -224,4 +224,8 @@ div.wy-side-nav-search a.icon-home{
 footer .credits {
     font-size: 0.8em;
     margin-top: 10px;
+}
+p {
+    line-height: 1.5;
+    font-size: 1em;
 }
