@@ -1,9 +1,34 @@
 site_name: FarmShare
 site_url: https://docs.farmshare.stanford.edu/
-theme: readthedocs
+copyright: '&copy; Stanford Research Computing'
+theme: 
+  name: readthedocs
+  custom_dir: overrides
+  navigation_depth: 2
+  sticky_navigation: false
+  collapse_navigation: false
+
 
 extra_css:
   - style.css
+extra_javascript:
+  - custom.js
+
+extra:
+
+  social:
+    - icon: fontawesome/solid/earth-americas
+      link: https://srcc.stanford.edu
+      name: SRC website
+    - icon: fontawesome/brands/github
+      link: https://github.com/stanford-rc
+      name: SRC on GitHub
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/stanford-rc.bsky.social
+      name: SRC on Bluesky
+    - icon: fontawesome/brands/slack
+      link: https://srcc.slack.com/
+      name: SRC Users Slack workspace
 
 markdown_extensions:
     - admonition
