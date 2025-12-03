@@ -1,4 +1,4 @@
-!! danger "Extended Maintenance Period: *Wednesday, December 17 starting at 12AM through 5PM Thursday, December 18*"
+!!! danger "Extended Maintenance Period: *Wednesday, December 17 starting at 12AM through 5PM Thursday, December 18*"
     **All FarmShare systems will be down for maintenance. Please make sure that running jobs have completed and you have saved any results, refrain from starting any long-running jobs that might not finish, and log out before the beginning of the maintenance window**
 
 # Welcome to FarmShare
