@@ -1,6 +1,3 @@
-!!! danger "Extended Maintenance Period: 12/17–12/18"
-    **FarmShare will be down for scheduled maintenance from 12 am on Wednesday, December 17 through 5 pm on Thursday, December 18. Please complete your work and log out before the beginning of the maintenance period.**
-
 # Welcome to FarmShare
 
 FarmShare is Stanford's community computing environment. It is intended for use in coursework and unsponsored research. It is not approved for use with high-risk data, or for use in sponsored research.
@@ -28,7 +25,7 @@ FarmShare consists of three classes of servers:
 
 * *Login* nodes called **rice** servers where you log in to run commands, access files, submit jobs, and review results. The rice servers also have access to [Stanford AFS](https://uit.stanford.edu/service/afs). These servers can be accessed via [`ssh`](connecting.md#ssh) and can be used for interactive work. Some resource limits are enforced, so if you need to run a long-running or compute- and/or memory-intensive process you should submit a [*job*](slurm.md#slurm)
 
-* *Compute* nodes called **iron**, **rye** and **wheat** servers. They have more CPU power and more memory than the rice servers, and are meant for both [interactive](slurm.md#interactive-jobs) jobs (where you log in to control what happens) and [batch](slurm.md#batch-jobs) jobs (where everything runs from a script that you submit)
+* *Compute* nodes called **barley**, **rye** and **wheat** servers. They have more CPU power and more memory than the rice servers, and are meant for both [interactive](slurm.md#interactive-jobs) jobs (where you log in to control what happens) and [batch](slurm.md#batch-jobs) jobs (where everything runs from a script that you submit)
 
 * *GPU compute nodes* called **oat** servers. They are similar to the compute nodes mentioned above, except that they also have GPUs installed 
 
