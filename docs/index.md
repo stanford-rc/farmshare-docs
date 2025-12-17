@@ -9,16 +9,15 @@ FarmShare evolved from the old, public UNIX cluster, once located on the second 
 
 Resources on FarmShare are focused on making it easier to learn how to use research computing including “scheduler” or “distributed resource management system” to submit compute jobs. By using FarmShare, new researchers can more easily adapt to using larger clusters when they have big projects that involve using federally funded resources, shared Stanford clusters, or on a small grant funded cluster. Full SUNet (or sponsorship) required.
 
-## What's New
+## What's New (2025)
 
 Key changes on the new FarmShare environment include:
 
-* Major OS upgrade to [Ubuntu 24.04 LTS](https://wiki.ubuntu.com/NobleNumbat/ReleaseNotes) which brings many changes, improvements and provides LTS stability.
-* New Hardware with CPU and memory improvements.
-* New browser based access with [Open OnDemand v4](connecting.md#open-ondemand). 
-* Updated Open Ondemand apps: JupyterLabs, RStudio, and VS Code.
-* Updated Scheduler (resource manager) to [Slurm v24.11](slurm.md#slurm)
-* Home directory path updated to `/home/users/USER`. Please use the variable `$HOME` instead of hard coding directory paths.
+* Major Hardware Expansion (Dec 2025):
+   * 12 New Compute nodes (6 GPU nodes each with four NVIDIA L40S, 2 Big Memory nodes with up to 1.5T Memory, 4 regular computes)
+   * TrueNAS all-NVMe Storage Appliance now providing `HOME` and `/scratch`
+   * New 100GbE Network Switches with 25GbE connections to Compute nodes
+* Minor OS updates to [Ubuntu 24.04 LTS](https://wiki.ubuntu.com/NobleNumbat/ReleaseNotes) which brings many changes, improvements and provides LTS stability.
 
 ## Cluster Components
 
