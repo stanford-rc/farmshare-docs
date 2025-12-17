@@ -11,8 +11,8 @@ Resources on FarmShare are focused on making it easier to learn how to use resea
 Key changes on the new FarmShare environment include:
 
 * Major Hardware Expansion (Dec 2025):
-   * 12 New Compute nodes (6 GPU nodes each with four NVIDIA L40S, 2 Big Memory nodes with up to 1.5T Memory, 4 Regular compute nodes with AMD "Genoa-X" CPUs)
-   * TrueNAS all-NVMe Storage Appliance now providing `HOME` and `/scratch`
+   * 12 New Compute nodes (6 GPU nodes each with four [NVIDIA L40S](https://www.nvidia.com/en-us/data-center/l40s/), 2 Big Memory nodes with up to 1.5T Memory, 4 Regular compute nodes with AMD "Genoa-X" CPUs)
+   * [TrueNAS](https://www.truenas.com/blog/the-new-performance-flagship-truenas-f-series/) all-NVMe Storage Appliance now providing `HOME` and `/scratch`
    * New 100GbE Network Switches with 25GbE connections to Compute nodes
 * Minor OS updates to [Ubuntu 24.04 LTS](https://wiki.ubuntu.com/NobleNumbat/ReleaseNotes) which brings many changes, improvements and provides LTS stability.
 
