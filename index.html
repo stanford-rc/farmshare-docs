@@ -43,7 +43,7 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Introduction</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#whats-new">What&rsquo;s New</a>
+    <li class="toctree-l2"><a class="reference internal" href="#whats-new-2025">What&rsquo;s New (2025)</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#cluster-components">Cluster Components</a>
     </li>
@@ -102,23 +102,19 @@
             <div class="section" itemprop="articleBody">
               
 <div id="page-content">
-                <div class="admonition danger">
-<p class="admonition-title">Extended Maintenance Period: 12/17–12/18</p>
-<p><strong>FarmShare will be down for scheduled maintenance from 12 am on Wednesday, December 17 through 5 pm on Thursday, December 18. Please complete your work and log out before the beginning of the maintenance period.</strong></p>
-</div>
-<h1 id="welcome-to-farmshare">Welcome to FarmShare<a class="headerlink" href="#welcome-to-farmshare" title="Permanent link">&para;</a></h1>
+                <h1 id="welcome-to-farmshare">Welcome to FarmShare<a class="headerlink" href="#welcome-to-farmshare" title="Permanent link">&para;</a></h1>
 <p>FarmShare is Stanford&rsquo;s community computing environment. It is intended for use in coursework and unsponsored research. It is not approved for use with high-risk data, or for use in sponsored research.</p>
 <p>FarmShare evolved from the old, public UNIX cluster, once located on the second floor of Sweet Hall, which was itself a successor to systems like the University&rsquo;s original timeshare service, LOTS. The latest iteration of FarmShare with hardware and major OS update came online early 2024.</p>
 <p>Resources on FarmShare are focused on making it easier to learn how to use research computing including “scheduler” or “distributed resource management system” to submit compute jobs. By using FarmShare, new researchers can more easily adapt to using larger clusters when they have big projects that involve using federally funded resources, shared Stanford clusters, or on a small grant funded cluster. Full SUNet (or sponsorship) required.</p>
-<h2 id="whats-new">What&rsquo;s New<a class="headerlink" href="#whats-new" title="Permanent link">&para;</a></h2>
+<h2 id="whats-new-2025">What&rsquo;s New (2025)<a class="headerlink" href="#whats-new-2025" title="Permanent link">&para;</a></h2>
 <p>Key changes on the new FarmShare environment include:</p>
 <ul>
-<li>Major OS upgrade to <a href="https://wiki.ubuntu.com/NobleNumbat/ReleaseNotes">Ubuntu 24.04 LTS</a> which brings many changes, improvements and provides LTS stability.</li>
-<li>New Hardware with CPU and memory improvements.</li>
-<li>New browser based access with <a href="connecting/#open-ondemand">Open OnDemand v4</a>. </li>
-<li>Updated Open Ondemand apps: JupyterLabs, RStudio, and VS Code.</li>
-<li>Updated Scheduler (resource manager) to <a href="slurm/#slurm">Slurm v24.11</a></li>
-<li>Home directory path updated to <code>/home/users/USER</code>. Please use the variable <code>$HOME</code> instead of hard coding directory paths.</li>
+<li>Major Hardware Expansion (Dec 2025):</li>
+<li>12 New Compute nodes (6 GPU nodes each with four <a href="https://www.nvidia.com/en-us/data-center/l40s/">NVIDIA L40S</a>, 2 Big Memory nodes with up to 1.5T Memory, 4 Regular compute nodes with AMD &ldquo;Genoa-X&rdquo; CPUs)</li>
+<li><a href="https://www.truenas.com/blog/the-new-performance-flagship-truenas-f-series/">TrueNAS</a> all-NVMe Storage Appliance now providing <code>HOME</code> and <code>/scratch</code></li>
+<li>New 100GbE Network providing 25GbE to Compute nodes (leveraging RDMA where possible)</li>
+<li>Minor OS updates to <a href="https://discourse.ubuntu.com/t/noble-numbat-point-release-changes/47565/4">Ubuntu 24.04 LTS</a> which brings many changes, improvements and provides LTS stability</li>
+<li>New software modules recompiled to match the OS and hardware changes</li>
 </ul>
 <h2 id="cluster-components">Cluster Components<a class="headerlink" href="#cluster-components" title="Permanent link">&para;</a></h2>
 <div class="admonition info">
@@ -131,7 +127,7 @@
 <p><em>Login</em> nodes called <strong>rice</strong> servers where you log in to run commands, access files, submit jobs, and review results. The rice servers also have access to <a href="https://uit.stanford.edu/service/afs">Stanford AFS</a>. These servers can be accessed via <a href="connecting/#ssh"><code>ssh</code></a> and can be used for interactive work. Some resource limits are enforced, so if you need to run a long-running or compute- and/or memory-intensive process you should submit a <a href="slurm/#slurm"><em>job</em></a></p>
 </li>
 <li>
-<p><em>Compute</em> nodes called <strong>iron</strong>, <strong>rye</strong> and <strong>wheat</strong> servers. They have more CPU power and more memory than the rice servers, and are meant for both <a href="slurm/#interactive-jobs">interactive</a> jobs (where you log in to control what happens) and <a href="slurm/#batch-jobs">batch</a> jobs (where everything runs from a script that you submit)</p>
+<p><em>Compute</em> nodes called <strong>barley</strong>, <strong>rye</strong> and <strong>wheat</strong> servers. They have more CPU power and more memory than the rice servers, and are meant for both <a href="slurm/#interactive-jobs">interactive</a> jobs (where you log in to control what happens) and <a href="slurm/#batch-jobs">batch</a> jobs (where everything runs from a script that you submit)</p>
 </li>
 <li>
 <p><em>GPU compute nodes</em> called <strong>oat</strong> servers. They are similar to the compute nodes mentioned above, except that they also have GPUs installed </p>
@@ -204,5 +200,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-12-03 18:06:23.435139+00:00
+Build Date UTC : 2025-12-18 21:07:20.277717+00:00
 -->
