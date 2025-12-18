@@ -10,11 +10,12 @@ Resources on FarmShare are focused on making it easier to learn how to use resea
 
 Key changes on the new FarmShare environment include:
 
-* Major Hardware Expansion (Dec 2025):
-   * 12 New Compute nodes (6 GPU nodes each with four [NVIDIA L40S](https://www.nvidia.com/en-us/data-center/l40s/), 2 Big Memory nodes with up to 1.5T Memory, 4 Regular compute nodes with AMD "Genoa-X" CPUs)
-   * [TrueNAS](https://www.truenas.com/blog/the-new-performance-flagship-truenas-f-series/) all-NVMe Storage Appliance now providing `HOME` and `/scratch`
-   * New 100GbE Network providing 25GbE to Compute nodes (leveraging RDMA where possible)
+* Major Hardware Expansion (Dec 2025)
+    * 12 New Compute nodes (6 GPU nodes each with four [NVIDIA L40S](https://www.nvidia.com/en-us/data-center/l40s), 2 Big Memory nodes with up to 1.5T Memory, 4 Regular compute nodes with AMD "Genoa-X" CPUs)
+    * [TrueNAS](https://www.truenas.com/blog/the-new-performance-flagship-truenas-f-series) all-NVMe Storage Appliance now providing `HOME` and `/scratch`
+    * New 100GbE Network providing 25GbE to Compute nodes (leveraging RDMA where possible)
 * Minor OS updates to [Ubuntu 24.04 LTS](https://discourse.ubuntu.com/t/noble-numbat-point-release-changes/47565/4) which brings many changes, improvements and provides LTS stability
+* Slurm scheduler updated to [v25.11.1](https://www.schedmd.com/slurm-version-25-11-1-is-now-available) 
 * New software modules recompiled to match the OS and hardware changes
 
 ## Cluster Components
