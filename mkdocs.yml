@@ -1,19 +1,25 @@
 site_name: FarmShare
 site_url: https://docs.farmshare.stanford.edu/
 copyright: '&copy; Stanford Research Computing'
-theme: 
-  name: readthedocs
+theme:
+  name: material
+  palette:
+    scheme: stanford
   custom_dir: overrides
   navigation_depth: 2
 
 extra_css:
   - style.css
+  - stylesheets/extra.css
 extra_javascript:
   - custom.js
 
 extra:
 
   social:
+    - icon: fontawesome/solid/wheelchair
+      link: https://www.stanford.edu/site/accessibility
+      name: Digital Accessibility at Stanford
     - icon: fontawesome/solid/earth-americas
       link: https://srcc.stanford.edu
       name: SRC website
@@ -43,4 +49,5 @@ nav:
   - "Using Software": software.md
   - "Transferring Data": transfer.md
   - "Adding Capacity": capacity.md
+  - "Getting Help": help.md
   - Policy: policy.md

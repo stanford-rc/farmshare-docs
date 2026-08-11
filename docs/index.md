@@ -51,10 +51,3 @@ If you are doing sponsored or departmental research, then FarmShare might not be
 If you are working with high-risk data then you should consider our [Nero GCP](https://nero-docs.stanford.edu/gcp-overview.html) or [Carina](https://carinadocs.sites.stanford.edu/) Computing platform. 
 
 If you are working with complex AI you should consider our [Marlowe](https://docs.marlowe.stanford.edu/) Cluster.
-
-# Getting Help
-
-Most FarmShare support is provided during business hours, either via email or during academic-year office hours.
-
-For email support, send a message to [srcc-support](mailto:srcc-support@stanford.edu?subject=FarmShare support). Make sure you have "FarmShare" somewhere in the subject line, and please be as detailed as possible with your request.
-
