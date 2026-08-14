@@ -1,19 +1,54 @@
 site_name: FarmShare
 site_url: https://docs.farmshare.stanford.edu/
-copyright: "&copy; Stanford Research Computing"
+site_description: >
+  User documenation for FarmShare, Stanford's cluster for teaching,
+  coursework, and unsponsored research.
+site_author: Stanford | Research Computing
+
+copyright: >-
+  &copy <a href='mailto:srcc-support@stanford.edu'>
+  <span style="color: #8C1515;">Stanford</span> | Research Computing</a><br/>
+
+docs_dir: src
+site_dir: site
+
 theme:
   name: material
-  palette:
-    scheme: stanford
   custom_dir: overrides
-  navigation_depth: 2
+
+  language: en
+
+  palette:
+  # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: stanford
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      # https://github.com/squidfunk/mkdocs-material/issues/5537
+      primary: custom
+      accent:  custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+  font:
+    text: Roboto
+    code: Roboto Mono
 
 extra_css:
-#  - style.css
-  - stylesheets/extra.css
+  - assets/stylesheets/extra.css
 
 extra_javascript:
-  - custom.js
+  - assets/scripts/custom.js
 
 extra:
   social:
@@ -44,10 +79,11 @@ markdown_extensions:
 
 nav:
   - "Introduction": index.md
-  - "Getting Connected": connecting.md
-  - "Running Jobs": slurm.md
-  - "Using Software": software.md
-  - "Transferring Data": transfer.md
-  - "Adding Capacity": capacity.md
-  - "Getting Help": help.md
-  - "Policy": policy.md
+  - "Getting Connected": docs/connecting.md
+  - "Running Jobs": docs/slurm.md
+  - "Using Software": docs/software.md
+  - "Shared Storage": docs/storage.md
+  - "Transferring Data": docs/transfer.md
+  - "Adding Capacity": docs/capacity.md
+  - "Getting Help": docs/help.md
+  - "Policy": docs/policy.md

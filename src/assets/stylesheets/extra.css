@@ -10,3 +10,10 @@
   --md-accent-bg-color:              #FFFFFF;   /* White */
   --md-accent-bg-color--light:       #FFFFFFB3; /* Semi-transparent White */
 }
+
+[data-md-color-scheme="slate"] {
+}
+
+.acronym {
+  font-variant: small-caps;
+}
