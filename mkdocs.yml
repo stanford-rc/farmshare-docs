@@ -7,7 +7,7 @@ site_author: Stanford | Research Computing
 
 copyright: >-
   &copy <a href='mailto:srcc-support@stanford.edu'>
-  <span style="color: #8C1515;">Stanford</span> | Research Computing</a><br/>
+  <span style="color: #8C1515;"><strong>Stanford</strong></span> | Research Computing</a><br/>
 
 docs_dir: src
 site_dir: site

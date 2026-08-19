@@ -6,33 +6,38 @@ FarmShare is Stanford University's community computing environment. It is intend
 
 FarmShare evolved from a public UNIX cluster, once located on the second floor of Sweet Hall, which was itself a successor to the University's original timesharing service, <span class="acronym">LOTS</span> (Low-Overhead Timesharing). The latest iteration, with major hardware and software updates, came online in December 2025.
 
+!!! important "FarmShare Usage Policy"
+    See the [Policy](docs/policy.md) section for details.
+
 ## Cluster Description
 
 FarmShare consists of several classes of servers:
 
 * **Login** nodes (`rice`), where users log in for interactive work (running commands, accessing files, submitting jobs, and reviewing results). Unlike some other HPC clusters, users are allowed to do substantial work on the login nodes, but some limits are enforced; work that needs to exceed these limits should be submitted as a batch job.
-* **Compute** nodes (`barley`, `rye`, `oat`, `wheat`, and `iron`), orchestrated by the [Slurm](https://slurm.schedmd.com) workload manager, where batch jobs run. These have more computing resources than the login nodes, and some (`rye`) have additional memory or (`oat`) specialized hardware (GPUs) for jobs that require them. Others (`iron`) are dedicated to specific workloads. Users do not access these nodes directly, but by submitting [jobs](docs/slurm.md) (or, for interactive or desktop applications, via [FarmShare OnDemand](https://ondemand.farmshare.stanford.edu)).
+* **Compute** nodes (`barley`, `rye`, `oat`, `wheat`, and `iron`), orchestrated by the [Slurm](https://slurm.schedmd.com) workload manager, where batch jobs run. These have more computing resources than the login nodes, and some (`rye`) have additional memory or (`oat`) specialized hardware (GPUs) for jobs that require them. Others (`iron`) are dedicated to specific workloads. Users do not access these nodes directly, but by submitting [jobs](docs/slurm.md).
 * **Data transfer** nodes (`dtn`), which are used for [moving data](docs/transfer.md) between FarmShare and other systems.
 
 There are also various **service** nodes, used for the administration of the cluster.
 
 The nodes are connected by a fast network, and have access to [shared storage](docs/storage.md).
 
+!!! info "Operating System"
+    FarmShare systems run Ubuntu 24.04 LTS (`noble`), based on Debian 13 (`trixie`), and use the HWE kernel.
+
+Users can get started by [connecting](docs/connecting.md) directly to a login node, or via a web browser using [FarmShare OnDemand](https://ondemand.farmshare.stanford.edu/).
+
 ## Eligibility
 
-!!! important "FarmShare Usage Policy"
-    Visit our [Policy](docs/policy.md) section for details
+FarmShare is available to users with a full-service [SUNet ID](https://uit.stanford.edu/service/accounts/sunetids). A full-service ID is one that has email service; anyone with a `stanford.edu` e-mail address can log in and use FarmShare for an approved purpose. Users who are not already eligible for a full-service SUNetID (e.g., visiting researchers) can seek sponsorship at the required level.
 
-FarmShare is available to anyone who has a full-service SUNetID. A full-service SUNetID is one that has email service; if you can successfully get to [Stanford Webmail](https://webmail.stanford.edu/), then you are eligible to use FarmShare for academic work. If you do not already have a full-service SUNetID (maybe because you are a visiting researcher), you can get a sponsored full-service SUNetID. Read more about [SUNetID levels](https://uit.stanford.edu/service/accounts/sunetids).
-
-Note that, in order to get a sponsored SUNetID, a monthly fee will be charged by University IT. Only people with spending authority may sponsor a SUNetID. Sponsorships can be obtained and paid for through [Sponsorship Manager](https://uit.stanford.edu/service/sponsorship/).  Current rates are available from the Sponsored Account [Rates page](https://uit.stanford.edu/rates/sponsorship).
-
-FarmShare is meant for [**low- or moderate-risk data**](https://uit.stanford.edu/guide/riskclassifications), and is primarily intended for coursework or research purposes. It is not meant for sponsored research (where you have a dedicated source of funding), and is *not* approved for handling high-risk data.
+!!! info "Sponsorship"
+    Sponsoring a SUNet ID requires spending authority, and involves a [monthly fee](https://uit.stanford.edu/rates/sponsorship) payable to University IT. Speak with a faculty member or manager for more information.
 
 ## Sponsored Research
 
-If you are doing sponsored or departmental research, then FarmShare might not be the right place for you. Instead, if the data you are working with is all low-risk, then you should consider our [Sherlock](https://www.sherlock.stanford.edu/) Cluster. 
+FarmShare is not intended for sponsored or departmental research. Users with a grant or other, dedicated source of funding should explore other options:
 
-If you are working with high-risk data then you should consider our [Nero GCP](https://nero-docs.stanford.edu/gcp-overview.html) or [Carina](https://carinadocs.sites.stanford.edu/) Computing platform. 
-
-If you are working with complex AI you should consider our [Marlowe](https://docs.marlowe.stanford.edu/) Cluster.
+* **[Sherlock](https://www.sherlock.stanford.edu/)**, a large, shared cluster for Stanford faculty and their labs or research teams.
+* **[Carina](https://carinadocs.sites.stanford.edu/)**, a secure computing environment approved for use with high-risk data.
+* **[Nero](https://nero-docs.stanford.edu/)**, a cloud computing environment and Big Data platform for high-risk data.
+* **[Marlowe](https://docs.marlowe.stanford.edu/)**, a large GPU cluster for AI and other research requiring access to specialized hardware.
