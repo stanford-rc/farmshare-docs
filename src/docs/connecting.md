@@ -95,7 +95,7 @@ Host login.farmshare.stanford.edu
 
 ## Mobile Shell (Mosh)
 
-[Mosh](https://mosh.org/) is an alternative to SSH for Linux and macOS clients. It uses OpenSSH for authentication but manages its own, encrypted session. Mosh has some advantages, including predictive display (useful on high-latency connections) and improved network resiliency. Mosh connections can persist even when a computer's network location changes or a computer goes to sleep.
+[Mosh](https://mosh.org/) is an alternative to SSH for Linux and macOS clients. It uses OpenSSH for authentication but closes the SSH session and manages its own, encrypted connection after successful authentication. Mosh has some advantages, including predictive display (useful on high-latency connections) and improved network resiliency. Mosh connections can persist even when a computer's network location changes or a computer goes to sleep.
 
 ## Open OnDemand
 
