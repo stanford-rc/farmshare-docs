@@ -33,9 +33,7 @@ $ ssh sunetid@login.farmshare.stanford.edu
 !!! info "Windows Subsystem for Linux"
     On Windows, the [Windows Subsystem for Linux](https://learn.microsoft.com/en-us/windows/wsl/about) is another option for a terminal interface.
 
-An terminal session can be ended by running `exit` (or `logout`).
-
-The example below shows how to login using your SUNet ID and password along with two-step authentication. To logout, run `exit` or `logout`.
+A terminal session can be ended by running `exit` (or `logout`).
 
 ``` shell
 $ ssh sunetid@login.farmshare.stanford.edu
@@ -99,7 +97,7 @@ Host login.farmshare.stanford.edu
 
 ## Open OnDemand
 
-[Open OnDemand](https://openondemand.org/) provides a browser-based interface to HPC clusters. The local instance, [FarmShare OnDemand](https://ondemand.farmshare.stanford.edu/), offers terminal, file manager, editor, desktop, and even GUI applications right from a web browser!
+[Open OnDemand](https://openondemand.org/) provides a browser-based interface to HPC clusters. The local instance, [FarmShare OnDemand](https://ondemand.farmshare.stanford.edu/), offers a terminal, file manager, editor, desktop, and even GUI applications right from a web browser!
 
 !!! warning "Invalid account or account/partition combination specified"
-    Some important setup happens the very first time a user connects to a FarmShare login node; this error can indicate that setup has not yet occurred. Before attempting to submit another job (or start an OnDemand app) first select [FarmShare Shell Access](https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh) from the Clusters menu to satisfy the login requirement.
+    Some important setup happens the very first time a user connects to a FarmShare login node; this error can indicate that setup has not yet occurred when you access FarmShare first using OnDemand. Before attempting to submit another job (or start an OnDemand app) first select [FarmShare Shell Access](https://ondemand.farmshare.stanford.edu/pun/sys/shell/ssh) from the Clusters menu to satisfy the login requirement.

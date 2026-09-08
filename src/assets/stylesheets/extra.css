@@ -4,14 +4,17 @@
   --md-primary-fg-color--dark:  #820000;   /* Dark Cardinal red */
   --md-primary-bg-color:        #FFFFFF;   /* White */
   --md-primary-bg-color--light: #FFFFFFB3; /* Semi-transparent White */
-  
-  --md-accent-fg-color:              #4298B5;   /* Sky */
-  --md-accent-fg-color--transparent: #FFFFFFB3; /* Transparent White */
-  --md-accent-bg-color:              #FFFFFF;   /* White */
-  --md-accent-bg-color--light:       #FFFFFFB3; /* Semi-transparent White */
+
+#  --md-accent-fg-color:              #4298B5;   /* Sky */
+#  --md-accent-fg-color--transparent: #FFFFFFB3; /* Transparent White */
+#  --md-accent-bg-color:              #FFFFFF;   /* White */
+#  --md-accent-bg-color--light:       #FFFFFFB3; /* Semi-transparent White */
 }
 
 [data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #8C1515;   /* Cardinal red */
+  --md-primary-fg-color--light: #B83A4B;   /* Light Cardinal red */
+  --md-primary-fg-color--dark:  #820000;   /* Dark Cardinal red *
 }
 
 .acronym {
