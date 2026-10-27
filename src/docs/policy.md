@@ -22,3 +22,7 @@ FarmShare is intended for use in coursework and unsponsored research, and is sub
 FarmShare is *not* approved for use with [high-risk][7] data, including protected health information and personally identifiable information. **Do not use FarmShare to transmit, store, or process high-risk data.**
 
 [8]: https://dataclass.stanford.edu/
+
+## Licensing
+
+Commercial software available on FarmShare is licensed *only* for academic use.
