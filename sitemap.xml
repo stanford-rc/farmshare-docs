@@ -2,34 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.farmshare.stanford.edu/</loc>
-         <lastmod>2026-08-14</lastmod>
+         <lastmod>2026-10-27</lastmod>
     </url>
     <url>
-         <loc>https://docs.farmshare.stanford.edu/capacity/</loc>
-         <lastmod>2026-08-14</lastmod>
+         <loc>https://docs.farmshare.stanford.edu/docs/capacity/</loc>
+         <lastmod>2026-10-27</lastmod>
     </url>
     <url>
-         <loc>https://docs.farmshare.stanford.edu/connecting/</loc>
-         <lastmod>2026-08-14</lastmod>
+         <loc>https://docs.farmshare.stanford.edu/docs/connecting/</loc>
+         <lastmod>2026-10-27</lastmod>
     </url>
     <url>
-         <loc>https://docs.farmshare.stanford.edu/help/</loc>
-         <lastmod>2026-08-14</lastmod>
+         <loc>https://docs.farmshare.stanford.edu/docs/examples/</loc>
+         <lastmod>2026-10-27</lastmod>
     </url>
     <url>
-         <loc>https://docs.farmshare.stanford.edu/policy/</loc>
-         <lastmod>2026-08-14</lastmod>
+         <loc>https://docs.farmshare.stanford.edu/docs/help/</loc>
+         <lastmod>2026-10-27</lastmod>
     </url>
     <url>
-         <loc>https://docs.farmshare.stanford.edu/slurm/</loc>
-         <lastmod>2026-08-14</lastmod>
+         <loc>https://docs.farmshare.stanford.edu/docs/policy/</loc>
+         <lastmod>2026-10-27</lastmod>
     </url>
     <url>
-         <loc>https://docs.farmshare.stanford.edu/software/</loc>
-         <lastmod>2026-08-14</lastmod>
+         <loc>https://docs.farmshare.stanford.edu/docs/slurm/</loc>
+         <lastmod>2026-10-27</lastmod>
     </url>
     <url>
-         <loc>https://docs.farmshare.stanford.edu/transfer/</loc>
-         <lastmod>2026-08-14</lastmod>
+         <loc>https://docs.farmshare.stanford.edu/docs/software/</loc>
+         <lastmod>2026-10-27</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.farmshare.stanford.edu/docs/storage/</loc>
+         <lastmod>2026-10-27</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.farmshare.stanford.edu/docs/transfer/</loc>
+         <lastmod>2026-10-27</lastmod>
     </url>
 </urlset>

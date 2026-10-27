@@ -6,12 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="User documenation for FarmShare, Stanford's cluster for teaching, coursework, and unsponsored research.
+">
       
       
-        <link rel="canonical" href="https://docs.farmshare.stanford.edu/transfer/">
+        <meta name="author" content="Stanford | Research Computing">
       
       
-        <link rel="prev" href="../software/">
+        <link rel="canonical" href="https://docs.farmshare.stanford.edu/docs/transfer/">
+      
+      
+        <link rel="prev" href="../storage/">
       
       
         <link rel="next" href="../capacity/">
@@ -20,7 +25,7 @@
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
@@ -29,10 +34,10 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +56,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,10 +69,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="stanford" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#transferring-research-data" class="md-skip">
+        <a href="#transferring-data" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +99,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="FarmShare" class="md-header__button md-logo" aria-label="FarmShare" data-md-component="logo">
+    <a href="../.." title="FarmShare" class="md-header__button md-logo" aria-label="FarmShare" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -120,7 +127,43 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="stanford" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -190,7 +233,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="FarmShare" class="md-nav__button md-logo" aria-label="FarmShare" data-md-component="logo">
+    <a href="../.." title="FarmShare" class="md-nav__button md-logo" aria-label="FarmShare" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -208,7 +251,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -313,6 +356,33 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shared Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -376,21 +446,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#ssh-transport" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SCP
+        SSH Transport
       
     </span>
   </a>
@@ -405,34 +464,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Globus">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transfer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Transfer
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -552,21 +583,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#ssh-transport" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scp" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SCP
+        SSH Transport
       
     </span>
   </a>
@@ -581,34 +601,6 @@
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Globus">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Setup
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#transfer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Transfer
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -626,36 +618,19 @@
               <article class="md-content__inner md-typeset">
                 
 <div id="page-content">
-                <h1 id="transferring-research-data">Transferring Research Data<a class="headerlink" href="#transferring-research-data" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>A variety of methods are available for secure and efficient data transfer. There are two methods of data transfer: </p>
-<ul>
-<li>Command-line tools (scp, rsync, sftp, rclone)</li>
-<li>Graphical tools (<a href="https://winscp.net/">WinSCP</a>, <a href="https://cyberduck.io/">Cyberduck</a>, <a href="#globus">Globus</a>)</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">For large transfers, using DTN is recommended</p>
-<p>Quick transfers are ok on the login nodes. The preferred (fastest) method for large transfers is our DTN (data transfer node): <code>dtn.farmshare.stanford.edu</code></p>
+                <h1 id="transferring-data">Transferring Data<a class="headerlink" href="#transferring-data" title="Permanent link">&para;</a></h1>
+<p>FarmShare supports transfering files with any client that can use SSH as a transport, or using <a href="#globus">Globus</a> (GridFTP).</p>
+<div class="admonition important">
+<p class="admonition-title">Data Transfer Nodes</p>
+<p>FarmShare login nodes can be used for small-scale data transfers, but for large transfers a <em>data transfer node</em> (DTN) is preferred; use <code>dtn.farmshare.stanford.edu</code> as the transfer host.</p>
 </div>
-<h2 id="scp">SCP<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h2>
-<p>Secure Copy (scp) uses <a href="../connecting/#ssh">ssh</a> for data transfer and authentication. It works like the <code>cp</code> command, except it can work over the network to copy files between a local host and a remote host.</p>
-<p>Example to copy a single file from a local computer to your home directory (<code>~/</code>) on FarmShare:</p>
-<pre><code class="language-shell">$ scp alpine-standard-3.21.2-aarch64.iso ta5@dtn.farmshare.stanford.edu:~
-ta5@dtn.farmshare.stanford.edu's password: 
-Autopushing login request to phone...
-Success. Logging you in...
-alpine-standard-3.21.2-aarch64.iso            100%  253MB   1.3MB/s   03:18    
-</code></pre>
-<p>The process is similar for other ssh based tools like rsync, sftp.</p>
+<h2 id="ssh-transport">SSH Transport<a class="headerlink" href="#ssh-transport" title="Permanent link">&para;</a></h2>
+<p>Clients that use SSH as a transport for data transfers include both command-line tools like <code>scp</code>, <code>rsync</code>, and <code>rclone</code>, and applications with a graphical user interface like <a href="https://uit.stanford.edu/software/scrt_sfx">SecureFX</a>, <a href="https://winscp.net/">WinSCP</a>, and <a href="https://cyberduck.io/">Cyberduck</a>. <code>scp</code> works much like the standard Linux command <code>cp</code> and is useful for quick transfers involving just one or a few files; <code>rsync</code> can be used for transfers of entire directories or directory trees, and can efficiently sync local and remote files by transferring only data that has changed at the source. <code>rclone</code> can be used to transfer data from a personal computer to FarmShare using SSH, or from supported cloud storage sources when used as a client on a FarmShare login or compute node.</p>
 <h2 id="globus">Globus<a class="headerlink" href="#globus" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.globus.org/data-transfer">Globus</a> is browser based interface for data management and transfers. It can be used for data transfers from a personal computer to FarmShare. It is useful for large transfers and will provide the best transfer speeds.</p>
-<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h3>
-<p>To use Globus, you will first need to authenticate at <a href="https://www.globus.org/">Globus.org</a>. You can either sign up for a Globus account, or use your SUNet ID account for authentication to Globus (which will be required to authenticate to the FarmShare endpoint).</p>
-<p>To use your SUNet ID, choose &ldquo;Stanford University&rdquo; from the drop down menu at the Login page and follow the instructions from there.</p>
-<h3 id="transfer">Transfer<a class="headerlink" href="#transfer" title="Permanent link">&para;</a></h3>
-<div class="admonition note">
-<p class="admonition-title">FarmShare Endpoint</p>
-<p>Connect to the <code>SRCC FarmShare</code> endpoint: <a href="https://app.globus.org/file-manager?origin_id=13818aec-5644-11e9-9e6e-0266b1fe9f9e">https://app.globus.org</a>.</p>
+<p><a href="https://www.globus.org/">Globus</a> is browser-based interface for data management and transfers. It can be used for moving files between a personal computer and FarmShare, or between FarmShare and other Globus endpoints both here at Stanford (for example, Sherlock or Oak) and elsewhere. It provides the best performance for large transfers.</p>
+<div class="admonition info">
+<p class="admonition-title">FarmShare Globus Endpoint</p>
+<p>To connect directly to the FarmShare Globus endpoint, <a href="https://app.globus.org/file-manager?origin_id=13818aec-5644-11e9-9e6e-0266b1fe9f9e">SRCC FarmShare</a>, authenticate using ogranization &ldquo;Stanford University.&rdquo; Globus can also be accessed from FarmShare OnDemand using the <a href="https://ondemand.farmshare.stanford.edu/pun/sys/dashboard/files/">Files</a> app.</p>
 </div>
                 </div>
               
@@ -675,7 +650,7 @@ alpine-standard-3.21.2-aarch64.iso            100%  253MB   1.3MB/s   03:18
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; Stanford Research Computing
+      &copy <a href='mailto:srcc-support@stanford.edu'> <span style="color: #8C1515;"><strong>Stanford</strong></span> | Research Computing</a><br/>
     </div>
   
   
@@ -744,12 +719,12 @@ alpine-standard-3.21.2-aarch64.iso            100%  253MB   1.3MB/s   03:18
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../custom.js"></script>
+        <script src="../../assets/scripts/custom.js"></script>
       
     
   </body>

@@ -6,33 +6,36 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="User documenation for FarmShare, Stanford's cluster for teaching, coursework, and unsponsored research.
+">
       
       
-        <link rel="canonical" href="https://docs.farmshare.stanford.edu/slurm/">
+        <meta name="author" content="Stanford | Research Computing">
       
       
-        <link rel="prev" href="../connecting/">
+        <link rel="canonical" href="https://docs.farmshare.stanford.edu/docs/policy/">
       
       
-        <link rel="next" href="../software/">
+        <link rel="prev" href="../help/">
+      
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
-        <title>Running Jobs - FarmShare</title>
+        <title>Policy - FarmShare</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +54,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,10 +67,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="stanford" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#running-jobs" class="md-skip">
+        <a href="#policy" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +97,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="FarmShare" class="md-header__button md-logo" aria-label="FarmShare" data-md-component="logo">
+    <a href="../.." title="FarmShare" class="md-header__button md-logo" aria-label="FarmShare" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Running Jobs
+              Policy
             
           </span>
         </div>
@@ -120,7 +125,43 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="stanford" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -190,7 +231,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="FarmShare" class="md-nav__button md-logo" aria-label="FarmShare" data-md-component="logo">
+    <a href="../.." title="FarmShare" class="md-nav__button md-logo" aria-label="FarmShare" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -208,7 +249,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -259,37 +300,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Running Jobs
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../slurm/" class="md-nav__link">
         
   
   
@@ -305,98 +319,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#slurm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slurm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#slurm-commands" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Slurm commands
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#interactive-jobs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Interactive Jobs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#batch-jobs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Batch Jobs
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Batch Jobs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#partitionqos-info" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Partition/QoS Info
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -416,6 +338,33 @@
     
   
     Using Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shared Storage
   
 
     
@@ -513,10 +462,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../policy/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Policy
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -532,6 +508,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authorized-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorized Users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acceptable-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptable Use
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Classification
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licensing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licensing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -563,10 +603,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#slurm" class="md-nav__link">
+  <a href="#authorized-users" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Slurm
+        Authorized Users
       
     </span>
   </a>
@@ -574,10 +614,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slurm-commands" class="md-nav__link">
+  <a href="#acceptable-use" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Slurm commands
+        Acceptable Use
       
     </span>
   </a>
@@ -585,10 +625,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interactive-jobs" class="md-nav__link">
+  <a href="#risk-classification" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interactive Jobs
+        Risk Classification
       
     </span>
   </a>
@@ -596,38 +636,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#batch-jobs" class="md-nav__link">
+  <a href="#licensing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Batch Jobs
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Batch Jobs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#partitionqos-info" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Partition/QoS Info
+        Licensing
       
     </span>
   </a>
@@ -648,147 +660,15 @@
               <article class="md-content__inner md-typeset">
                 
 <div id="page-content">
-                <h1 id="running-jobs">Running Jobs<a class="headerlink" href="#running-jobs" title="Permanent link">&para;</a></h1>
-<h2 id="slurm">Slurm<a class="headerlink" href="#slurm" title="Permanent link">&para;</a></h2>
-<p>FarmShare uses <a href="https://slurm.schedmd.com/">Slurm</a> for job (resource) management. Jobs are scheduled according to a priority which depends on a number of factors, including how long a job has been waiting, its size, and a fair-share value that tracks recent per-user utilization of cluster resources. Lower-priority jobs, and jobs requiring access to resources not currently available, may wait some time before starting to run. The scheduler may reserve resources so that pending jobs can start; while it will try to backfill these resources with smaller, shorter jobs (even those at lower priorities), this behavior can sometimes cause nodes to appear to be idle even when there are jobs that are ready to run.</p>
-<h2 id="slurm-commands">Slurm commands<a class="headerlink" href="#slurm-commands" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Slurm Man Pages</p>
-<p>Full <a href="https://slurm.schedmd.com/documentation.html">documentation</a> and detailed usage information is provided in the man pages.</p>
-</div>
-<p>Slurm allows requesting resources and submitting jobs in a variety of ways. The<br />
-main Slurm commands to submit jobs are listed in the table below:</p>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Description</th>
-<th>Behavior</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://slurm.schedmd.com/salloc.html"><code>salloc</code></a></td>
-<td>Request resources and allocates them to a job</td>
-<td>Starts a new shell, but does not execute anything</td>
-</tr>
-<tr>
-<td><a href="https://slurm.schedmd.com/srun.html"><code>srun</code></a></td>
-<td>Request resources and runs a command on the allocated compute node</td>
-<td>Execute command on compute node</td>
-</tr>
-<tr>
-<td><a href="https://slurm.schedmd.com/sbatch.html"><code>sbatch</code></a></td>
-<td>Request resources and runs a script on the allocated compute node</td>
-<td>Submit a batch script to Slurm</td>
-</tr>
-<tr>
-<td><a href="https://slurm.schedmd.com/squeue.html"><code>squeue</code></a></td>
-<td>View job and job step information</td>
-<td>Displays job information</td>
-</tr>
-<tr>
-<td><a href="https://slurm.schedmd.com/scancel.html"><code>scancel</code></a></td>
-<td>Signal or cancel jobs, job arrays or job steps</td>
-<td>Cancel running job</td>
-</tr>
-<tr>
-<td><a href="https://slurm.schedmd.com/sinfo.html"><code>sinfo</code></a></td>
-<td>View information about Slurm nodes and partitions</td>
-<td>Displays partition information</td>
-</tr>
-<tr>
-<td><a href="https://slurm.schedmd.com/scontrol.html"><code>scontrol</code></a></td>
-<td>View detailed information on job, node, partition, reservation and configuration</td>
-<td>Displays detailed Slurm information</td>
-</tr>
-</tbody>
-</table>
-<h2 id="interactive-jobs">Interactive Jobs<a class="headerlink" href="#interactive-jobs" title="Permanent link">&para;</a></h2>
-<p>Interactive sessions that require resources in excess of limits on the login nodes, exclusive access to resources, or access to a feature not available on the login nodes (e.g., a GPU), can be submitted to a compute node. Each user is allowed one interactive job, which may run for at most one day. You can use the <a href="https://slurm.schedmd.com/srun.html"><code>srun</code></a> command to request one:</p>
-<p>The example below shows how to request an interactive session using <code>srun</code>:</p>
-<pre><code class="language-shell">ta5@rice-02:~$ srun --partition=interactive --qos=interactive --pty bash
-ta5@iron-03:~$ 
-</code></pre>
-<p>Notice that the prompt changed from <code>rice-02</code> (login node) to <code>iron-03</code> (compute node). Check your job info with <code>squeue</code>:</p>
-<pre><code class="language-shell">ta5@iron-03:~$ squeue -a -u ta5
-       JOBID    PARTITION   NAME  USER ST TIME_LIMIT  NODES CPUS MIN_MEMORY
-      309641  interactive   bash  ta5  R  1:00:00     1    1      4000M
-</code></pre>
-<p>Here we can see the default limits of one cpu, 4000MB memory and one hour walltime.</p>
-<h2 id="batch-jobs">Batch Jobs<a class="headerlink" href="#batch-jobs" title="Permanent link">&para;</a></h2>
-<p>The <a href="https://slurm.schedmd.com/sbatch.html"><code>sbatch</code></a> command is used to submit a batch job. A job is simply an instance of your application (for example your R or Python script) that is submitted to and executed by the job scheduler (Slurm). When you submit a job with the <code>sbatch</code> command it&rsquo;s called a batch job. Options are used to request specific resources (including runtime), and can be provided either on the command line or, using a special syntax, in the script file itself. </p>
-<p>Common options are outlined below. Some options have a short and long version. Refer to the man page for all options.</p>
-<p><strong>CPUs:</strong> <code>-c, --cpus-per-task</code> How many CPUs the application you are calling the in the sbatch script needs, unless it can utilize multiple CPUs at once you should request a single CPU. Confirm Check your code&rsquo;s documentation or try running in an interactive session with <code>htop</code> if you are unsure.</p>
-<p><strong>memory (RAM):</strong> <code>--mem</code> How much memory your job will consume. Some things to consider, will it load a large file or matrix into memory? Does it consume a lot of memory on your laptop? Often the default memory is sufficient for many jobs.</p>
-<p><strong>time:</strong> <code>-t, --time</code> How long will it take for your code to run to completion?</p>
-<p><strong>partition:</strong> <code>-p, --partition</code> What set of compute nodes on FarmShare will you run on, normal, interactive, bigmem? The default partition on FarmShare is the normal partition.</p>
-<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
-<p>To submit batch jobs to the scheduler:</p>
-<ol>
-<li>Create an application script </li>
-<li>Create a Slurm job script that runs the application script</li>
-<li>Submit the job script to the job scheduler using <code>sbatch</code></li>
-</ol>
-<p>Sample python script <code>sum.py</code> to calculate the sum of one to five:</p>
-<pre><code class="language-shell">a = (1, 2, 3, 4, 5)
-x = sum(a)
-print(x)
-</code></pre>
-<p>Sample job submit script <code>tutorial.sh</code> requesting one cpu on one node using the normal partition to run <code>python sum.py</code>:</p>
-<pre><code class="language-shell">#!/bin/bash
-
-#SBATCH --job-name=tutorial
-#SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=1
-#SBATCH --partition=normal
-
-python sum.py
-</code></pre>
-<p>Submit the job with <code>sbatch</code>:</p>
-<pre><code class="language-shell">$ sbatch tutorial.sh
-Submitted batch job 300992
-</code></pre>
-<h2 id="partitionqos-info">Partition/QoS Info<a class="headerlink" href="#partitionqos-info" title="Permanent link">&para;</a></h2>
-<p>FarmShare provides the following partitions and <a href="https://slurm.schedmd.com/qos.html">QoS</a>:</p>
-<table>
-<thead>
-<tr>
-<th>Partition</th>
-<th>Max Memory</th>
-<th>Max CPU</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>normal</td>
-<td>188GB</td>
-<td>256</td>
-</tr>
-<tr>
-<td>bigmem</td>
-<td>768GB</td>
-<td>344</td>
-</tr>
-<tr>
-<td>interactive</td>
-<td>188GB</td>
-<td>16</td>
-</tr>
-</tbody>
-</table>
-<pre><code class="language-shell">$ sacctmgr show qos format=name%11,maxsubmitjobspu,maxjobspu,mintres%10,maxtrespu%25,maxwall
-       Name MaxSubmitPU MaxJobsPU    MinTRES                 MaxTRESPU     MaxWall 
------------ ----------- --------- ---------- ------------------------- ----------- 
-     normal        1024       128                   cpu=256,gres/gpu=3             
-interactive           3         3            cpu=16,gres/gpu=1,mem=64G             
-        dev           1         1             cpu=8,gres/gpu=1,mem=32G    08:00:00 
-       long          32         4                               cpu=32  7-00:00:00 
- caddyshack           1         1                        cpu=8,mem=32G             
-     bigmem          32         4   mem=192G                  mem=768G             
-        gpu          32         4 gres/gpu=1                gres/gpu=6             
-</code></pre>
+                <h1 id="policy">Policy<a class="headerlink" href="#policy" title="Permanent link">&para;</a></h1>
+<h2 id="authorized-users">Authorized Users<a class="headerlink" href="#authorized-users" title="Permanent link">&para;</a></h2>
+<p>Stanford students, faculty, and staff, and other users with a full-service <a href="https://uit.stanford.edu/service/accounts/sunetids">SUNet ID</a>, may use FarmShare resources.</p>
+<h2 id="acceptable-use">Acceptable Use<a class="headerlink" href="#acceptable-use" title="Permanent link">&para;</a></h2>
+<p>FarmShare is intended for use in coursework and unsponsored research, and is subject to University policies on acceptable use and standards of behavior. These include, but are not limited to, policies in the <a href="https://adminguide.stanford.edu/">Administrative Guide</a> (especially the <a href="https://adminguide.stanford.edu/chapter-1/subchapter-1/policy-1-1-1">University Code of Conduct</a> and <a href="https://adminguide.stanford.edu/chapter-6/subchapter-2/policy-6-2-1">Computer and Network Usage Policy</a>) and the <a href="https://doresearch.stanford.edu/policies/research-policy-handbook">Research Policy Handbook</a>, the <a href="https://communitystandards.stanford.edu/policies-and-guidance/honor-code">Honor Code</a>, and the <a href="https://communitystandards.stanford.edu/policies-and-guidance/fundamental-standard">Fundamental Standard</a>.</p>
+<h2 id="risk-classification">Risk Classification<a class="headerlink" href="#risk-classification" title="Permanent link">&para;</a></h2>
+<p>FarmShare is <em>not</em> approved for use with <a href="https://communitystandards.stanford.edu/policies-and-guidance/fundamental-standard">high-risk</a> data, including protected health information and personally identifiable information. <strong>Do not use FarmShare to transmit, store, or process high-risk data.</strong></p>
+<h2 id="licensing">Licensing<a class="headerlink" href="#licensing" title="Permanent link">&para;</a></h2>
+<p>Commercial software available on FarmShare is licensed <em>only</em> for academic use.</p>
                 </div>
               
               </article>
@@ -807,7 +687,7 @@ interactive           3         3            cpu=16,gres/gpu=1,mem=64G
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; Stanford Research Computing
+      &copy <a href='mailto:srcc-support@stanford.edu'> <span style="color: #8C1515;"><strong>Stanford</strong></span> | Research Computing</a><br/>
     </div>
   
   
@@ -876,12 +756,12 @@ interactive           3         3            cpu=16,gres/gpu=1,mem=64G
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="../custom.js"></script>
+        <script src="../../assets/scripts/custom.js"></script>
       
     
   </body>

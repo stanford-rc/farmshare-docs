@@ -6,13 +6,18 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
+        <meta name="description" content="User documenation for FarmShare, Stanford's cluster for teaching, coursework, and unsponsored research.
+">
+      
+      
+        <meta name="author" content="Stanford | Research Computing">
       
       
         <link rel="canonical" href="https://docs.farmshare.stanford.edu/">
       
       
       
-        <link rel="next" href="connecting/">
+        <link rel="next" href="docs/connecting/">
       
       
         
@@ -49,7 +54,7 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="assets/stylesheets/extra.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -62,10 +67,12 @@
   
     
     
+      
     
     
     
-    <body dir="ltr" data-md-color-scheme="stanford" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -74,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-farmshare" class="md-skip">
+        <a href="#farmshare-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +125,43 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="stanford" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -266,10 +309,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#whats-new-2025" class="md-nav__link">
+  <a href="#welcome-to-farmshare" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What&rsquo;s New (2025)
+        Welcome to FarmShare!
       
     </span>
   </a>
@@ -277,10 +320,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cluster-components" class="md-nav__link">
+  <a href="#cluster-description" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster Components
+        Cluster Description
       
     </span>
   </a>
@@ -324,7 +367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="connecting/" class="md-nav__link">
+      <a href="docs/connecting/" class="md-nav__link">
         
   
   
@@ -351,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="slurm/" class="md-nav__link">
+      <a href="docs/slurm/" class="md-nav__link">
         
   
   
@@ -378,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="software/" class="md-nav__link">
+      <a href="docs/software/" class="md-nav__link">
         
   
   
@@ -405,7 +448,34 @@
   
   
     <li class="md-nav__item">
-      <a href="transfer/" class="md-nav__link">
+      <a href="docs/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shared Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="docs/transfer/" class="md-nav__link">
         
   
   
@@ -432,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="capacity/" class="md-nav__link">
+      <a href="docs/capacity/" class="md-nav__link">
         
   
   
@@ -459,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="help/" class="md-nav__link">
+      <a href="docs/help/" class="md-nav__link">
         
   
   
@@ -486,7 +556,7 @@
   
   
     <li class="md-nav__item">
-      <a href="policy/" class="md-nav__link">
+      <a href="docs/policy/" class="md-nav__link">
         
   
   
@@ -533,10 +603,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#whats-new-2025" class="md-nav__link">
+  <a href="#welcome-to-farmshare" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What&rsquo;s New (2025)
+        Welcome to FarmShare!
       
     </span>
   </a>
@@ -544,10 +614,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cluster-components" class="md-nav__link">
+  <a href="#cluster-description" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster Components
+        Cluster Description
       
     </span>
   </a>
@@ -590,53 +660,42 @@
               <article class="md-content__inner md-typeset">
                 
 <div id="page-content">
-                <h1 id="welcome-to-farmshare">Welcome to FarmShare<a class="headerlink" href="#welcome-to-farmshare" title="Permanent link">&para;</a></h1>
-<p>FarmShare is Stanford&rsquo;s community computing environment. It is intended for use in coursework and unsponsored research. It is not approved for use with high-risk data, or for use in sponsored research.</p>
-<p>FarmShare evolved from the old, public UNIX cluster, once located on the second floor of Sweet Hall, which was itself a successor to systems like the University&rsquo;s original timeshare service, LOTS. The latest iteration of FarmShare with hardware and major OS update came online early 2024.</p>
-<p>Resources on FarmShare are focused on making it easier to learn how to use research computing including “scheduler” or “distributed resource management system” to submit compute jobs. By using FarmShare, new researchers can more easily adapt to using larger clusters when they have big projects that involve using federally funded resources, shared Stanford clusters, or on a small grant funded cluster. Full SUNet (or sponsorship) required.</p>
-<h2 id="whats-new-2025">What&rsquo;s New (2025)<a class="headerlink" href="#whats-new-2025" title="Permanent link">&para;</a></h2>
-<p>Key changes on the new FarmShare environment include:</p>
-<ul>
-<li>Major Hardware Expansion (Dec 2025)<ul>
-<li>12 New Compute nodes (6 GPU nodes each with four <a href="https://www.nvidia.com/en-us/data-center/l40s">NVIDIA L40S</a>, 2 Big Memory nodes with up to 1.5T Memory, 4 Regular compute nodes with AMD &ldquo;Genoa-X&rdquo; CPUs)</li>
-<li><a href="https://www.truenas.com/blog/the-new-performance-flagship-truenas-f-series">TrueNAS</a> all-NVMe Storage Appliance now providing <code>HOME</code> and <code>/scratch</code></li>
-<li>New 100GbE Network providing 25GbE to Compute nodes (leveraging RDMA where possible)</li>
-</ul>
-</li>
-<li>Minor OS updates to <a href="https://discourse.ubuntu.com/t/noble-numbat-point-release-changes/47565/4">Ubuntu 24.04 LTS</a> which brings many changes, improvements and provides LTS stability</li>
-<li>Slurm scheduler updated to <a href="https://www.schedmd.com/slurm-version-25-11-1-is-now-available">v25.11.1</a> </li>
-<li>New software modules recompiled to match the OS and hardware changes</li>
-</ul>
-<h2 id="cluster-components">Cluster Components<a class="headerlink" href="#cluster-components" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">Ubuntu OS</p>
-<p>All FarmShare servers run <a href="https://wiki.ubuntu.com/NobleNumbat/ReleaseNotes">Ubuntu 24.04 LTS</a> and get patched/updated on a regular basis</p>
-</div>
-<p>FarmShare consists of three classes of servers:</p>
-<ul>
-<li>
-<p><em>Login</em> nodes called <strong>rice</strong> servers where you log in to run commands, access files, submit jobs, and review results. The rice servers also have access to <a href="https://uit.stanford.edu/service/afs">Stanford AFS</a>. These servers can be accessed via <a href="connecting/#ssh"><code>ssh</code></a> and can be used for interactive work. Some resource limits are enforced, so if you need to run a long-running or compute- and/or memory-intensive process you should submit a <a href="slurm/#slurm"><em>job</em></a></p>
-</li>
-<li>
-<p><em>Compute</em> nodes called <strong>barley</strong>, <strong>rye</strong> and <strong>wheat</strong> servers. They have more CPU power and more memory than the rice servers, and are meant for both <a href="slurm/#interactive-jobs">interactive</a> jobs (where you log in to control what happens) and <a href="slurm/#batch-jobs">batch</a> jobs (where everything runs from a script that you submit)</p>
-</li>
-<li>
-<p><em>GPU compute nodes</em> called <strong>oat</strong> servers. They are similar to the compute nodes mentioned above, except that they also have GPUs installed </p>
-</li>
-</ul>
-<p>FarmShare currently has 4 rice servers (login nodes) along with 26 compute nodes (iron, rye, wheat, oat nodes). User storage for <code>$HOME</code> along with global <code>/scratch</code> space is available on all nodes.</p>
-<h2 id="eligibility">Eligibility<a class="headerlink" href="#eligibility" title="Permanent link">&para;</a></h2>
+                <h1 id="farmshare-documentation">FarmShare <small>Documentation</small><a class="headerlink" href="#farmshare-documentation" title="Permanent link">&para;</a></h1>
+<h2 id="welcome-to-farmshare">Welcome to FarmShare!<a class="headerlink" href="#welcome-to-farmshare" title="Permanent link">&para;</a></h2>
+<p>FarmShare is Stanford University&rsquo;s community computing environment. It is intended for use in teaching, coursework, and unsponsored research, and is designed to be similar to other high-performance computing environments at Stanford (and elsewhere), making it easier for users to learn how such systems work and transition to other clusters when appropriate. FarmShare is <em>not</em> approved for use with high-risk data, or for use in sponsored research.</p>
+<p>FarmShare evolved from a public UNIX cluster, once located on the second floor of Sweet Hall, which was itself a successor to the University&rsquo;s original timesharing service, <span class="acronym">LOTS</span> (Low-Overhead Timesharing). The latest iteration, with major hardware and software updates, came online in December 2025.</p>
 <div class="admonition important">
 <p class="admonition-title">FarmShare Usage Policy</p>
-<p>Visit our <a href="policy/">Policy</a> section for details</p>
+<p>See the <a href="docs/policy/">Policy</a> section for details.</p>
 </div>
-<p>FarmShare is available to anyone who has a full-service SUNetID. A full-service SUNetID is one that has email service; if you can successfully get to <a href="https://webmail.stanford.edu/">Stanford Webmail</a>, then you are eligible to use FarmShare for academic work. If you do not already have a full-service SUNetID (maybe because you are a visiting researcher), you can get a sponsored full-service SUNetID. Read more about <a href="https://uit.stanford.edu/service/accounts/sunetids">SUNetID levels</a>.</p>
-<p>Note that, in order to get a sponsored SUNetID, a monthly fee will be charged by University IT. Only people with spending authority may sponsor a SUNetID. Sponsorships can be obtained and paid for through <a href="https://uit.stanford.edu/service/sponsorship/">Sponsorship Manager</a>.  Current rates are available from the Sponsored Account <a href="https://uit.stanford.edu/rates/sponsorship">Rates page</a>.</p>
-<p>FarmShare is meant for <a href="https://uit.stanford.edu/guide/riskclassifications"><strong>low- or moderate-risk data</strong></a>, and is primarily intended for coursework or research purposes. It is not meant for sponsored research (where you have a dedicated source of funding), and is <em>not</em> approved for handling high-risk data.</p>
+<h2 id="cluster-description">Cluster Description<a class="headerlink" href="#cluster-description" title="Permanent link">&para;</a></h2>
+<p>FarmShare consists of several classes of servers:</p>
+<ul>
+<li><strong>Login</strong> nodes (<code>rice</code>), where users log in for interactive work (running commands, accessing files, submitting jobs, and reviewing results). Unlike some other HPC clusters, users are allowed to do substantial work on the login nodes, but some limits are enforced; work that needs to exceed these limits should be submitted as a batch job.</li>
+<li><strong>Compute</strong> nodes (<code>barley</code>, <code>rye</code>, <code>oat</code>, <code>wheat</code>, and <code>iron</code>), orchestrated by the <a href="https://slurm.schedmd.com">Slurm</a> workload manager, where batch jobs run. These have more computing resources than the login nodes, and some (<code>rye</code>) have additional memory or (<code>oat</code>) specialized hardware (GPUs) for jobs that require them. Others (<code>iron</code>) are dedicated to specific workloads. Users do not access these nodes directly, but by submitting <a href="docs/slurm/">jobs</a>.</li>
+<li><strong>Data transfer</strong> nodes (<code>dtn</code>), which are used for <a href="docs/transfer/">moving data</a> between FarmShare and other systems.</li>
+</ul>
+<p>There are also various <strong>service</strong> nodes, used for the administration of the cluster.</p>
+<p>The nodes are connected by a fast network, and have access to <a href="docs/storage/">shared storage</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Operating System</p>
+<p>FarmShare systems run Ubuntu 24.04 LTS (<code>noble</code>), based on Debian 13 (<code>trixie</code>), and use the HWE kernel.</p>
+</div>
+<p>Users can get started by <a href="docs/connecting/">connecting</a> directly to a login node, or via a web browser using <a href="https://ondemand.farmshare.stanford.edu/">FarmShare OnDemand</a>.</p>
+<h2 id="eligibility">Eligibility<a class="headerlink" href="#eligibility" title="Permanent link">&para;</a></h2>
+<p>FarmShare is available to users with a full-service <a href="https://uit.stanford.edu/service/accounts/sunetids">SUNet ID</a>. A full-service ID is one that has email service; anyone with a <code>stanford.edu</code> e-mail address can log in and use FarmShare for an approved purpose. Users who are not already eligible for a full-service SUNetID (e.g., visiting researchers) can seek sponsorship at the required level.</p>
+<div class="admonition info">
+<p class="admonition-title">Sponsorship</p>
+<p>Sponsoring a SUNet ID requires spending authority, and involves a <a href="https://uit.stanford.edu/rates/sponsorship">monthly fee</a> payable to University IT. Speak with a faculty member or manager for more information.</p>
+</div>
 <h2 id="sponsored-research">Sponsored Research<a class="headerlink" href="#sponsored-research" title="Permanent link">&para;</a></h2>
-<p>If you are doing sponsored or departmental research, then FarmShare might not be the right place for you. Instead, if the data you are working with is all low-risk, then you should consider our <a href="https://www.sherlock.stanford.edu/">Sherlock</a> Cluster. </p>
-<p>If you are working with high-risk data then you should consider our <a href="https://nero-docs.stanford.edu/gcp-overview.html">Nero GCP</a> or <a href="https://carinadocs.sites.stanford.edu/">Carina</a> Computing platform. </p>
-<p>If you are working with complex AI you should consider our <a href="https://docs.marlowe.stanford.edu/">Marlowe</a> Cluster.</p>
+<p>FarmShare is not intended for sponsored or departmental research. Users with a grant or other, dedicated source of funding should explore other options:</p>
+<ul>
+<li><strong><a href="https://www.sherlock.stanford.edu/">Sherlock</a></strong>, a large, shared cluster for Stanford faculty and their labs or research teams.</li>
+<li><strong><a href="https://carinadocs.sites.stanford.edu/">Carina</a></strong>, a secure computing environment approved for use with high-risk data.</li>
+<li><strong><a href="https://nero-docs.stanford.edu/">Nero</a></strong>, a cloud computing environment and Big Data platform for high-risk data.</li>
+<li><strong><a href="https://docs.marlowe.stanford.edu/">Marlowe</a></strong>, a large GPU cluster for AI and other research requiring access to specialized hardware.</li>
+</ul>
                 </div>
               
               </article>
@@ -655,7 +714,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; Stanford Research Computing
+      &copy <a href='mailto:srcc-support@stanford.edu'> <span style="color: #8C1515;"><strong>Stanford</strong></span> | Research Computing</a><br/>
     </div>
   
   
@@ -729,7 +788,7 @@
     
       <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
       
-        <script src="custom.js"></script>
+        <script src="assets/scripts/custom.js"></script>
       
     
   </body>
